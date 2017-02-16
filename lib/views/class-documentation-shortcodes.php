@@ -31,6 +31,7 @@ class Documentation_Shortcodes {
 		add_shortcode( 'documentation_documents', array( __CLASS__, 'documentation_documents' ) );
 		add_shortcode( 'documentation_list_children', array( __CLASS__, 'documentation_list_children' ) );
 		add_shortcode( 'documentation_hierarchy', array( __CLASS__, 'documentation_hierarchy' ) );
+		add_shortcode( 'documentation_categories', array( __CLASS__, 'documentation_categories' ) );
 	}
 
 	/**
@@ -74,6 +75,48 @@ class Documentation_Shortcodes {
 	public static function documentation_hierarchy( $atts, $content = null ) {
 		require_once DOCUMENTATION_VIEWS_LIB . '/class-documentation-renderer.php';
 		return Documentation_Renderer::document_hierarchy( $atts );
+	}
+
+	/**
+	 * Renders document categories.
+	 * 
+	 * @param array $atts
+	 * @param string $content (not used)
+	 */
+	public static function documentation_categories( $atts, $content = null ) {
+		$defaults = array(
+			'child_of'     => '',
+			'depth'        => 0,
+			'hide_empty'   => true,
+			'hierarchical' => true,
+			'order'        => 'ASC',
+			'orderby'      => 'menu_order',
+			'show_count'   => false,
+		);
+		$atts = shortcode_atts( $defaults, $atts );
+		$atts['echo'] = false;
+		$atts['taxonomy'] = 'document_category';
+		$atts['title_li'] = ''; // disable the list title
+		// evaluate booleans
+		foreach( array( 'hide_empty', 'hierarchical', 'show_count' ) as $key ) {
+			if ( !is_bool( $atts[$key] ) ) {
+				$atts[$key] = trim( $atts[$key] );
+				switch( strtolower( $atts[$key] ) ) {
+					case 'false' :
+					case 'no' :
+					case '' :
+						$atts[$key] = false;
+						break;
+					case 'true' :
+					case 'yes' :
+						$atts[$key] = true;
+						break;
+					default :
+						$atts[$key] = $defaults[$key];
+				}
+			}
+		}
+		return wp_list_categories( $atts );
 	}
 }
 Documentation_Shortcodes::init();
