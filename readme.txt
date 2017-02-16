@@ -3,8 +3,8 @@ Contributors: itthinx
 Donate link: http://www.itthinx.com/plugins/documentation
 Tags: doc, docs, document, documents, documentation, manual, manuals, platform, system, wiki, wikis, woocommerce
 Requires at least: 4.0
-Tested up to: 4.4.2
-Stable tag: 1.3.6
+Tested up to: 4.7.2
+Stable tag: 1.4.0
 License: GPLv3
 
 A documentation management system.
@@ -75,6 +75,9 @@ The documentation pages are [here](http://www.itthinx.com/documentation/document
 
 == Changelog ==
 
+= 1.4.0 =
+* 
+
 = 1.3.6 =
 * Fixed an issue where providing a widget title would be erroneously used to filter documents shown.
 
@@ -122,5 +125,5 @@ The documentation pages are [here](http://www.itthinx.com/documentation/document
 
 == Upgrade Notice ==
 
-= 1.3.6 =
-Fixes an issue where documents would not show up in the Documents widget when the widget is given a title.
+= 1.4.0 =
+
