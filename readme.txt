@@ -78,7 +78,7 @@ The documentation pages are [here](http://www.itthinx.com/documentation/document
 = 1.4.0 =
 * 
 
-
+The full changelog is available at https://github.com/itthinx/documentation/blob/master/changelog.txt
 
 == Upgrade Notice ==
 
