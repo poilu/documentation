@@ -3,8 +3,8 @@ Contributors: itthinx
 Donate link: http://www.itthinx.com/plugins/documentation
 Tags: doc, docs, document, documents, documentation, manual, manuals, platform, system, wiki, wikis, woocommerce
 Requires at least: 4.0
-Tested up to: 4.4.2
-Stable tag: 1.3.6
+Tested up to: 4.7.2
+Stable tag: 1.4.0
 License: GPLv3
 
 A documentation management system.
@@ -75,52 +75,14 @@ The documentation pages are [here](http://www.itthinx.com/documentation/document
 
 == Changelog ==
 
-= 1.3.6 =
-* Fixed an issue where providing a widget title would be erroneously used to filter documents shown.
+= 1.4.0 =
+* WordPress 4.7.2 compatibility tested.
+* Improved handling of number of documents shown for Documents widget.
+* Added the [documentation_categories] shortcode.
 
-= 1.3.5 =
-* Tested for WordPress 4.4.
-
-= 1.3.3 =
-* Tested for WordPress 4.2.
-* Fixed separators in Settings affecting the admin sidebar's separators.
-* Added an info section in Settings.
-
-= 1.3.2 =
-* Fixed missing ul tags in the document hierarchy renderer.
-* Added a content filter to recognize escaped shortcodes in documents, so that
-  these can appear and be rendered without the double [[ ]]. WordPress will
-  render them with double brackets if the shortcode doesn't exist.
-
-= 1.3.1 =
-* Fixed static call to class method.
-
-= 1.3.0 =
-* Adjusted for WordPress 4.0 compatibility.
-* Added [documentation_documents] shortcode.
-
-= 1.2.0 =
-* Added support for search options to the [documentation_search_form] shortcode.
-
-= 1.1.0 =
-* Added the [documentation_search_form] shortcode which provides a dynamic document search form.
-
-= 1.0.3 =
-* WordPress 3.9 compatibility checked
-* Translation template added
-
-= 1.0.2 =
-* Improvement: Documents are available under Appearance > Menus so that documents can be added directly to menus.
-* Improvement: Changed the basic labels of document categories to distinguish them from post categories, especially for the Menus.
-* Improvement: Added the Document Categories column on the Documents overview screen Document > All Documents.
-
-= 1.0.1 =
-* WordPress 3.8 compatibility checked.
-
-= 1.0.0 =
-* This is the first public release.
+The full changelog is available at https://github.com/itthinx/documentation/blob/master/changelog.txt
 
 == Upgrade Notice ==
 
-= 1.3.6 =
-Fixes an issue where documents would not show up in the Documents widget when the widget is given a title.
+= 1.4.0 =
+This release adds the [documentation_categories] shortcode and makes some minor internal improvements.

@@ -31,6 +31,7 @@ class Documentation_Shortcodes {
 		add_shortcode( 'documentation_documents', array( __CLASS__, 'documentation_documents' ) );
 		add_shortcode( 'documentation_list_children', array( __CLASS__, 'documentation_list_children' ) );
 		add_shortcode( 'documentation_hierarchy', array( __CLASS__, 'documentation_hierarchy' ) );
+		add_shortcode( 'documentation_categories', array( __CLASS__, 'documentation_categories' ) );
 	}
 
 	/**
@@ -74,6 +75,82 @@ class Documentation_Shortcodes {
 	public static function documentation_hierarchy( $atts, $content = null ) {
 		require_once DOCUMENTATION_VIEWS_LIB . '/class-documentation-renderer.php';
 		return Documentation_Renderer::document_hierarchy( $atts );
+	}
+
+	/**
+	 * Renders document categories.
+	 * 
+	 * Accepted attributes are:
+	 * - child_of to indicate a category id and show its children, default is empty
+	 * - depth indentation category depth, default is 0 for all, only used when hierarchical
+	 * - hide_empty to hide empty categories, default is true
+	 * - hierarchical to indent descendants, default is true
+	 * - order ASC or DESC
+	 * - orderby to order by name, slug, id or description; default is 'name'
+	 * - show_count to show the number of entries per category
+	 * 
+	 * @param array $atts
+	 * @param string $content (not used)
+	 */
+	public static function documentation_categories( $atts, $content = null ) {
+		$defaults = array(
+			'child_of'     => '',
+			'depth'        => 0,
+			'hide_empty'   => true,
+			'hierarchical' => true,
+			'order'        => 'ASC',
+			'orderby'      => 'name',
+			'show_count'   => false,
+		);
+		$atts = shortcode_atts( $defaults, $atts );
+		$atts['echo'] = false;
+		$atts['taxonomy'] = 'document_category';
+		$atts['title_li'] = ''; // disable the list title
+		$atts['child_of'] = trim( $atts['child_of'] );
+		$atts['depth'] = trim( $atts['depth'] );
+		if ( !empty( $atts['depth'] ) ) {
+			$atts['depth'] = intval( $atts['depth'] );
+		}
+		// evaluate booleans
+		foreach( array( 'hide_empty', 'hierarchical', 'show_count' ) as $key ) {
+			if ( !is_bool( $atts[$key] ) ) {
+				$atts[$key] = trim( $atts[$key] );
+				switch( strtolower( $atts[$key] ) ) {
+					case 'false' :
+					case 'no' :
+					case '' :
+						$atts[$key] = false;
+						break;
+					case 'true' :
+					case 'yes' :
+						$atts[$key] = true;
+						break;
+					default :
+						$atts[$key] = $defaults[$key];
+				}
+			}
+		}
+		// orderby
+		$atts['orderby'] = trim( $atts['orderby'] );
+		switch( $atts['orderby'] ) {
+			case 'name' :
+			case 'slug' :
+			case 'id' :
+			case 'description' :
+				break;
+			default :
+				$atts['orderby'] = 'name';
+		}
+		// order
+		$atts['order'] = trim( strtoupper( $atts['order'] ) );
+		switch( $atts['order'] ) {
+			case 'ASC' :
+			case 'DESC' :
+				break;
+			default :
+				$atts['order'] = 'ASC';
+		}
+		return wp_list_categories( $atts );
 	}
 }
 Documentation_Shortcodes::init();
