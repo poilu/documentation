@@ -7,7 +7,7 @@
 msgid   ""
 msgstr  "Project-Id-Version: PACKAGE VERSION\n"
         "Report-Msgid-Bugs-To: \n"
-        "POT-Creation-Date: 2014-05-04 14:43+0200\n"
+        "POT-Creation-Date: 2017-02-16 15:49+0100\n"
         "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
         "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
         "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,14 +22,15 @@ msgstr  "Project-Id-Version: PACKAGE VERSION\n"
 msgid   "#%d (no title)"
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:386
+#: lib/views/class-documentation-documents-widget.php:394
+#: lib/views/class-documentation-renderer.php:173
 #, php-format
 msgid   "1 reply"
 msgid_plural    "%d replies"
 msgstr[0]       ""
 msgstr[1]       ""
 
-#: lib/admin/class-documentation-settings.php:77 lib/admin/settings.php:25
+#: lib/admin/class-documentation-settings.php:77 lib/admin/settings.php:23
 msgid   "Access denied."
 msgstr  ""
 
@@ -37,35 +38,39 @@ msgstr  ""
 msgid   "Add New Category"
 msgstr  ""
 
-#: lib/ext/class-documentation-post-type.php:74
+#: lib/ext/class-documentation-post-type.php:77
 msgid   "Add New Document"
 msgstr  ""
 
-#: lib/admin/settings.php:86
+#: lib/admin/settings.php:75
 #, php-format
 msgid   "After changing this, please visit the <a href=\"%s\">Permalinks</a> "
         "admin section to make sure that the permalink structure is updated."
+msgstr  ""
+
+#: lib/views/class-documentation-documents-widget.php:238
+msgid   "All"
 msgstr  ""
 
 #: lib/ext/class-documentation-taxonomy.php:54
 msgid   "All Categories"
 msgstr  ""
 
-#: lib/ext/class-documentation-post-type.php:72
+#: lib/ext/class-documentation-post-type.php:75
 msgid   "All Documents"
 msgstr  ""
 
-#: lib/admin/settings.php:63
+#: lib/admin/settings.php:54
 msgid   "Allow comments on documents"
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:70
 #: lib/views/class-documentation-document-children-widget.php:79
+#: lib/views/class-documentation-documents-widget.php:70
 msgid   "Ascending"
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:64
 #: lib/views/class-documentation-document-children-widget.php:73
+#: lib/views/class-documentation-documents-widget.php:64
 msgid   "Author"
 msgstr  ""
 
@@ -73,11 +78,11 @@ msgstr  ""
 msgid   "Categories"
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:280
+#: lib/views/class-documentation-documents-widget.php:284
 msgid   "Category ID"
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:287
+#: lib/views/class-documentation-documents-widget.php:291
 #, php-format
 msgid   "Category: <em>%s</em>"
 msgstr  ""
@@ -94,28 +99,28 @@ msgstr  ""
 msgid   "Comment Count"
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:65
 #: lib/views/class-documentation-document-children-widget.php:74
+#: lib/views/class-documentation-documents-widget.php:65
 msgid   "Date"
 msgstr  ""
 
-#: lib/admin/settings.php:82
+#: lib/admin/settings.php:71
 msgid   "Depending on your Permalink settings, URLs of documents will contain "
         "this in their path before the section that identifies the document."
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:71
 #: lib/views/class-documentation-document-children-widget.php:80
+#: lib/views/class-documentation-documents-widget.php:71
 msgid   "Descending"
 msgstr  ""
 
-#: lib/admin/settings.php:68
+#: lib/admin/settings.php:57
 msgid   "Disable this option if you do not want to allow visitors to post "
         "comments on documents."
 msgstr  ""
 
-#: lib/ext/class-documentation-post-type.php:71
-#: lib/ext/class-documentation-post-type.php:86
+#: lib/ext/class-documentation-post-type.php:74
+#: lib/ext/class-documentation-post-type.php:89
 msgid   "Document"
 msgstr  ""
 
@@ -129,7 +134,7 @@ msgctxt "taxonomy singular name"
 msgid   "Document Category"
 msgstr  ""
 
-#: lib/admin/settings.php:78
+#: lib/admin/settings.php:67
 msgid   "Document slug"
 msgstr  ""
 
@@ -142,8 +147,8 @@ msgstr  ""
 msgid   "Documentation Settings"
 msgstr  ""
 
-#: lib/ext/class-documentation-post-type.php:70
-#: lib/views/class-documentation-renderer.php:243
+#: lib/ext/class-documentation-post-type.php:73
+#: lib/views/class-documentation-renderer.php:400
 msgid   "Documents"
 msgstr  ""
 
@@ -155,7 +160,13 @@ msgstr  ""
 msgid   "Documents below"
 msgstr  ""
 
-#: lib/ext/class-documentation-post-type.php:75
+#: lib/admin/class-documentation-settings.php:87
+msgid   "Documents can be attached to products in WooCommerce using the <a "
+        "href=\"http://www.itthinx.com/shop/woocommerce-documentation/"
+        "\">WooCommerce Documentation</a> extension."
+msgstr  ""
+
+#: lib/ext/class-documentation-post-type.php:78
 msgid   "Edit"
 msgstr  ""
 
@@ -163,7 +174,7 @@ msgstr  ""
 msgid   "Edit Category"
 msgstr  ""
 
-#: lib/ext/class-documentation-post-type.php:76
+#: lib/ext/class-documentation-post-type.php:79
 msgid   "Edit Document"
 msgstr  ""
 
@@ -171,7 +182,7 @@ msgstr  ""
 msgid   "Empty, document ID or {current}"
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:284
+#: lib/views/class-documentation-documents-widget.php:288
 msgid   "Empty, document category ID or {current}"
 msgstr  ""
 
@@ -183,15 +194,15 @@ msgstr  ""
 msgid   "ID"
 msgstr  ""
 
-#: lib/admin/settings.php:84
+#: lib/admin/settings.php:73
 msgid   "If left empty, the default <em>document</em> applies."
 msgstr  ""
 
-#: lib/admin/settings.php:72
+#: lib/admin/settings.php:61
 msgid   "If this option is disabled, comments on all documents are disabled."
 msgstr  ""
 
-#: lib/admin/settings.php:70
+#: lib/admin/settings.php:59
 msgid   "If this option is enabled, you may choose to allow comments on each "
         "document individually."
 msgstr  ""
@@ -206,7 +217,7 @@ msgid   "Leave empty to show all documents. To show child documents for a "
         "for the current document, indicate: {current}."
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:278
+#: lib/views/class-documentation-documents-widget.php:282
 msgid   "Leave empty to show documents in all document categories. To show "
         "documents in a specific category, indicate the category ID. To show "
         "documents in the current document category, indicate: {current} "
@@ -228,20 +239,20 @@ msgstr  ""
 msgid   "New Category Name"
 msgstr  ""
 
-#: lib/ext/class-documentation-post-type.php:73
-#: lib/ext/class-documentation-post-type.php:77
+#: lib/ext/class-documentation-post-type.php:76
+#: lib/ext/class-documentation-post-type.php:80
 msgid   "New Document"
 msgstr  ""
 
-#: lib/ext/class-documentation-post-type.php:78
+#: lib/ext/class-documentation-post-type.php:81
 msgid   "No Documents found"
 msgstr  ""
 
-#: lib/ext/class-documentation-post-type.php:79
+#: lib/ext/class-documentation-post-type.php:82
 msgid   "No Documents found in trash"
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:233
+#: lib/views/class-documentation-documents-widget.php:237
 msgid   "Number of documents"
 msgstr  ""
 
@@ -249,8 +260,8 @@ msgstr  ""
 msgid   "Order"
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:242
 #: lib/views/class-documentation-document-children-widget.php:319
+#: lib/views/class-documentation-documents-widget.php:246
 msgid   "Order by ..."
 msgstr  ""
 
@@ -262,7 +273,7 @@ msgstr  ""
 msgid   "Parent Category:"
 msgstr  ""
 
-#: lib/ext/class-documentation-post-type.php:80
+#: lib/ext/class-documentation-post-type.php:83
 msgid   "Parent Document"
 msgstr  ""
 
@@ -270,7 +281,7 @@ msgstr  ""
 msgid   "Root depth"
 msgstr  ""
 
-#: lib/admin/settings.php:95
+#: lib/admin/settings.php:84
 msgid   "Save"
 msgstr  ""
 
@@ -278,18 +289,18 @@ msgstr  ""
 msgid   "Search Categories"
 msgstr  ""
 
-#: lib/ext/class-documentation-post-type.php:81
+#: lib/ext/class-documentation-post-type.php:84
 msgid   "Search Documents"
 msgstr  ""
 
 #: lib/admin/class-documentation-settings.php:64
-#: lib/admin/class-documentation-settings.php:81
-#: lib/admin/class-documentation-settings.php:97
+#: lib/admin/class-documentation-settings.php:80
+#: lib/admin/class-documentation-settings.php:100
 msgid   "Settings"
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:296
 #: lib/views/class-documentation-document-children-widget.php:359
+#: lib/views/class-documentation-documents-widget.php:300
 msgid   "Show author"
 msgstr  ""
 
@@ -302,8 +313,8 @@ msgstr  ""
 msgid   "Show child documents of the current one up to how many levels deep?"
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:305
 #: lib/views/class-documentation-document-children-widget.php:368
+#: lib/views/class-documentation-documents-widget.php:309
 msgid   "Show date"
 msgstr  ""
 
@@ -316,7 +327,7 @@ msgstr  ""
 msgid   "Show documents within the hierarchy to how many levels deep?"
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:314
+#: lib/views/class-documentation-documents-widget.php:318
 msgid   "Show number of replies"
 msgstr  ""
 
@@ -324,13 +335,13 @@ msgstr  ""
 msgid   "Show parent documents above the current one up to how many levels?"
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:256
 #: lib/views/class-documentation-document-children-widget.php:328
+#: lib/views/class-documentation-documents-widget.php:260
 msgid   "Sort order"
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:255
 #: lib/views/class-documentation-document-children-widget.php:327
+#: lib/views/class-documentation-documents-widget.php:259
 msgid   "Sort order."
 msgstr  ""
 
@@ -340,7 +351,7 @@ msgid   "Sorting criteria, one or more options separated by comma. Possible "
         "post_author and post_name."
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:241
+#: lib/views/class-documentation-documents-widget.php:245
 msgid   "Sorting criteria."
 msgstr  ""
 
@@ -348,29 +359,30 @@ msgstr  ""
 msgid   "Sublevel depth"
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:232
+#: lib/views/class-documentation-documents-widget.php:236
 msgid   "The number of documents to show."
 msgstr  ""
 
-#: lib/admin/settings.php:41
+#: lib/admin/settings.php:39
 msgid   "The settings have been saved."
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:223
 #: lib/views/class-documentation-document-children-widget.php:262
 #: lib/views/class-documentation-document-hierarchy-widget.php:193
+#: lib/views/class-documentation-documents-widget.php:227
 msgid   "The widget title."
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:392
+#: lib/views/class-documentation-documents-widget.php:400
+#: lib/views/class-documentation-renderer.php:179
 msgid   "There are no documents."
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:66
-#: lib/views/class-documentation-documents-widget.php:224
 #: lib/views/class-documentation-document-children-widget.php:75
 #: lib/views/class-documentation-document-children-widget.php:263
 #: lib/views/class-documentation-document-hierarchy-widget.php:194
+#: lib/views/class-documentation-documents-widget.php:66
+#: lib/views/class-documentation-documents-widget.php:228
 msgid   "Title"
 msgstr  ""
 
@@ -378,21 +390,21 @@ msgstr  ""
 msgid   "Update Category"
 msgstr  ""
 
-#: lib/ext/class-documentation-post-type.php:82
-#: lib/ext/class-documentation-post-type.php:83
+#: lib/ext/class-documentation-post-type.php:85
+#: lib/ext/class-documentation-post-type.php:86
 msgid   "View Document"
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:294
 #: lib/views/class-documentation-document-children-widget.php:357
+#: lib/views/class-documentation-documents-widget.php:298
 msgid   "Whether to show the author of each document."
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:312
+#: lib/views/class-documentation-documents-widget.php:316
 msgid   "Whether to show the comment count for each document."
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:303
 #: lib/views/class-documentation-document-children-widget.php:366
+#: lib/views/class-documentation-documents-widget.php:307
 msgid   "Whether to show the date of each document."
 msgstr  ""
