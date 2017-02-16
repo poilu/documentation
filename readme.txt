@@ -85,4 +85,4 @@ The full changelog is available at https://github.com/itthinx/documentation/blob
 == Upgrade Notice ==
 
 = 1.4.0 =
-
+This release adds the [documentation_categories] shortcode and makes some minor internal improvements.
