@@ -167,13 +167,17 @@ class Documentation_Documents_Widget extends WP_Widget {
 		$settings['title'] = strip_tags( $new_instance['title'] );
 
 		// number
-		$number = intval( $new_instance['number'] );
-		if ( $number > 0 ) {
-			$settings['number'] = $number;
+		$settings['number'] = '';
+		$number = trim( $new_instance['number'] );
+		if ( !empty( $number ) ) {
+			$number = intval( $number );
+			if ( $number > 0 ) {
+				$settings['number'] = $number;
+			}
 		}
 
 		// orderby
-		$orderby = $new_instance['orderby'];
+		$orderby = trim( $new_instance['orderby'] );
 		if ( key_exists( $orderby, self::$orderby_options ) ) {
 			$settings['orderby'] = $orderby;
 		} else {
@@ -181,7 +185,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 		}
 
 		// order
-		$order = $new_instance['order'];
+		$order = trim( $new_instance['order'] );
 		if ( key_exists( $order, self::$order_options ) ) {
 			$settings['order'] = $order;
 		} else {
@@ -189,7 +193,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 		}
 
 		// category_id
-		$category_id = $new_instance['category_id'];
+		$category_id = trim( $new_instance['category_id'] );
 		if ( empty( $category_id ) ) {
 			unset( $settings['category_id'] );
 		} else if ( ("[current]" == $category_id ) || ("{current}" == $category_id ) )  {
@@ -218,7 +222,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 		extract( self::$defaults );
 
 		// title
-		$title = isset( $instance['title'] ) ? $instance['title'] : "";
+		$title = isset( $instance['title'] ) ? $instance['title'] : '';
 		echo '<p>';
 		echo sprintf( '<label title="%s">', sprintf( __( 'The widget title.', DOCUMENTATION_PLUGIN_DOMAIN ) ) );
 		echo __( 'Title', DOCUMENTATION_PLUGIN_DOMAIN );
@@ -227,16 +231,16 @@ class Documentation_Documents_Widget extends WP_Widget {
 		echo '</p>';
 
 		// number
-		$number = isset( $instance['number'] ) ? intval( $instance['number'] ) : '';
+		$number = !empty( $instance['number'] ) ? intval( $instance['number'] ) : '';
 		echo '<p>';
 		echo sprintf( '<label title="%s" >', __( "The number of documents to show.", DOCUMENTATION_PLUGIN_DOMAIN ) );
 		echo __( 'Number of documents', DOCUMENTATION_PLUGIN_DOMAIN );
-		echo '<input class="widefat" id="' . $this->get_field_id( 'number' ) . '" name="' . $this->get_field_name( 'number' ) . '" type="text" value="' . esc_attr( $number ) . '" />';
+		echo '<input class="widefat" id="' . $this->get_field_id( 'number' ) . '" name="' . $this->get_field_name( 'number' ) . '" type="text" value="' . esc_attr( $number ) . '" placeholder="' . esc_attr( __( 'All', DOCUMENTS_PLUGIN_DOMAIN ) ) . '"/>';
 		echo '</label>';
 		echo '</p>';
 
 		// orderby
-		$orderby = isset( $instance['orderby'] ) ? $instance['orderby'] : '';
+		$orderby = isset( $instance['orderby'] ) ? $instance['orderby'] : $orderby;
 		echo '<p>';
 		echo sprintf( '<label title="%s">', __( 'Sorting criteria.', DOCUMENTATION_PLUGIN_DOMAIN ) );
 		echo __( 'Order by ...', DOCUMENTATION_PLUGIN_DOMAIN );
@@ -250,7 +254,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 		echo '</p>';
 
 		// order
-		$order = isset( $instance['order'] ) ? $instance['order'] : '';
+		$order = isset( $instance['order'] ) ? $instance['order'] : $order;
 		echo '<p>';
 		echo sprintf( '<label title="%s">', __( "Sort order.", DOCUMENTATION_PLUGIN_DOMAIN ) );
 		echo __( 'Sort order', DOCUMENTATION_PLUGIN_DOMAIN );
@@ -322,9 +326,11 @@ class Documentation_Documents_Widget extends WP_Widget {
 
 		$args = array_merge( $instance, array( 'post_type' => 'document' ) );
 
-		if ( isset( $args['number'] ) ) {
+		if ( !empty( $args['number'] ) ) {
 			$args['numberposts'] = $args['number'];
 			unset( $args['number'] );
+		} else {
+			$args['numberposts'] = -1; // all
 		}
 
 		$show_author = isset( $args['show_author'] ) && $args['show_author'];

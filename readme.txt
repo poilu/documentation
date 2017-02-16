@@ -76,7 +76,8 @@ The documentation pages are [here](http://www.itthinx.com/documentation/document
 == Changelog ==
 
 = 1.4.0 =
-* 
+* WordPress 4.7.2 compatibility tested.
+* Improved handling of number of documents shown for Documents widget.
 
 The full changelog is available at https://github.com/itthinx/documentation/blob/master/changelog.txt
 
