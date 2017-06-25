@@ -1,5 +1,8 @@
 == Documentation plugin by itthinx - changelog.txt ==
 
+= 1.4.1 =
+* WordPress 4.8 compatibility tested.
+
 = 1.4.0 =
 * WordPress 4.7.2 compatibility tested.
 * Improved handling of number of documents shown for Documents widget.
