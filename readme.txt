@@ -3,8 +3,8 @@ Contributors: itthinx
 Donate link: http://www.itthinx.com/plugins/documentation
 Tags: doc, docs, document, documents, documentation, manual, manuals, platform, system, wiki, wikis, woocommerce
 Requires at least: 4.0
-Tested up to: 4.7.2
-Stable tag: 1.4.0
+Tested up to: 4.8
+Stable tag: 1.4.1
 License: GPLv3
 
 A documentation management system.
@@ -75,6 +75,9 @@ The documentation pages are [here](http://www.itthinx.com/documentation/document
 
 == Changelog ==
 
+= 1.4.1 =
+* WordPress 4.8 compatibility tested.
+
 = 1.4.0 =
 * WordPress 4.7.2 compatibility tested.
 * Improved handling of number of documents shown for Documents widget.
@@ -84,5 +87,5 @@ The full changelog is available at https://github.com/itthinx/documentation/blob
 
 == Upgrade Notice ==
 
-= 1.4.0 =
-This release adds the [documentation_categories] shortcode and makes some minor internal improvements.
+= 1.4.1 =
+This release has been tested with WordPress 4.8.
