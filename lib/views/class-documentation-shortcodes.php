@@ -107,6 +107,24 @@ class Documentation_Shortcodes {
 		$atts['taxonomy'] = 'document_category';
 		$atts['title_li'] = ''; // disable the list title
 		$atts['child_of'] = trim( $atts['child_of'] );
+		if ( $atts['child_of'] == '{current}' ) {
+			$atts['child_of'] = '';
+			if ( $queried_object = get_queried_object() ) {
+				if ( isset( $queried_object->term_id ) ) {
+					$atts['child_of'] = intval( $queried_object->term_id );
+				}
+			}
+		} else {
+			$key = $atts['child_of'];
+			if ( !( $term = get_term_by( 'id', $key, 'document_category' ) ) ) {
+				if ( !( $term = get_term_by( 'slug', $key, 'document_category' ) ) ) {
+					$term = get_term_by( 'name', $key, 'document_category' );
+				}
+			}
+			if ( $term ) {
+				$atts['child_of'] = $term->term_id;
+			}
+		}
 		$atts['depth'] = trim( $atts['depth'] );
 		if ( !empty( $atts['depth'] ) ) {
 			$atts['depth'] = intval( $atts['depth'] );

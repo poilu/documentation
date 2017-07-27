@@ -26,6 +26,7 @@ The plugin provides several widgets that are used to display document links:
 - Document Hierarchy : facilitates navigating and viewing the document hierarchy
 - Document Children : displays links to children of documents
 - Documents : to display sets of document links
+- Document Categories : to display links to document categories
 
 ### Shortcodes ###
 
@@ -85,6 +86,7 @@ The documentation pages are [here](http://www.itthinx.com/documentation/document
 * Added the Add-Ons section.
 * Added the Notice class.
 * Added links to the documenation pages.
+* Added the Document Categories widget.
 
 = 1.4.1 =
 * WordPress 4.8 compatibility tested.
@@ -99,4 +101,4 @@ The full changelog is available at https://github.com/itthinx/documentation/blob
 == Upgrade Notice ==
 
 = 1.5.0 =
-This release contains several fixes and improvements.
+This release add a new widget to display Document Categories, a new section with recommended helpful add-ons and contains several fixes and improvements.

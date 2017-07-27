@@ -45,6 +45,7 @@ class Documentation_Controller {
 			require_once( DOCUMENTATION_ADMIN_LIB . '/class-documentation-settings.php' );
 			require_once( DOCUMENTATION_ADMIN_LIB . '/class-documentation-add-ons.php' );
 		}
+		require_once( DOCUMENTATION_VIEWS_LIB . '/class-documentation-categories-widget.php' );
 		require_once( DOCUMENTATION_VIEWS_LIB . '/class-documentation-documents-widget.php' );
 		require_once( DOCUMENTATION_VIEWS_LIB . '/class-documentation-document-children-widget.php' );
 		require_once( DOCUMENTATION_VIEWS_LIB . '/class-documentation-document-hierarchy-widget.php' );
