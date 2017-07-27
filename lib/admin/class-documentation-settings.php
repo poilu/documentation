@@ -60,8 +60,8 @@ class Documentation_Settings {
 	public static function admin_menu() {
 		$page = add_submenu_page(
 			'edit.php?post_type=document',
-			__( 'Documentation Settings', DOCUMENTATION_PLUGIN_DOMAIN ),
-			__( 'Settings', DOCUMENTATION_PLUGIN_DOMAIN ),
+			__( 'Documentation Settings', 'documentation' ),
+			__( 'Settings', 'documentation' ),
 			self::$capability,
 			'documentation-settings',
 			array( __CLASS__, 'settings' )
@@ -74,17 +74,17 @@ class Documentation_Settings {
 	 */
 	public static function settings() {
 		if ( !current_user_can( self::$capability ) ) {
-			wp_die( __( 'Access denied.', DOCUMENTATION_PLUGIN_DOMAIN ) );
+			wp_die( __( 'Access denied.', 'documentation' ) );
 		}
 		echo '<h2>';
-		echo __( 'Settings', DOCUMENTATION_PLUGIN_DOMAIN );
+		echo __( 'Settings', 'documentation' );
 		echo '</h2>';
 		echo '<div class="documentation-settings">';
 		include_once DOCUMENTATION_ADMIN_LIB . '/settings.php';
 		echo '</div>'; // .documentation-settings
 
 		echo '<div class="documentation-settings-info">';
-		echo __( 'Documents can be attached to products in WooCommerce using the <a href="http://www.itthinx.com/shop/woocommerce-documentation/">WooCommerce Documentation</a> extension.', DOCUMENTATION_PLUGIN_DOMAIN );
+		echo __( 'Documents can be attached to products in WooCommerce using the <a href="http://www.itthinx.com/shop/woocommerce-documentation/">WooCommerce Documentation</a> extension.', 'documentation' );
 		echo '</div>'; // .documentation-settings-info
 	}
 
@@ -97,7 +97,7 @@ class Documentation_Settings {
 	 */
 	public static function admin_settings_link( $links ) {
 		if ( current_user_can( self::$capability ) ) {
-			$links[] = '<a href="' . get_admin_url( null, 'admin.php?page=documentation-settings' ) . '">' . __( 'Settings', DOCUMENTATION_PLUGIN_DOMAIN ) . '</a>';
+			$links[] = '<a href="' . get_admin_url( null, 'admin.php?page=documentation-settings' ) . '">' . __( 'Settings', 'documentation' ) . '</a>';
 		}
 		return $links;
 	}

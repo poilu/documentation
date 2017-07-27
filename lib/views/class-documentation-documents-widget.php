@@ -61,14 +61,14 @@ class Documentation_Documents_Widget extends WP_Widget {
 	 */
 	static function init() {
 		self::$orderby_options = array(
-			'post_author'   => __( 'Author', DOCUMENTATION_PLUGIN_DOMAIN ),
-			'post_date'     => __( 'Date', DOCUMENTATION_PLUGIN_DOMAIN ),
-			'post_title'    => __( 'Title', DOCUMENTATION_PLUGIN_DOMAIN ),
-			'comment_count' => __( 'Comment Count', DOCUMENTATION_PLUGIN_DOMAIN ),
+			'post_author'   => __( 'Author', 'documentation' ),
+			'post_date'     => __( 'Date', 'documentation' ),
+			'post_title'    => __( 'Title', 'documentation' ),
+			'comment_count' => __( 'Comment Count', 'documentation' ),
 		);
 		self::$order_options = array(
-			'ASC'  => __( 'Ascending', DOCUMENTATION_PLUGIN_DOMAIN ),
-			'DESC' => __( 'Descending', DOCUMENTATION_PLUGIN_DOMAIN )
+			'ASC'  => __( 'Ascending', 'documentation' ),
+			'DESC' => __( 'Descending', 'documentation' )
 		);
 // 		if ( !has_action( 'wp_print_styles', array( __CLASS__, '_wp_print_styles' ) ) ) {
 // 			add_action( 'wp_print_styles', array( __CLASS__, '_wp_print_styles' ) );
@@ -92,7 +92,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 	/**
 	 * Creates a documents widget.
 	 */
-	function Documentation_Documents_Widget() {
+	public function __construct() {
 		parent::__construct( false, $name = 'Documents' );
 	}
 
@@ -224,8 +224,8 @@ class Documentation_Documents_Widget extends WP_Widget {
 		// title
 		$title = isset( $instance['title'] ) ? $instance['title'] : '';
 		echo '<p>';
-		echo sprintf( '<label title="%s">', sprintf( __( 'The widget title.', DOCUMENTATION_PLUGIN_DOMAIN ) ) );
-		echo __( 'Title', DOCUMENTATION_PLUGIN_DOMAIN );
+		echo sprintf( '<label title="%s">', sprintf( __( 'The widget title.', 'documentation' ) ) );
+		echo __( 'Title', 'documentation' );
 		echo '<input class="widefat" id="' . $this->get_field_id( 'title' ) . '" name="' . $this->get_field_name( 'title' ) . '" type="text" value="' . esc_attr( $title ) . '" />';
 		echo '</label>';
 		echo '</p>';
@@ -233,17 +233,17 @@ class Documentation_Documents_Widget extends WP_Widget {
 		// number
 		$number = !empty( $instance['number'] ) ? intval( $instance['number'] ) : '';
 		echo '<p>';
-		echo sprintf( '<label title="%s" >', __( "The number of documents to show.", DOCUMENTATION_PLUGIN_DOMAIN ) );
-		echo __( 'Number of documents', DOCUMENTATION_PLUGIN_DOMAIN );
-		echo '<input class="widefat" id="' . $this->get_field_id( 'number' ) . '" name="' . $this->get_field_name( 'number' ) . '" type="text" value="' . esc_attr( $number ) . '" placeholder="' . esc_attr( __( 'All', DOCUMENTATION_PLUGIN_DOMAIN) ) . '"/>';
+		echo sprintf( '<label title="%s" >', __( "The number of documents to show.", 'documentation' ) );
+		echo __( 'Number of documents', 'documentation' );
+		echo '<input class="widefat" id="' . $this->get_field_id( 'number' ) . '" name="' . $this->get_field_name( 'number' ) . '" type="text" value="' . esc_attr( $number ) . '" placeholder="' . esc_attr( __( 'All', 'documentation') ) . '"/>';
 		echo '</label>';
 		echo '</p>';
 
 		// orderby
 		$orderby = isset( $instance['orderby'] ) ? $instance['orderby'] : $orderby;
 		echo '<p>';
-		echo sprintf( '<label title="%s">', __( 'Sorting criteria.', DOCUMENTATION_PLUGIN_DOMAIN ) );
-		echo __( 'Order by ...', DOCUMENTATION_PLUGIN_DOMAIN );
+		echo sprintf( '<label title="%s">', __( 'Sorting criteria.', 'documentation' ) );
+		echo __( 'Order by ...', 'documentation' );
 		echo '<select class="widefat" name="' . $this->get_field_name( 'orderby' ) . '">';
 		foreach ( self::$orderby_options as $orderby_option_key => $orderby_option_name ) {
 			$selected = ( $orderby_option_key == $orderby ? ' selected="selected" ' : "" );
@@ -256,8 +256,8 @@ class Documentation_Documents_Widget extends WP_Widget {
 		// order
 		$order = isset( $instance['order'] ) ? $instance['order'] : $order;
 		echo '<p>';
-		echo sprintf( '<label title="%s">', __( "Sort order.", DOCUMENTATION_PLUGIN_DOMAIN ) );
-		echo __( 'Sort order', DOCUMENTATION_PLUGIN_DOMAIN );
+		echo sprintf( '<label title="%s">', __( "Sort order.", 'documentation' ) );
+		echo __( 'Sort order', 'documentation' );
 		echo '<select class="widefat" name="' . $this->get_field_name( 'order' ) . '">';
 		foreach ( self::$order_options as $order_option_key => $order_option_name ) {
 			$selected = ( $order_option_key == $order ? ' selected="selected" ' : "" );
@@ -279,43 +279,43 @@ class Documentation_Documents_Widget extends WP_Widget {
 		echo '<p>';
 		echo sprintf(
 			'<label title="%s">',
-			__( "Leave empty to show documents in all document categories. To show documents in a specific category, indicate the category ID. To show documents in the current document category, indicate: {current} (when not on a document page, documents for all categories are displayed).", DOCUMENTATION_PLUGIN_DOMAIN )
+			__( "Leave empty to show documents in all document categories. To show documents in a specific category, indicate the category ID. To show documents in the current document category, indicate: {current} (when not on a document page, documents for all categories are displayed).", 'documentation' )
 		);
-		echo __( 'Category ID', DOCUMENTATION_PLUGIN_DOMAIN ); 
+		echo __( 'Category ID', 'documentation' ); 
 		echo '<input class="widefat" id="' . $this->get_field_id( 'category_id' ) . '" name="' . $this->get_field_name( 'category_id' ) . '" type="text" value="' . esc_attr( $category_id ) . '" />';
 		echo '</label>';
 		echo '<br/>';
-		echo '<span class="description">' . __( "Empty, document category ID or {current}", DOCUMENTATION_PLUGIN_DOMAIN ) . '</span>';
+		echo '<span class="description">' . __( "Empty, document category ID or {current}", 'documentation' ) . '</span>';
 		if ( !empty( $category_id ) && ( $category = get_term( $category_id, 'document_category' ) ) && !is_wp_error( $category ) ) {
 			echo '<br/>';
-			echo '<span class="description"> ' . sprintf( __( "Category: <em>%s</em>", DOCUMENTATION_PLUGIN_DOMAIN ) , $category->name ) . '</span>';
+			echo '<span class="description"> ' . sprintf( __( "Category: <em>%s</em>", 'documentation' ) , $category->name ) . '</span>';
 		}
 		echo '</p>';
 
 		// show_author
 		$checked = ( ( ( !isset( $instance['show_author'] ) && self::$defaults['show_author'] ) || ( isset( $instance['show_author'] ) && ( $instance['show_author'] === true ) ) ) ? 'checked="checked"' : '' );
 		echo '<p>';
-		echo sprintf( '<label title="%s">', __( "Whether to show the author of each document.", DOCUMENTATION_PLUGIN_DOMAIN ) ); 
+		echo sprintf( '<label title="%s">', __( "Whether to show the author of each document.", 'documentation' ) ); 
 		echo '<input type="checkbox" ' . $checked . ' value="1" name="' . $this->get_field_name( 'show_author' ) . '" />';
-		echo __( 'Show author', DOCUMENTATION_PLUGIN_DOMAIN );
+		echo __( 'Show author', 'documentation' );
 		echo '</label>';
 		echo '</p>';
 
 		// show_date
 		$checked = ( ( ( !isset( $instance['show_date'] ) && self::$defaults['show_date'] ) || ( isset( $instance['show_date'] ) && ( $instance['show_date'] === true ) ) ) ? 'checked="checked"' : '' );
 		echo '<p>';
-		echo sprintf( '<label title="%s">', __( "Whether to show the date of each document.", DOCUMENTATION_PLUGIN_DOMAIN ) );
+		echo sprintf( '<label title="%s">', __( "Whether to show the date of each document.", 'documentation' ) );
 		echo '<input type="checkbox" ' . $checked . ' value="1" name="' . $this->get_field_name( 'show_date' ) . '" />';
-		echo __( 'Show date', DOCUMENTATION_PLUGIN_DOMAIN );
+		echo __( 'Show date', 'documentation' );
 		echo '</label>';
 		echo '</p>';
 
 		// show_comment_count
 		$checked = ( ( ( !isset( $instance['show_comment_count'] ) && self::$defaults['show_comment_count'] ) || ( isset( $instance['show_comment_count'] ) && ( $instance['show_comment_count'] === true ) ) ) ? 'checked="checked"' : '' );
 		echo '<p>';
-		echo sprintf( '<label title="%s">', __( "Whether to show the comment count for each document.", DOCUMENTATION_PLUGIN_DOMAIN ) ); 
+		echo sprintf( '<label title="%s">', __( "Whether to show the comment count for each document.", 'documentation' ) ); 
 		echo '<input type="checkbox" ' . $checked . ' value="1" name="' . $this->get_field_name( 'show_comment_count' ) . '" />';
-		echo __( 'Show number of replies', DOCUMENTATION_PLUGIN_DOMAIN );
+		echo __( 'Show number of replies', 'documentation' );
 		echo '</label>';
 		echo '</p>';
 	}
@@ -397,7 +397,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 			}
 			$output .= '</ul>';
 		} else {
-			$output .= __( 'There are no documents.', DOCUMENTATION_PLUGIN_DOMAIN );
+			$output .= __( 'There are no documents.', 'documentation' );
 		}
 		return $output;
 	}

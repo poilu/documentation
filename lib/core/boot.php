@@ -27,7 +27,7 @@ class Documentation_Controller {
 	 */
 	public static function boot() {
 		add_action( 'admin_notices', array( __CLASS__, 'admin_notices' ) );
-		load_plugin_textdomain( DOCUMENTATION_PLUGIN_DOMAIN, null, 'documentation/languages' );
+		load_plugin_textdomain( 'documentation', null, 'documentation/languages' );
 		require_once( DOCUMENTATION_CORE_LIB . '/class-documentation.php' );
 		require_once( DOCUMENTATION_EXT_LIB . '/class-documentation-post-type.php' );
 		require_once( DOCUMENTATION_EXT_LIB . '/class-documentation-taxonomy.php' );

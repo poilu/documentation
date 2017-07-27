@@ -70,23 +70,23 @@ class Documentation_Post_Type {
 			'document',
 			array(
 				'labels' => array(
-					'name'               => __( 'Documents', DOCUMENTATION_PLUGIN_DOMAIN ),
-					'singular_name'      => __( 'Document', DOCUMENTATION_PLUGIN_DOMAIN ),
-					'all_items'          => __( 'All Documents', DOCUMENTATION_PLUGIN_DOMAIN ),
-					'add_new'            => __( 'New Document', DOCUMENTATION_PLUGIN_DOMAIN ),
-					'add_new_item'       => __( 'Add New Document', DOCUMENTATION_PLUGIN_DOMAIN ),
-					'edit'               => __( 'Edit', DOCUMENTATION_PLUGIN_DOMAIN ),
-					'edit_item'          => __( 'Edit Document', DOCUMENTATION_PLUGIN_DOMAIN ),
-					'new_item'           => __( 'New Document', DOCUMENTATION_PLUGIN_DOMAIN ),
-					'not_found'          => __( 'No Documents found', DOCUMENTATION_PLUGIN_DOMAIN ),
-					'not_found_in_trash' => __( 'No Documents found in trash', DOCUMENTATION_PLUGIN_DOMAIN ),
-					'parent'             => __( 'Parent Document', DOCUMENTATION_PLUGIN_DOMAIN ),
-					'search_items'       => __( 'Search Documents', DOCUMENTATION_PLUGIN_DOMAIN ),
-					'view'               => __( 'View Document', DOCUMENTATION_PLUGIN_DOMAIN ),
-					'view_item'          => __( 'View Document', DOCUMENTATION_PLUGIN_DOMAIN )
+					'name'               => __( 'Documents', 'documentation' ),
+					'singular_name'      => __( 'Document', 'documentation' ),
+					'all_items'          => __( 'All Documents', 'documentation' ),
+					'add_new'            => __( 'New Document', 'documentation' ),
+					'add_new_item'       => __( 'Add New Document', 'documentation' ),
+					'edit'               => __( 'Edit', 'documentation' ),
+					'edit_item'          => __( 'Edit Document', 'documentation' ),
+					'new_item'           => __( 'New Document', 'documentation' ),
+					'not_found'          => __( 'No Documents found', 'documentation' ),
+					'not_found_in_trash' => __( 'No Documents found in trash', 'documentation' ),
+					'parent'             => __( 'Parent Document', 'documentation' ),
+					'search_items'       => __( 'Search Documents', 'documentation' ),
+					'view'               => __( 'View Document', 'documentation' ),
+					'view_item'          => __( 'View Document', 'documentation' )
 				),
 // 				'capability_type'     => 'document', // @todo if used we need to assign them appropriately so at least admins have them, or use roles/groups
-				'description'         => __( 'Document', DOCUMENTATION_PLUGIN_DOMAIN ),
+				'description'         => __( 'Document', 'documentation' ),
 				'exclude_from_search' => false, // this option is unreliable, see http://core.trac.wordpress.org/ticket/17592
 				'has_archive'         => true,
 				'hierarchical'        => true,
