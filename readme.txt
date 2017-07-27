@@ -36,7 +36,9 @@ The following shortcodes are available:
 - [documentation_search_form]
 - [documentation_documents]
 
-Please refer to the documentation pages for details.
+### Documentation ###
+
+Please refer to the [documentation](http://docs.itthinx.com/document/documentation/) pages for details.
 
 ### Feedback ###
 
