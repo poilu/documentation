@@ -99,8 +99,9 @@ class Documentation_Admin_Notice {
 
 		$output .= '<style type="text/css">';
 		$output .= 'div.documentation-rating {';
-		$output .= sprintf( 'background: url(%s) #fff no-repeat 8px 8px;', DOCUMENTATION_PLUGIN_URL . '/images/wctrl_gear.png' );
+		$output .= sprintf( 'background: url(%s) #fff no-repeat 8px 8px;', DOCUMENTATION_PLUGIN_URL . '/images/icon-256x256.png' );
 		$output .= 'padding-left: 76px ! important;';
+		$output .= 'background-size: 64px 64px';
 		$output .= '}';
 		$output .= '</style>';
 
