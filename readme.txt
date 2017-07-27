@@ -31,10 +31,11 @@ The plugin provides several widgets that are used to display document links:
 
 The following shortcodes are available:
 
-- [documentation_hierarchy]
-- [documentation_list_children]
-- [documentation_search_form]
-- [documentation_documents]
+- [documentation_documents] Lists documents, also useful to list documents in a category.
+- [documentation_categories] Renders a list of links to the document categories.
+- [documentation_hierarchy] Provides a means to navigate the documentation structure, equivalent to the Document Hierarchy widget.
+- [documentation_list_children] Lists the children of a document like the Document Children widget.
+- [documentation_search_form] Renders a dynamic search form. Use [Search Live](https://wordpress.org/plugins/search-live/) for a more flexible search form.
 
 ### Documentation ###
 
