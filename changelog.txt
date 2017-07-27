@@ -4,6 +4,8 @@
 * Replaced deprecated widget constructor in Documentation_Documents_Widget.
 * Fixed use of undefined constant.
 * Replaced use of the DOCUMENTATION_PLUGIN_DOMAIN constant with the string literal 'documentation'.
+* Added the Add-Ons section.
+* Added the Notice class.
 
 = 1.4.1 =
 * WordPress 4.8 compatibility tested.
