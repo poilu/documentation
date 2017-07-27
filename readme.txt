@@ -81,6 +81,7 @@ The documentation pages are [here](http://www.itthinx.com/documentation/document
 * Replaced use of the DOCUMENTATION_PLUGIN_DOMAIN constant with the string literal 'documentation'.
 * Added the Add-Ons section.
 * Added the Notice class.
+* Added links to the documenation pages.
 
 = 1.4.1 =
 * WordPress 4.8 compatibility tested.
