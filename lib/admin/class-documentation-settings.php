@@ -98,6 +98,7 @@ class Documentation_Settings {
 	public static function admin_settings_link( $links ) {
 		if ( current_user_can( self::$capability ) ) {
 			$links[] = '<a href="' . get_admin_url( null, 'admin.php?page=documentation-settings' ) . '">' . __( 'Settings', 'documentation' ) . '</a>';
+			$links[] = '<a href="http://docs.itthinx.com/document/documentation/">' . __( 'Documentation', 'documentation' ) . '</a>';
 		}
 		return $links;
 	}
