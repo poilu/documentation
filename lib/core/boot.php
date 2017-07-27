@@ -35,6 +35,7 @@ class Documentation_Controller {
 			require_once( DOCUMENTATION_VIEWS_LIB . '/class-documentation-shortcodes.php' );
 		} else {
 			require_once( DOCUMENTATION_ADMIN_LIB . '/class-documentation-settings.php' );
+			require_once( DOCUMENTATION_ADMIN_LIB . '/class-documentation-add-ons.php' );
 		}
 		require_once( DOCUMENTATION_VIEWS_LIB . '/class-documentation-documents-widget.php' );
 		require_once( DOCUMENTATION_VIEWS_LIB . '/class-documentation-document-children-widget.php' );
