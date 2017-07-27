@@ -235,7 +235,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 		echo '<p>';
 		echo sprintf( '<label title="%s" >', __( "The number of documents to show.", DOCUMENTATION_PLUGIN_DOMAIN ) );
 		echo __( 'Number of documents', DOCUMENTATION_PLUGIN_DOMAIN );
-		echo '<input class="widefat" id="' . $this->get_field_id( 'number' ) . '" name="' . $this->get_field_name( 'number' ) . '" type="text" value="' . esc_attr( $number ) . '" placeholder="' . esc_attr( __( 'All', DOCUMENTS_PLUGIN_DOMAIN ) ) . '"/>';
+		echo '<input class="widefat" id="' . $this->get_field_id( 'number' ) . '" name="' . $this->get_field_name( 'number' ) . '" type="text" value="' . esc_attr( $number ) . '" placeholder="' . esc_attr( __( 'All', DOCUMENTATION_PLUGIN_DOMAIN) ) . '"/>';
 		echo '</label>';
 		echo '</p>';
 
