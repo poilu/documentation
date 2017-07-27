@@ -114,4 +114,4 @@ The full changelog is available at https://github.com/itthinx/documentation/blob
 == Upgrade Notice ==
 
 = 1.5.0 =
-This release add a new widget to display Document Categories, a new section with recommended helpful add-ons and contains several fixes and improvements.
+This release adds a new widget to display Document Categories, a new section with recommended helpful add-ons and contains several fixes and improvements.
