@@ -85,8 +85,8 @@ class Documentation_Post_Type {
 					'view'               => __( 'View Document', 'documentation' ),
 					'view_item'          => __( 'View Document', 'documentation' )
 				),
-// 				'capability_type'     => 'document', // @todo if used we need to assign them appropriately so at least admins have them, or use roles/groups
-				'description'         => __( 'Document', 'documentation' ),
+// 				'capability_type'     => 'document', // @todo if used we need to assign them appropriately so at least admins have them, or use roles/groups; add-ons menu capability must be adjusted if changed
+					'description'         => __( 'Document', 'documentation' ),
 				'exclude_from_search' => false, // this option is unreliable, see http://core.trac.wordpress.org/ticket/17592
 				'has_archive'         => true,
 				'hierarchical'        => true,

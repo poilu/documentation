@@ -40,7 +40,7 @@ class Documentation_Add_Ons {
 			add_query_arg( array( 'post_type' => 'document' ), 'edit.php' ),
 			__( 'Add-Ons', 'widgets-control' ),
 			__( 'Add-Ons', 'widgets-control' ),
-			'edit_posts', // @todo ???
+			'edit_posts', // @todo if we use our own capabilities this needs to be edit_documents
 			'documentation-add-ons',
 			array( __CLASS__, 'render_admin' )
 		);
