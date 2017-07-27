@@ -28,7 +28,7 @@ class Documentation_Add_Ons {
 	 * Adds the admin_menu action hook.
 	 */
 	public static function init() {
-		add_action( 'admin_menu', array( __CLASS__, 'admin_menu' ) );
+		add_action( 'admin_menu', array( __CLASS__, 'admin_menu' ), 11 ); // so we have it last after settings
 		add_action( 'admin_init', array( __CLASS__, 'admin_init' ) );
 	}
 
