@@ -72,7 +72,7 @@ class Documentation_Add_Ons {
 				'content' => 'This extension for WooCommerce and the Documentation plugin for WordPress allows to link documentation pages to products and display them automatically on the product pages.',
 				'image'   => DOCUMENTATION_PLUGIN_URL. 'images/add-ons/woocommerce-documentation.png',
 				'url'     => 'http://www.itthinx.com/shop/woocommerce-documentation/',
-				'index'   => 10
+				'index'   => 100
 			),
 			'groups' => array(
 				'title'   => 'Groups',
@@ -86,35 +86,35 @@ class Documentation_Add_Ons {
 				'content' => 'Search Live supplies effective integrated live search facilities and advanced search features. Makes it really easy to find the desired documents.',
 				'image'   => DOCUMENTATION_PLUGIN_URL. 'images/add-ons/search-live.png',
 				'url'     => 'https://wordpress.org/plugins/search-live/',
-				'index'   => 100
+				'index'   => 200
 			),
 			'widgets-control' => array(
 				'title'   => 'Widgets Control',
 				'content' => 'Widgets Control is a toolbox that features visibility management for all widgets, sidebars, sections of content and content blocks. This is very useful to show content and widgets in context.',
 				'image'   => DOCUMENTATION_PLUGIN_URL. 'images/add-ons/widgets-control.png',
 				'url'     => 'https://wordpress.org/plugins/search-live/',
-				'index'   => 100
+				'index'   => 200
 			),
 			'widgets-control-pro' => array(
 				'title'   => 'Widgets Control Pro',
 				'content' => 'Widgets Control Pro is the advanced version of the Widgets Control toolbox that features visibility management for all widgets, sidebars, sections of content and content blocks. With its additional features, it is even more useful to show document-specific content and widgets, including the options to show widgets on documents and related pages only.',
 				'image'   => DOCUMENTATION_PLUGIN_URL. 'images/add-ons/widgets-control-pro.png',
 				'url'     => 'http://www.itthinx.com/shop/widgets-control-pro/',
-				'index'   => 100
+				'index'   => 200
 			),
 			'decent-comments' => array(
 				'title'   => 'Decent Comments',
 				'content' => 'Decent Comments shows what people say. If you want to show comments along with their author’s avatars and an excerpt of their comment, then this is the right plugin for you. Use it to show comments posted on documents only or including them.',
 				'image'   => DOCUMENTATION_PLUGIN_URL. 'images/add-ons/decent-comments.png',
 				'url'     => 'https://wordpress.org/plugins/decent-comments/',
-				'index'   => 100
+				'index'   => 300
 			),
 			'open-graph-protocol-framework' => array(
 				'title'   => 'Open Graph Protocol Framework',
 				'content' => 'The Open Graph protocol enables any web page to become a rich object in a social graph. For instance, this is used on Facebook to allow any web page to have the same functionality as any other object on Facebook. This will automate the process of adding basic and optional metadata to documents.',
 				'image'   => DOCUMENTATION_PLUGIN_URL. 'images/add-ons/open-graph-protocol-framework.png',
 				'url'     => 'https://wordpress.org/plugins/open-graph-protocol-framework/',
-				'index'   => 100
+				'index'   => 300
 			)
 		);
 		usort( $entries, array( __CLASS__, 'add_ons_sort' ) );
@@ -143,16 +143,16 @@ class Documentation_Add_Ons {
 				'affiliates' => array(
 					'title'   => 'Affiliates',
 					'content' => 'The free Affiliates system provides powerful tools to maintain an Affiliate Marketing Program.',
-					'image'   => DOCUMENTATION_PLUGIN_URL. 'images/add-ons/affiliates-pro.png',
-					'url'     => 'http://www.itthinx.com/shop/affiliates-pro/',
+					'image'   => DOCUMENTATION_PLUGIN_URL. 'images/add-ons/affiliates.png',
+					'url'     => 'https://wordpress.org/plugins/affiliates/',
 					'index'   => 100
 				),
 				'affiliates-pro' => array(
-							'title'   => 'Affiliates Pro',
-							'content' => 'Boost Sales with the best Affiliate Marketing for your WordPress site.',
-							'image'   => DOCUMENTATION_PLUGIN_URL. 'images/add-ons/affiliates-pro.png',
-							'url'     => 'http://www.itthinx.com/shop/affiliates-pro/',
-							'index'   => 200
+					'title'   => 'Affiliates Pro',
+					'content' => 'Boost Sales with the best Affiliate Marketing for your WordPress site.',
+					'image'   => DOCUMENTATION_PLUGIN_URL. 'images/add-ons/affiliates-pro.png',
+					'url'     => 'http://www.itthinx.com/shop/affiliates-pro/',
+					'index'   => 200
 				),
 				'affiliates-enterprise' => array(
 					'title'   => 'Affiliates Enterprise',
