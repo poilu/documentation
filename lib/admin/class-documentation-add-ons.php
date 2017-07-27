@@ -82,11 +82,12 @@ class Documentation_Add_Ons {
 	public static function add_ons_content( $params = array( 'offset' => 0 ) ) {
 
 		$d = intval( $params['offset'] );
-		$h2 = sprintf( 'h%d', 2+$d );
+		$h2 = 2 + $d;
+		$h3 = 3 + $d;
 
-		echo "<$h2>";
+		printf( '<h%d class="add-ons-sub-title">', $h2 );
 		echo __( 'Recommended Tools and Extensions', 'documentation' );
-		echo "</$h2>";
+		printf( '</h%d>', $h2 );
 
 		$entries = array(
 			'woocommerce-documentation' => array(
@@ -144,11 +145,13 @@ class Documentation_Add_Ons {
 		echo '<ul class="add-ons">';
 		foreach( $entries as $key => $entry ) {
 			echo '<li class="add-on">';
-			echo sprintf( '<a href="%s">', $entry['url'] );
-			echo '<h3>';
+			echo sprintf( '<a href="%s" target="_blank">', $entry['url'] );
+			printf( '<h%d class="add-ons-sub-sub-title">', $h3 );
 			echo sprintf( '<img src="%s"/>', $entry['image'] );
+			echo '<span class="title">';
 			echo $entry['title'];
-			echo '</h3>';
+			echo '</span>';
+			printf( '</h%d>', $h3 );
 			echo '<p>';
 			echo $entry['content'];
 			echo '</p>';
@@ -157,9 +160,9 @@ class Documentation_Add_Ons {
 		}
 		echo '</ul>'; // .add-ons
 
-		echo "<$h2>";
+		printf( '<h%d class="add-ons-sub-title">', $h2 );
 		printf( __( 'More from <a href="%s">itthinx</a>', 'documentation' ), esc_attr( 'https://www.itthinx.com/' ) );
-		echo "</$h2>";
+		printf( '</h%d>', $h2 );
 
 		$entries = array(
 				'affiliates' => array(
@@ -189,11 +192,13 @@ class Documentation_Add_Ons {
 		echo '<ul class="add-ons">';
 		foreach( $entries as $key => $entry ) {
 			echo '<li class="add-on">';
-			echo sprintf( '<a href="%s">', $entry['url'] );
-			echo '<h3>';
+			echo sprintf( '<a href="%s" target="_blank">', $entry['url'] );
+			printf( '<h%d class="add-ons-sub-sub-title">', $h3 );
 			echo sprintf( '<img src="%s"/>', $entry['image'] );
+			echo '<span class="title">';
 			echo $entry['title'];
-			echo '</h3>';
+			echo '</span>';
+			printf( '</h%d>', $h3 );
 			echo '<p>';
 			echo $entry['content'];
 			echo '</p>';

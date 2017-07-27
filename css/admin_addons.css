@@ -27,21 +27,25 @@
 	overflow: hidden;
 }
 .documentation-admin-add-ons li {
-	float: left;
+	display: inline-block;
 	margin: 0 1em 1em 0;
 	padding: 8px;
 	vertical-align: top;
 	width: 256px;
-	height: 158px;
+	min-height: 176px;
 	background-color: #fff;
 	border: 1px solid #ccc;
 }
-.documentation-admin-add-ons .add-ons h3 {
+.documentation-admin-add-ons .add-ons .add-ons-sub-sub-title {
 	margin: 0;
 	display: block;
 	clear: both;
 }
-.documentation-admin-add-ons .add-ons h3 img {
+.documentation-admin-add-ons .add-ons .add-ons-sub-sub-title span.title {
+	padding: 8px 0 8px 2px;
+	display: block;
+}
+.documentation-admin-add-ons .add-ons .add-ons-sub-sub-tile img {
 	vertical-align: middle;
 	margin: 0 8px 0 0;
 	display: block;
