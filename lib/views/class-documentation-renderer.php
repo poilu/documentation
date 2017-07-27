@@ -176,7 +176,7 @@ class Documentation_Renderer {
 			}
 			$output .= '</ul>';
 		} else {
-			$output .= __( 'There are no documents.', DOCUMENTATION_PLUGIN_DOMAIN );
+			$output .= __( 'There are no documents.', 'documentation' );
 		}
 		return $output;
 	}
@@ -397,7 +397,7 @@ class Documentation_Renderer {
 			'date_format' => get_option('date_format'),
 			'child_of' => 0,
 			'exclude' => '',
-			'title_li' => __( 'Documents', DOCUMENTATION_PLUGIN_DOMAIN ),
+			'title_li' => __( 'Documents', 'documentation' ),
 			'echo' => 1,
 			'authors' => '',
 			'sort_column' => 'menu_order, post_title',

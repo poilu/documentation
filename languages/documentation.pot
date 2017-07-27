@@ -7,7 +7,7 @@
 msgid   ""
 msgstr  "Project-Id-Version: PACKAGE VERSION\n"
         "Report-Msgid-Bugs-To: \n"
-        "POT-Creation-Date: 2017-02-16 15:49+0100\n"
+        "POT-Creation-Date: 2017-07-27 18:20+0200\n"
         "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
         "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
         "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,6 +40,12 @@ msgstr  ""
 
 #: lib/ext/class-documentation-post-type.php:77
 msgid   "Add New Document"
+msgstr  ""
+
+#: lib/admin/class-documentation-add-ons.php:41
+#: lib/admin/class-documentation-add-ons.php:42
+#: lib/admin/class-documentation-add-ons.php:71
+msgid   "Add-Ons"
 msgstr  ""
 
 #: lib/admin/settings.php:75
@@ -99,6 +105,10 @@ msgstr  ""
 msgid   "Comment Count"
 msgstr  ""
 
+#: lib/admin/class-documentation-admin-notice.php:112
+msgid   "Could you please give it a quick review over at WordPress.org?"
+msgstr  ""
+
 #: lib/views/class-documentation-document-children-widget.php:74
 #: lib/views/class-documentation-documents-widget.php:65
 msgid   "Date"
@@ -141,6 +151,10 @@ msgstr  ""
 #: lib/views/class-documentation-document-children-widget.php:289
 #, php-format
 msgid   "Document: <em>%s</em>"
+msgstr  ""
+
+#: lib/admin/class-documentation-settings.php:105
+msgid   "Documentation"
 msgstr  ""
 
 #: lib/admin/class-documentation-settings.php:63
@@ -190,6 +204,16 @@ msgstr  ""
 msgid   "Exclude documents"
 msgstr  ""
 
+#: lib/admin/class-documentation-settings.php:91
+msgid   "For details on the usage of this documentation system, please visit "
+        "the <a href=\"http://docs.itthinx.com/document/documentation/"
+        "\">Documentation</a> pages."
+msgstr  ""
+
+#: lib/admin/class-documentation-admin-notice.php:124
+msgid   "I've already rated it."
+msgstr  ""
+
 #: lib/views/class-documentation-document-children-widget.php:71
 msgid   "ID"
 msgstr  ""
@@ -235,6 +259,15 @@ msgid   "List of documents to include, indicate document IDs separated by "
         "comma."
 msgstr  ""
 
+#: lib/admin/class-documentation-admin-notice.php:110
+msgid   "Many thanks for using <strong>Documentation</strong>!"
+msgstr  ""
+
+#: lib/admin/class-documentation-add-ons.php:164
+#, php-format
+msgid   "More from <a href=\"%s\">itthinx</a>"
+msgstr  ""
+
 #: lib/ext/class-documentation-taxonomy.php:60
 msgid   "New Category Name"
 msgstr  ""
@@ -277,6 +310,10 @@ msgstr  ""
 msgid   "Parent Document"
 msgstr  ""
 
+#: lib/admin/class-documentation-add-ons.php:89
+msgid   "Recommended Tools and Extensions"
+msgstr  ""
+
 #: lib/views/class-documentation-document-hierarchy-widget.php:205
 msgid   "Root depth"
 msgstr  ""
@@ -295,7 +332,7 @@ msgstr  ""
 
 #: lib/admin/class-documentation-settings.php:64
 #: lib/admin/class-documentation-settings.php:80
-#: lib/admin/class-documentation-settings.php:100
+#: lib/admin/class-documentation-settings.php:104
 msgid   "Settings"
 msgstr  ""
 
@@ -407,4 +444,15 @@ msgstr  ""
 #: lib/views/class-documentation-document-children-widget.php:366
 #: lib/views/class-documentation-documents-widget.php:307
 msgid   "Whether to show the date of each document."
+msgstr  ""
+
+#: lib/admin/class-documentation-admin-notice.php:118
+msgid   "Yes, let's go!"
+msgstr  ""
+
+#: lib/admin/class-documentation-admin-notice.php:129
+#, php-format
+msgid   "You can also follow <a href=\"%s\">@itthinx</a> on Twitter or visit "
+        "<a href=\"%s\" target=\"_blank\">itthinx.com</a> to check out other "
+        "free and premium plugins we provide."
 msgstr  ""

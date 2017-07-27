@@ -190,8 +190,8 @@ class Documentation_Document_Hierarchy_Widget extends WP_Widget {
 		// title
 		$title = isset( $instance['title'] ) ? $instance['title'] : "";
 		echo '<p>';
-		echo sprintf( '<label title="%s">', sprintf( __( 'The widget title.', DOCUMENTATION_PLUGIN_DOMAIN ) ) );
-		echo __( 'Title', DOCUMENTATION_PLUGIN_DOMAIN );
+		echo sprintf( '<label title="%s">', sprintf( __( 'The widget title.', 'documentation' ) ) );
+		echo __( 'Title', 'documentation' );
 		echo '<input class="widefat" id="' . $this->get_field_id( 'title' ) . '" name="' . $this->get_field_name( 'title' ) . '" type="text" value="' . esc_attr( $title ) . '" />';
 		echo '</label>';
 		echo '</p>';
@@ -200,9 +200,9 @@ class Documentation_Document_Hierarchy_Widget extends WP_Widget {
 		echo '<p>';
 		printf(
 			'<label title="%s" >',
-			__( "Show documents within the hierarchy from root documents (those without parents) to how many levels deep?", DOCUMENTATION_PLUGIN_DOMAIN )
+			__( "Show documents within the hierarchy from root documents (those without parents) to how many levels deep?", 'documentation' )
 		);
-		echo __( 'Root depth', DOCUMENTATION_PLUGIN_DOMAIN );
+		echo __( 'Root depth', 'documentation' );
 		printf(
 			'<input class="widefat" id="%s" name="%s" type="text" value="%s" />',
 			esc_attr( $this->get_field_id( 'root_depth' ) ),
@@ -216,9 +216,9 @@ class Documentation_Document_Hierarchy_Widget extends WP_Widget {
 		echo '<p>';
 		printf(
 			'<label title="%s" >',
-			__( "Show parent documents above the current one up to how many levels?", DOCUMENTATION_PLUGIN_DOMAIN )
+			__( "Show parent documents above the current one up to how many levels?", 'documentation' )
 		);
-		echo __( 'Documents above', DOCUMENTATION_PLUGIN_DOMAIN );
+		echo __( 'Documents above', 'documentation' );
 		printf(
 			'<input class="widefat" id="%s" name="%s" type="text" value="%s" />',
 			esc_attr( $this->get_field_id( 'supernode_height' ) ),
@@ -232,9 +232,9 @@ class Documentation_Document_Hierarchy_Widget extends WP_Widget {
 		echo '<p>';
 		printf(
 			'<label title="%s" >',
-			__( "Show child documents of parent documents above the current one up to how many levels deep?", DOCUMENTATION_PLUGIN_DOMAIN )
+			__( "Show child documents of parent documents above the current one up to how many levels deep?", 'documentation' )
 		);
-		echo __( 'Children of documents above', DOCUMENTATION_PLUGIN_DOMAIN );
+		echo __( 'Children of documents above', 'documentation' );
 		printf(
 			'<input class="widefat" id="%s" name="%s" type="text" value="%s" />',
 			esc_attr( $this->get_field_id( 'supernode_subnode_depth' ) ),
@@ -248,9 +248,9 @@ class Documentation_Document_Hierarchy_Widget extends WP_Widget {
 		echo '<p>';
 		printf(
 			'<label title="%s" >',
-			__( "Show child documents of the current one up to how many levels deep?", DOCUMENTATION_PLUGIN_DOMAIN )
+			__( "Show child documents of the current one up to how many levels deep?", 'documentation' )
 		);
-		echo __( 'Documents below', DOCUMENTATION_PLUGIN_DOMAIN );
+		echo __( 'Documents below', 'documentation' );
 		printf(
 			'<input class="widefat" id="%s" name="%s" type="text" value="%s" />',
 			esc_attr( $this->get_field_id( 'subnode_depth' ) ),

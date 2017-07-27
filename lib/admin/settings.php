@@ -20,7 +20,7 @@
  */
 
 if ( !current_user_can( Documentation_Settings::$capability ) ) {
-	wp_die( __( 'Access denied.', DOCUMENTATION_PLUGIN_DOMAIN ) );
+	wp_die( __( 'Access denied.', 'documentation' ) );
 }
 
 if ( isset( $_POST['action'] ) && ( $_POST['action'] == 'set' ) && wp_verify_nonce( $_POST['documentation-settings'], 'admin' ) ) {
@@ -36,7 +36,7 @@ if ( isset( $_POST['action'] ) && ( $_POST['action'] == 'set' ) && wp_verify_non
 
 	echo
 		'<p class="info">' .
-		__( 'The settings have been saved.', DOCUMENTATION_PLUGIN_DOMAIN ) .
+		__( 'The settings have been saved.', 'documentation' ) .
 		'</p>';
 }
 
@@ -51,28 +51,28 @@ echo '<div>';
 echo '<label>';
 printf( '<input type="checkbox" name="document_comments_open" %s />', $document_comments_open ? ' checked="checked" ' : '' );
 echo ' ';
-echo __( 'Allow comments on documents', DOCUMENTATION_PLUGIN_DOMAIN );
+echo __( 'Allow comments on documents', 'documentation' );
 echo '</label>';
 echo '<p class="description">';
-echo __( 'Disable this option if you do not want to allow visitors to post comments on documents.', DOCUMENTATION_PLUGIN_DOMAIN );
+echo __( 'Disable this option if you do not want to allow visitors to post comments on documents.', 'documentation' );
 echo ' ';
-echo __( 'If this option is enabled, you may choose to allow comments on each document individually.', DOCUMENTATION_PLUGIN_DOMAIN );
+echo __( 'If this option is enabled, you may choose to allow comments on each document individually.', 'documentation' );
 echo ' ';
-echo __( 'If this option is disabled, comments on all documents are disabled.', DOCUMENTATION_PLUGIN_DOMAIN );
+echo __( 'If this option is disabled, comments on all documents are disabled.', 'documentation' );
 echo '</p>';
 
 echo '<div class="separator"></div>';
 
 echo '<label>';
-echo __( 'Document slug', DOCUMENTATION_PLUGIN_DOMAIN );
+echo __( 'Document slug', 'documentation' );
 echo ' ';
 printf( '<input type="text" name="document_slug" value="%s" />', esc_attr( $document_slug ) );
 echo '<p class="description">';
-echo __( 'Depending on your Permalink settings, URLs of documents will contain this in their path before the section that identifies the document.', DOCUMENTATION_PLUGIN_DOMAIN );
+echo __( 'Depending on your Permalink settings, URLs of documents will contain this in their path before the section that identifies the document.', 'documentation' );
 echo ' ';
-echo __( 'If left empty, the default <em>document</em> applies.', DOCUMENTATION_PLUGIN_DOMAIN );
+echo __( 'If left empty, the default <em>document</em> applies.', 'documentation' );
 echo ' ';
-echo sprintf( __( 'After changing this, please visit the <a href="%s">Permalinks</a> admin section to make sure that the permalink structure is updated.', DOCUMENTATION_PLUGIN_DOMAIN ), admin_url( 'options-permalink.php' ) );
+echo sprintf( __( 'After changing this, please visit the <a href="%s">Permalinks</a> admin section to make sure that the permalink structure is updated.', 'documentation' ), admin_url( 'options-permalink.php' ) );
 echo '</p>';
 echo '</label>';
 
@@ -81,7 +81,7 @@ echo '<div class="separator"></div>';
 wp_nonce_field( 'admin', 'documentation-settings', true, true );
 
 echo '<div class="buttons">';
-printf( '<input class="save button button-primary" type="submit" name="submit" value="%s" />', esc_attr( __( 'Save', DOCUMENTATION_PLUGIN_DOMAIN ) ) );
+printf( '<input class="save button button-primary" type="submit" name="submit" value="%s" />', esc_attr( __( 'Save', 'documentation' ) ) );
 echo '<input type="hidden" name="action" value="set" />';
 echo '</div>';
 

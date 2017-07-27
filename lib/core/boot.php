@@ -18,16 +18,24 @@
  * @package documentation
  * @since documentation 1.0.0
  */
+
+/**
+ * This is the plugin's bootloader class.
+ */
 class Documentation_Controller {
 
+	/**
+	 * Holds admin messages to show.
+	 * @var array
+	 */
 	public static $admin_messages = array();
 
 	/**
 	 * Boots the plugin.
 	 */
 	public static function boot() {
+		add_action( 'init', array( __CLASS__, 'init' ) );
 		add_action( 'admin_notices', array( __CLASS__, 'admin_notices' ) );
-		load_plugin_textdomain( DOCUMENTATION_PLUGIN_DOMAIN, null, 'documentation/languages' );
 		require_once( DOCUMENTATION_CORE_LIB . '/class-documentation.php' );
 		require_once( DOCUMENTATION_EXT_LIB . '/class-documentation-post-type.php' );
 		require_once( DOCUMENTATION_EXT_LIB . '/class-documentation-taxonomy.php' );
@@ -35,7 +43,9 @@ class Documentation_Controller {
 			require_once( DOCUMENTATION_VIEWS_LIB . '/class-documentation-shortcodes.php' );
 		} else {
 			require_once( DOCUMENTATION_ADMIN_LIB . '/class-documentation-settings.php' );
+			require_once( DOCUMENTATION_ADMIN_LIB . '/class-documentation-add-ons.php' );
 		}
+		require_once( DOCUMENTATION_VIEWS_LIB . '/class-documentation-categories-widget.php' );
 		require_once( DOCUMENTATION_VIEWS_LIB . '/class-documentation-documents-widget.php' );
 		require_once( DOCUMENTATION_VIEWS_LIB . '/class-documentation-document-children-widget.php' );
 		require_once( DOCUMENTATION_VIEWS_LIB . '/class-documentation-document-hierarchy-widget.php' );
@@ -49,6 +59,18 @@ class Documentation_Controller {
 		if ( !empty( self::$admin_messages ) ) {
 			foreach ( self::$admin_messages as $msg ) {
 				echo $msg;
+			}
+		}
+	}
+
+	/**
+	 * Hooked on the 'init' action; loads translations and the notice class.
+	 */
+	public static function init() {
+		load_plugin_textdomain( 'documentation', null, 'documentation/languages' );
+		if ( is_admin() ) {
+			if ( current_user_can( 'activate_plugins' ) ) { // important: after init hook
+				require_once DOCUMENTATION_ADMIN_LIB. '/class-documentation-admin-notice.php';
 			}
 		}
 	}

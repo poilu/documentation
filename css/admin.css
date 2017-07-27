@@ -52,6 +52,13 @@
 .documentation-settings-info a:hover {
 	color: #1c1c1c;
 }
+.documentation-documentation-info {
+	margin: 1em 1em 0 0;
+	padding: 1em;
+	background-color: #fcfcff;
+	border-radius: 4px;
+	color: #111;
+}
 .documentation-settings .separator {
 	border-bottom: 1px solid #fcfcfc;
 	height: 0px;

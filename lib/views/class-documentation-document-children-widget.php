@@ -62,22 +62,22 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 			'include'            => '',
 			'sort_order'         => 'ASC',
 			'sort_column'        => 'menu_order,post_title',
-// 			'title_li'           => __( 'Documents', DOCUMENTATION_PLUGIN_DOMAIN ),
+// 			'title_li'           => __( 'Documents', 'documentation' ),
 			'show_author'        => false,
 			'show_date'          => false
 		);
 
 		self::$orderby_options = array(
-			'ID'            => __( 'ID', DOCUMENTATION_PLUGIN_DOMAIN ),
-			'menu_order'    => __( 'Order', DOCUMENTATION_PLUGIN_DOMAIN ),
-			'post_author'   => __( 'Author', DOCUMENTATION_PLUGIN_DOMAIN ),
-			'post_date'     => __( 'Date', DOCUMENTATION_PLUGIN_DOMAIN ),
-			'post_title'    => __( 'Title', DOCUMENTATION_PLUGIN_DOMAIN )
+			'ID'            => __( 'ID', 'documentation' ),
+			'menu_order'    => __( 'Order', 'documentation' ),
+			'post_author'   => __( 'Author', 'documentation' ),
+			'post_date'     => __( 'Date', 'documentation' ),
+			'post_title'    => __( 'Title', 'documentation' )
 		);
 
 		self::$order_options = array(
-			'ASC'  => __( 'Ascending', DOCUMENTATION_PLUGIN_DOMAIN ),
-			'DESC' => __( 'Descending', DOCUMENTATION_PLUGIN_DOMAIN )
+			'ASC'  => __( 'Ascending', 'documentation' ),
+			'DESC' => __( 'Descending', 'documentation' )
 		);
 
 // 		if ( !has_action( 'wp_print_styles', array( __CLASS__, '_wp_print_styles' ) ) ) {
@@ -259,8 +259,8 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 		// title
 		$title = isset( $instance['title'] ) ? $instance['title'] : "";
 		echo '<p>';
-		echo sprintf( '<label title="%s">', sprintf( __( 'The widget title.', DOCUMENTATION_PLUGIN_DOMAIN ) ) );
-		echo __( 'Title', DOCUMENTATION_PLUGIN_DOMAIN );
+		echo sprintf( '<label title="%s">', sprintf( __( 'The widget title.', 'documentation' ) ) );
+		echo __( 'Title', 'documentation' );
 		echo '<input class="widefat" id="' . $this->get_field_id( 'title' ) . '" name="' . $this->get_field_name( 'title' ) . '" type="text" value="' . esc_attr( $title ) . '" />';
 		echo '</label>';
 		echo '</p>';
@@ -277,24 +277,24 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 		echo '<p>';
 		echo sprintf(
 			'<label title="%s">',
-			__( "Leave empty to show all documents. To show child documents for a specific document, indicate the document ID. To show child documents for the current document, indicate: {current}.", DOCUMENTATION_PLUGIN_DOMAIN )
+			__( "Leave empty to show all documents. To show child documents for a specific document, indicate the document ID. To show child documents for the current document, indicate: {current}.", 'documentation' )
 		);
-		echo __( 'Children of ...', DOCUMENTATION_PLUGIN_DOMAIN ); 
+		echo __( 'Children of ...', 'documentation' ); 
 		echo '<input class="widefat" id="' . $this->get_field_id( 'child_of' ) . '" name="' . $this->get_field_name( 'child_of' ) . '" type="text" value="' . esc_attr( $child_of ) . '" />';
 		echo '</label>';
 		echo '<br/>';
-		echo '<span class="description">' . __( "Empty, document ID or {current}", DOCUMENTATION_PLUGIN_DOMAIN ) . '</span>';
+		echo '<span class="description">' . __( "Empty, document ID or {current}", 'documentation' ) . '</span>';
 		if ( !empty( $child_of ) && ( $post = get_post( $child_of ) ) && ( $post !== null ) ) {
 			echo '<br/>';
-			echo '<span class="description"> ' . sprintf( __( "Document: <em>%s</em>", DOCUMENTATION_PLUGIN_DOMAIN ) , wp_strip_all_tags( $post->post_title ) ) . '</span>';
+			echo '<span class="description"> ' . sprintf( __( "Document: <em>%s</em>", 'documentation' ) , wp_strip_all_tags( $post->post_title ) ) . '</span>';
 		}
 		echo '</p>';
 		
 		// depth
 		$depth = isset( $instance['depth'] ) ? intval( $instance['depth'] ) : '';
 		echo '<p>';
-		echo sprintf( '<label title="%s" >', __( "Show documents within the hierarchy to how many levels deep?", DOCUMENTATION_PLUGIN_DOMAIN ) );
-		echo __( 'Sublevel depth', DOCUMENTATION_PLUGIN_DOMAIN );
+		echo sprintf( '<label title="%s" >', __( "Show documents within the hierarchy to how many levels deep?", 'documentation' ) );
+		echo __( 'Sublevel depth', 'documentation' );
 		echo '<input class="widefat" id="' . $this->get_field_id( 'depth' ) . '" name="' . $this->get_field_name( 'depth' ) . '" type="text" value="' . esc_attr( $depth ) . '" />';
 		echo '</label>';
 		echo '</p>';
@@ -302,8 +302,8 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 		// orderby
 // 		$orderby = isset( $instance['orderby'] ) ? $instance['orderby'] : '';
 // 		echo '<p>';
-// 		echo sprintf( '<label title="%s">', __( 'Sorting criteria.', DOCUMENTATION_PLUGIN_DOMAIN ) );
-// 		echo __( 'Order by ...', DOCUMENTATION_PLUGIN_DOMAIN );
+// 		echo sprintf( '<label title="%s">', __( 'Sorting criteria.', 'documentation' ) );
+// 		echo __( 'Order by ...', 'documentation' );
 // 		echo '<select class="widefat" name="' . $this->get_field_name( 'orderby' ) . '">';
 // 		foreach ( self::$orderby_options as $orderby_option_key => $orderby_option_name ) {
 // 			$selected = ( $orderby_option_key == $orderby ? ' selected="selected" ' : "" );
@@ -315,8 +315,8 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 		
 		$sort_columns = isset( $instance['sort_columns'] ) ? $instance['sort_columns'] : '';
 		echo '<p>';
-		echo sprintf( '<label title="%s" >', __( "Sorting criteria, one or more options separated by comma. Possible choices are post_title, menu_order, post_date, post_modified, ID, post_author and post_name.", DOCUMENTATION_PLUGIN_DOMAIN ) );
-		echo __( 'Order by ...', DOCUMENTATION_PLUGIN_DOMAIN );
+		echo sprintf( '<label title="%s" >', __( "Sorting criteria, one or more options separated by comma. Possible choices are post_title, menu_order, post_date, post_modified, ID, post_author and post_name.", 'documentation' ) );
+		echo __( 'Order by ...', 'documentation' );
 		echo '<input class="widefat" id="' . $this->get_field_id( 'sort_column' ) . '" name="' . $this->get_field_name( 'sort_column' ) . '" type="text" value="' . esc_attr( $sort_column ) . '" />';
 		echo '</label>';
 		echo '</p>';
@@ -324,8 +324,8 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 		// order
 		$order = isset( $instance['sort_order'] ) ? $instance['sort_order'] : '';
 		echo '<p>';
-		echo sprintf( '<label title="%s">', __( "Sort order.", DOCUMENTATION_PLUGIN_DOMAIN ) );
-		echo __( 'Sort order', DOCUMENTATION_PLUGIN_DOMAIN );
+		echo sprintf( '<label title="%s">', __( "Sort order.", 'documentation' ) );
+		echo __( 'Sort order', 'documentation' );
 		echo '<select class="widefat" name="' . $this->get_field_name( 'sort_order' ) . '">';
 		foreach ( self::$order_options as $order_option_key => $order_option_name ) {
 			$selected = ( $order_option_key == $order ? ' selected="selected" ' : "" );
@@ -337,16 +337,16 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 
 		$include = isset( $instance['include'] ) ? $instance['include'] : '';
 		echo '<p>';
-		echo sprintf( '<label title="%s" >', __( "List of documents to include, indicate document IDs separated by comma.", DOCUMENTATION_PLUGIN_DOMAIN ) );
-		echo __( 'Include documents', DOCUMENTATION_PLUGIN_DOMAIN );
+		echo sprintf( '<label title="%s" >', __( "List of documents to include, indicate document IDs separated by comma.", 'documentation' ) );
+		echo __( 'Include documents', 'documentation' );
 		echo '<input class="widefat" id="' . $this->get_field_id( 'include' ) . '" name="' . $this->get_field_name( 'include' ) . '" type="text" value="' . esc_attr( $include ) . '" />';
 		echo '</label>';
 		echo '</p>';
 
 		$exclude = isset( $instance['exclude'] ) ? $instance['exclude'] : '';
 		echo '<p>';
-		echo sprintf( '<label title="%s" >', __( "List of documents to exclude, indicate document IDs separated by comma.", DOCUMENTATION_PLUGIN_DOMAIN ) );
-		echo __( 'Exclude documents', DOCUMENTATION_PLUGIN_DOMAIN );
+		echo sprintf( '<label title="%s" >', __( "List of documents to exclude, indicate document IDs separated by comma.", 'documentation' ) );
+		echo __( 'Exclude documents', 'documentation' );
 		echo '<input class="widefat" id="' . $this->get_field_id( 'exclude' ) . '" name="' . $this->get_field_name( 'exclude' ) . '" type="text" value="' . esc_attr( $exclude ) . '" />';
 		echo '</label>';
 		echo '</p>';
@@ -354,18 +354,18 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 		// show_author
 		$checked = ( ( ( !isset( $instance['show_author'] ) && self::$defaults['show_author'] ) || ( isset( $instance['show_author'] ) && ( $instance['show_author'] === true ) ) ) ? 'checked="checked"' : '' );
 		echo '<p>';
-		echo sprintf( '<label title="%s">', __( "Whether to show the author of each document.", DOCUMENTATION_PLUGIN_DOMAIN ) ); 
+		echo sprintf( '<label title="%s">', __( "Whether to show the author of each document.", 'documentation' ) ); 
 		echo '<input type="checkbox" ' . $checked . ' value="1" name="' . $this->get_field_name( 'show_author' ) . '" />';
-		echo __( 'Show author', DOCUMENTATION_PLUGIN_DOMAIN );
+		echo __( 'Show author', 'documentation' );
 		echo '</label>';
 		echo '</p>';
 		
 		// show_date
 		$checked = ( ( ( !isset( $instance['show_date'] ) && self::$defaults['show_date'] ) || ( isset( $instance['show_date'] ) && ( $instance['show_date'] === true ) ) ) ? 'checked="checked"' : '' );
 		echo '<p>';
-		echo sprintf( '<label title="%s">', __( "Whether to show the date of each document.", DOCUMENTATION_PLUGIN_DOMAIN ) );
+		echo sprintf( '<label title="%s">', __( "Whether to show the date of each document.", 'documentation' ) );
 		echo '<input type="checkbox" ' . $checked . ' value="1" name="' . $this->get_field_name( 'show_date' ) . '" />';
-		echo __( 'Show date', DOCUMENTATION_PLUGIN_DOMAIN );
+		echo __( 'Show date', 'documentation' );
 		echo '</label>';
 		echo '</p>';
 
