@@ -29,13 +29,14 @@ class Documentation_Add_Ons {
 	 */
 	public static function init() {
 		add_action( 'admin_menu', array( __CLASS__, 'admin_menu' ) );
+		add_action( 'admin_init', array( __CLASS__, 'admin_init' ) );
 	}
 
 	/**
 	 * Adds the Add Ons menu item to the Documentation menu.
 	 */
 	public static function admin_menu() {
-		add_submenu_page(
+		$page = add_submenu_page(
 			add_query_arg( array( 'post_type' => 'document' ), 'edit.php' ),
 			__( 'Add-Ons', 'widgets-control' ),
 			__( 'Add-Ons', 'widgets-control' ),
@@ -43,13 +44,34 @@ class Documentation_Add_Ons {
 			'documentation-add-ons',
 			array( __CLASS__, 'render_admin' )
 		);
+		add_action( 'admin_print_styles-' . $page, array( __CLASS__, 'admin_print_styles' ) );
+	}
+
+	
+	/**
+	 * Admin options admin setup.
+	 */
+	public static function admin_init() {
+		wp_register_style( 'documentation_admin_addons', DOCUMENTATION_PLUGIN_URL . 'css/admin_addons.css', array(), DOCUMENTATION_CORE_VERSION );
+	}
+
+	/**
+	 * Loads styles for the admin section.
+	 */
+	public static function admin_print_styles() {
+		wp_enqueue_style( 'documentation_admin_addons' );
 	}
 
 	/**
 	 * Renders the Add-Ons admin section.
 	 */
 	public static function render_admin() {
+		echo '<div class="documentation-admin-add-ons wrap">';
+		echo '<h1>';
+		echo __( 'Add-Ons', 'documentation' );
+		echo '</h1>';
 		self::add_ons_content();
+		echo '</div>'; // .documentation-admin-add-ons.wrap
 	}
 
 	/**
