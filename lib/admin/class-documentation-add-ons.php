@@ -104,6 +104,13 @@ class Documentation_Add_Ons {
 				'url'     => 'https://wordpress.org/plugins/groups/',
 				'index'   => 100
 			),
+			'groups-restrict-categories' => array(
+				'title'   => 'Groups Restrict Categories',
+				'content' => 'An extension based on Groups, provides access restrictions for categories and tags, custom post types and taxonomies. Very useful to restrict whole sets of documents based on their document categories or tags.',
+				'image'   => DOCUMENTATION_PLUGIN_URL . 'images/add-ons/groups-restrict-categories.png',
+				'url'     => 'https://www.itthinx.com/shop/groups-restrict-categories/',
+				'index'   => 100
+			),
 			'search-live' => array(
 				'title'   => 'Search Live',
 				'content' => 'Search Live supplies effective integrated live search facilities and advanced search features. Makes it really easy to find the desired documents.',
@@ -115,14 +122,14 @@ class Documentation_Add_Ons {
 				'title'   => 'Widgets Control',
 				'content' => 'Widgets Control is a toolbox that features visibility management for all widgets, sidebars, sections of content and content blocks. This is very useful to show content and widgets in context.',
 				'image'   => DOCUMENTATION_PLUGIN_URL. 'images/add-ons/widgets-control.png',
-				'url'     => 'https://wordpress.org/plugins/search-live/',
+				'url'     => 'https://wordpress.org/plugins/widgets-control/',
 				'index'   => 200
 			),
 			'widgets-control-pro' => array(
 				'title'   => 'Widgets Control Pro',
 				'content' => 'Widgets Control Pro is the advanced version of the Widgets Control toolbox that features visibility management for all widgets, sidebars, sections of content and content blocks. With its additional features, it is even more useful to show document-specific content and widgets, including the options to show widgets on documents and related pages only.',
 				'image'   => DOCUMENTATION_PLUGIN_URL. 'images/add-ons/widgets-control-pro.png',
-				'url'     => 'http://www.itthinx.com/shop/widgets-control-pro/',
+				'url'     => 'https://www.itthinx.com/shop/widgets-control-pro/',
 				'index'   => 200
 			),
 			'decent-comments' => array(

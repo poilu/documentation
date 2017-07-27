@@ -11,7 +11,7 @@ A documentation management system.
 
 == Description ==
 
-_Documentation_ is intended to provide sound basic structures for a documentation management system.
+_Documentation_ is intended to provide sound basic structures for a Documentation Management System.
 
 Leveraging WordPress' framework and internal structures, the system provides a completely new section to manage documents independently from normal posts or pages.
 Documents are complemented by their dedicated document categories and document tags, which allows to keep the documentation structures separate from the more blog-oriented posts or CMS-like pages.
@@ -37,6 +37,19 @@ The following shortcodes are available:
 - [documentation_hierarchy] Provides a means to navigate the documentation structure, equivalent to the Document Hierarchy widget.
 - [documentation_list_children] Lists the children of a document like the Document Children widget.
 - [documentation_search_form] Renders a dynamic search form. Use [Search Live](https://wordpress.org/plugins/search-live/) for a more flexible search form.
+
+### Recommended Useful Additions ###
+
+You should have a look at these tools. They will help you get the most out of this Documentation Management System.
+
+- [WooCommerce Documentation](http://www.itthinx.com/shop/woocommerce-documentation/) This extension for WooCommerce and the Documentation plugin for WordPress allows to link documentation pages to products and display them automatically on the product pages.
+- [Groups](https://wordpress.org/plugins/groups/) Groups is designed as an efficient, powerful and flexible solution for group-oriented memberships and content access control. Use it to control who can view documents and more.
+- [Groups Restrict Categories](https://www.itthinx.com/shop/groups-restrict-categories/) An extension based on Groups, provides access restrictions for categories and tags, custom post types and taxonomies. Very useful to restrict whole sets of documents based on their document categories or tags.
+- [Search Live](https://wordpress.org/plugins/search-live/) Search Live supplies effective integrated live search facilities and advanced search features. Makes it really easy to find the desired documents.
+- [Widgets Control](https://wordpress.org/plugins/widgets-control/) Widgets Control is a toolbox that features visibility management for all widgets, sidebars, sections of content and content blocks. This is very useful to show content and widgets in context.
+- [Widgets Control Pro](https://www.itthinx.com/shop/widgets-control-pro/) Widgets Control Pro is the advanced version of the Widgets Control toolbox that features visibility management for all widgets, sidebars, sections of content and content blocks. With its additional features, it is even more useful to show document-specific content and widgets, including the options to show widgets on documents and related pages only.
+- [Decent Comments](https://wordpress.org/plugins/decent-comments/) Decent Comments shows what people say. If you want to show comments along with their author’s avatars and an excerpt of their comment, then this is the right plugin for you. Use it to show comments posted on documents only or including them.
+- [Open Graph Protocol Framework](https://wordpress.org/plugins/open-graph-protocol-framework/) The Open Graph protocol enables any web page to become a rich object in a social graph. For instance, this is used on Facebook to allow any web page to have the same functionality as any other object on Facebook. This will automate the process of adding basic and optional metadata to documents.
 
 ### Documentation ###
 
