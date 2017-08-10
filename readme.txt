@@ -4,7 +4,7 @@ Donate link: http://www.itthinx.com/plugins/documentation
 Tags: doc, docs, document, documents, documentation, manual, manuals, platform, system, wiki, wikis, woocommerce
 Requires at least: 4.0
 Tested up to: 4.8
-Stable tag: 1.5.0
+Stable tag: 1.5.1
 License: GPLv3
 
 A documentation management system.
@@ -92,6 +92,10 @@ The documentation pages are [here](http://www.itthinx.com/documentation/document
 
 == Changelog ==
 
+= 1.5.1 =
+* Added some additional post type labels.
+* Customized the post updated messages for the document post type.
+
 = 1.5.0 =
 * Replaced deprecated widget constructor in Documentation_Documents_Widget.
 * Fixed use of undefined constant.
@@ -113,5 +117,5 @@ The full changelog is available at https://github.com/itthinx/documentation/blob
 
 == Upgrade Notice ==
 
-= 1.5.0 =
+= 1.5.1 =
 This release adds a new widget to display Document Categories, a new section with recommended helpful add-ons and contains several fixes and improvements.

@@ -35,6 +35,7 @@ class Documentation_Post_Type {
 		add_filter( 'comments_open', array( __CLASS__, 'comments_open' ), 10, 2 );
 		//add_action( 'comment_form_comments_closed', array( __CLASS__, 'comment_form_comments_closed' ) );
 		add_filter( 'the_content', array( __CLASS__, 'the_content' ), apply_filters( 'documentation_the_content_filter_priority', self::THE_CONTENT_FILTER_PRIORITY ) );
+		add_filter( 'post_updated_messages', array( __CLASS__, 'post_updated_messages' ) );
 	}
 
 	/**
@@ -75,18 +76,21 @@ class Documentation_Post_Type {
 					'all_items'          => __( 'All Documents', 'documentation' ),
 					'add_new'            => __( 'New Document', 'documentation' ),
 					'add_new_item'       => __( 'Add New Document', 'documentation' ),
+					'archives'           => __( 'Document Archives', 'documentation' ),
 					'edit'               => __( 'Edit', 'documentation' ),
 					'edit_item'          => __( 'Edit Document', 'documentation' ),
+					'filter_items_list'  => __( 'Filter documents list', 'documentation' ),
 					'new_item'           => __( 'New Document', 'documentation' ),
 					'not_found'          => __( 'No Documents found', 'documentation' ),
 					'not_found_in_trash' => __( 'No Documents found in trash', 'documentation' ),
 					'parent'             => __( 'Parent Document', 'documentation' ),
 					'search_items'       => __( 'Search Documents', 'documentation' ),
 					'view'               => __( 'View Document', 'documentation' ),
-					'view_item'          => __( 'View Document', 'documentation' )
+					'view_item'          => __( 'View Document', 'documentation' ),
+					'view_items'         => __( 'View Documents', 'documentation' ),
 				),
 // 				'capability_type'     => 'document', // @todo if used we need to assign them appropriately so at least admins have them, or use roles/groups; add-ons menu capability must be adjusted if changed
-					'description'         => __( 'Document', 'documentation' ),
+				'description'         => __( 'Document', 'documentation' ),
 				'exclude_from_search' => false, // this option is unreliable, see http://core.trac.wordpress.org/ticket/17592
 				'has_archive'         => true,
 				'hierarchical'        => true,
@@ -103,6 +107,51 @@ class Documentation_Post_Type {
 				'taxonomies' => array( 'document_category', 'document_tag' )
 			)
 		);
+	}
+
+	/**
+	 * Hooked on the post_updated_messages filter to customize messages for our document post type.
+	 * @param array $messages
+	 */
+	public static function post_updated_messages( $messages ) {
+		global $post, $post_ID;
+
+		$permalink = get_permalink( $post_ID );
+		if ( ! $permalink ) {
+			$permalink = '';
+		}
+
+		$preview_post_link_html = sprintf(
+			' <a target="_blank" href="%1$s">%2$s</a>',
+			esc_url( $preview_url ),
+			__( 'Preview document', 'documentation' )
+		);
+		$scheduled_post_link_html = sprintf(
+			' <a target="_blank" href="%1$s">%2$s</a>',
+			esc_url( $permalink ),
+			__( 'Preview document', 'documentation' )
+		);
+		$view_post_link_html = sprintf(
+			' <a href="%1$s">%2$s</a>',
+			esc_url( $permalink ),
+			__( 'View document', 'documentation' )
+		);
+
+		$messages['document'] = array(
+			0 => '', // Unused. Messages start at index 1.
+			1 => __( 'Document updated.', 'documentation' ) . $view_post_link_html,
+			2 => __( 'Custom field updated.', 'documentation' ),
+			3 => __( 'Custom field deleted.', 'documentation' ),
+			4 => __( 'Document updated.', 'documentation' ),
+			/* translators: %s: date and time of the revision */
+			5 => isset($_GET['revision']) ? sprintf( __( 'Document restored to revision from %s.', 'documentation' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+			6 => __( 'Document published.', 'documentation' ) . $view_post_link_html,
+			7 => __( 'Document saved.', 'documentation' ),
+			8 => __( 'Document submitted.', 'documentation' ) . $preview_post_link_html,
+			9 => sprintf( __( 'Document scheduled for: %s.', 'documentation' ), '<strong>' . $scheduled_date . '</strong>' ) . $scheduled_post_link_html,
+			10 => __( 'Document draft updated.', 'documentation' ) . $preview_post_link_html,
+		);
+		return $messages;
 	}
 
 	/**

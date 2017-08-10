@@ -1,5 +1,9 @@
 == Documentation plugin by itthinx - changelog.txt ==
 
+= 1.5.1 =
+* Added some additional post type labels.
+* Customized the post updated messages for the document post type.
+
 = 1.5.0 =
 * Replaced deprecated widget constructor in Documentation_Documents_Widget.
 * Fixed use of undefined constant.
