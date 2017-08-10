@@ -208,9 +208,17 @@ class Documentation_Renderer {
 			$atts['child_of'] = get_the_ID();
 		}
 
-		$result  = '<div class="documentation">';
+		$result  = apply_filters(
+			'documentation_list_children_prefix',
+			'<div class="documentation">' .
+			'<ul>'
+		);
 		$result .= wp_list_pages( $atts );
-		$result .= '</div>'; // .documentation
+		$result .= apply_filters(
+			'documentation_list_children_suffix',
+			'</ul>' .
+			'</div>' // .documentation
+		);
 		return $result;
 	}
 

@@ -120,6 +120,9 @@ class Documentation_Post_Type {
 		if ( ! $permalink ) {
 			$permalink = '';
 		}
+		$preview_url = get_preview_post_link( $post );
+		/* translators: Publish box date format, see https://secure.php.net/date */
+		$scheduled_date = date_i18n( __( 'M j, Y @ H:i' ), strtotime( $post->post_date ) );
 
 		$preview_post_link_html = sprintf(
 			' <a target="_blank" href="%1$s">%2$s</a>',

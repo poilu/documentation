@@ -95,6 +95,10 @@ The documentation pages are [here](http://www.itthinx.com/documentation/document
 = 1.5.1 =
 * Added some additional post type labels.
 * Customized the post updated messages for the document post type.
+* Fixed the output of Documentation_Renderer::list_children() to surround the items with corresponding ul tags.
+  This also fixes the output of the [documentation_list_children] shortcode and the Documentation Children widget
+  who use this method.
+* Added the documentation_list_children_prefix and documentation_list_children_suffix filters.
 
 = 1.5.0 =
 * Replaced deprecated widget constructor in Documentation_Documents_Widget.
