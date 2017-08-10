@@ -7,6 +7,7 @@
   This also fixes the output of the [documentation_list_children] shortcode and the Documentation Children widget
   who use this method.
 * Added the documentation_list_children_prefix and documentation_list_children_suffix filters.
+* Security improvement, added ABSPATH checks.
 
 = 1.5.0 =
 * Replaced deprecated widget constructor in Documentation_Documents_Widget.

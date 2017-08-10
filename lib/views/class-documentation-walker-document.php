@@ -19,6 +19,10 @@
  * @since documentation 1.0.0
  */
 
+if ( !defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Create HTML list of documents - this is an adjusted version of Walker_Page.
  *

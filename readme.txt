@@ -99,6 +99,7 @@ The documentation pages are [here](http://www.itthinx.com/documentation/document
   This also fixes the output of the [documentation_list_children] shortcode and the Documentation Children widget
   who use this method.
 * Added the documentation_list_children_prefix and documentation_list_children_suffix filters.
+* Security improvement, added ABSPATH checks.
 
 = 1.5.0 =
 * Replaced deprecated widget constructor in Documentation_Documents_Widget.
@@ -123,4 +124,4 @@ The full changelog is available at https://github.com/itthinx/documentation/blob
 
 = 1.5.1 =
 The 1.5.x release adds a new widget to display Document Categories, a new section with recommended helpful add-ons and contains several fixes and improvements.
-Version 1.5.1 adds some customized messages for a more coherent back end feedback when working with documents and fixes the output when listing children of a document.
+Version 1.5.1 adds an internal security improvement, some customized messages for a more coherent back end feedback when working with documents and fixes the output when listing children of a document.

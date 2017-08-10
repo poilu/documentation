@@ -49,6 +49,11 @@
  * @package documentation
  * @since documentation 1.0.0
  */
+
+if ( !defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 define( 'DOCUMENTATION_CORE_VERSION', '1.5.1' );
 define( 'DOCUMENTATION_PLUGIN_FILE', __FILE__ );
 define( 'DOCUMENTATION_PLUGIN_DOMAIN', 'documentation' );
