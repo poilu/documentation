@@ -19,6 +19,10 @@
  * @since documentation 1.0.0
  */
 
+if ( !defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( !current_user_can( Documentation_Settings::$capability ) ) {
 	wp_die( __( 'Access denied.', 'documentation' ) );
 }

@@ -19,6 +19,10 @@
  * @since documentation 1.0.0
  */
 
+if ( !defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Core forum class, handles comments and post/comment rights.
  */

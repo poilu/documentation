@@ -19,6 +19,10 @@
  * @since documentation 1.5.0
  */
 
+if ( !defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Document categories widget.
  *

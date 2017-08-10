@@ -19,6 +19,9 @@
  * @since 1.1.0
  */
 
+if ( !defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Documentation search facilities.
