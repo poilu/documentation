@@ -81,15 +81,17 @@ The documentation pages are [here](http://www.itthinx.com/documentation/document
 
 == Screenshots ==
 
-1. Documents Menu
-2. Example documentation as viewed on the back end.
-3. Document Hierarchy widget settings
-4. Document Hierarchy widget example output
-5. Document Children widget settings
-6. Document Children widget example output
-7. Documents widget settings
-8. Documents widget example output
-9. [documentation_hierarchy] shortcode example output
+1. Some example documents as viewed on the back end.
+2. Editing an example document.
+3. Documents Menu
+4. Settings.
+5. Document Hierarchy widget settings
+6. Document Hierarchy widget example output
+7. Document Children widget settings
+8. Document Children widget example output
+9. Documents widget settings
+10. Documents widget example output
+11. [documentation_hierarchy] shortcode example output
 
 == Changelog ==
 
