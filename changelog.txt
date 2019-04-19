@@ -1,5 +1,8 @@
 == Documentation plugin by itthinx - changelog.txt ==
 
+= 1.6.0 =
+* WordPress 5.1 compatible.
+
 = 1.5.1 =
 * Added some additional post type labels.
 * Customized the post updated messages for the document post type.
