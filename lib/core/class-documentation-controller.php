@@ -1,6 +1,6 @@
 <?php
 /**
- * boot.php
+ * class-documentation-controller.php
  *
  * Copyright (c) 2013 "kento" Karim Rahimpur www.itthinx.com
  *
@@ -16,7 +16,7 @@
  * 
  * @author Karim Rahimpur
  * @package documentation
- * @since documentation 1.0.0
+ * @since documentation 1.6.0
  */
 
 if ( !defined( 'ABSPATH' ) ) {
@@ -54,6 +54,8 @@ class Documentation_Controller {
 		require_once( DOCUMENTATION_VIEWS_LIB . '/class-documentation-document-children-widget.php' );
 		require_once( DOCUMENTATION_VIEWS_LIB . '/class-documentation-document-hierarchy-widget.php' );
 		require_once( DOCUMENTATION_CORE_LIB . '/class-documentation-search.php' );
+		register_activation_hook( DOCUMENTATION_PLUGIN_FILE, array( __CLASS__, 'activation' ) );
+		register_deactivation_hook( DOCUMENTATION_PLUGIN_FILE, array( __CLASS__, 'deactivation' ) );
 	}
 
 	/**
@@ -77,6 +79,21 @@ class Documentation_Controller {
 				require_once DOCUMENTATION_ADMIN_LIB. '/class-documentation-admin-notice.php';
 			}
 		}
+	}
+
+	/**
+	 * Hooked on plugin activation to flush rewrite rules after registering our document post type.
+	 */
+	public static function activation() {
+		Documentation_Post_Type::post_type();
+		flush_rewrite_rules( false );
+	}
+
+	/**
+	 * Hooked on plugin deactivation to flush rewrite rules.
+	 */
+	public static function deactivation() {
+		flush_rewrite_rules( false );
 	}
 }
 Documentation_Controller::boot();

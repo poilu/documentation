@@ -31,6 +31,7 @@ if ( isset( $_POST['action'] ) && ( $_POST['action'] == 'set' ) && wp_verify_non
 
 	$options = Documentation::get_options();
 	$options['document_comments_open'] = !empty( $_POST['document_comments_open'] );
+	$options['document_use_block_editor'] = !empty( $_POST['document_use_block_editor'] );
 
 	$maybe_slug = !empty( $_POST['document_slug'] ) ? $_POST['document_slug'] : '';
 	$maybe_slug = preg_replace( '/(\s|[^A-Za-z0-9-_])+/', '', wp_strip_all_tags( $maybe_slug ) );
@@ -47,6 +48,7 @@ if ( isset( $_POST['action'] ) && ( $_POST['action'] == 'set' ) && wp_verify_non
 $options = Documentation::get_options();
 $document_comments_open = isset( $options['document_comments_open'] ) ? $options['document_comments_open'] : true;
 $document_slug = !empty( $options['document_slug'] ) ? $options['document_slug'] : '';
+$document_use_block_editor = isset( $options['document_use_block_editor'] ) ? $options['document_use_block_editor'] : true;
 
 echo '<div class="settings">';
 echo '<form name="settings" method="post" action="">';
@@ -63,6 +65,17 @@ echo ' ';
 echo __( 'If this option is enabled, you may choose to allow comments on each document individually.', 'documentation' );
 echo ' ';
 echo __( 'If this option is disabled, comments on all documents are disabled.', 'documentation' );
+echo '</p>';
+
+echo '<div class="separator"></div>';
+
+echo '<label>';
+printf( '<input type="checkbox" name="document_use_block_editor" %s />', $document_use_block_editor ? ' checked="checked" ' : '' );
+echo ' ';
+echo __( 'Enable the block editor to edit documents', 'documentation' );
+echo '</label>';
+echo '<p class="description">';
+echo __( 'Disable this option if you do not want to use the block editor to edit documents.', 'documentation' );
 echo '</p>';
 
 echo '<div class="separator"></div>';

@@ -95,6 +95,8 @@ The documentation pages are [here](http://www.itthinx.com/documentation/document
 
 = 1.6.0 =
 * WordPress 5.1 compatible.
+* Added support for the WordPress Block editor to edit documents.
+* Added an option to choose whether to use the Block editor to edit documents.
 
 The full changelog is available at https://github.com/itthinx/documentation/blob/master/changelog.txt
 

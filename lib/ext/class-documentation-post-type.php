@@ -40,6 +40,7 @@ class Documentation_Post_Type {
 		//add_action( 'comment_form_comments_closed', array( __CLASS__, 'comment_form_comments_closed' ) );
 		add_filter( 'the_content', array( __CLASS__, 'the_content' ), apply_filters( 'documentation_the_content_filter_priority', self::THE_CONTENT_FILTER_PRIORITY ) );
 		add_filter( 'post_updated_messages', array( __CLASS__, 'post_updated_messages' ) );
+		add_filter( 'use_block_editor_for_post_type', array( __CLASS__, 'use_block_editor_for_post_type' ), 10, 2 );
 	}
 
 	/**
@@ -47,6 +48,20 @@ class Documentation_Post_Type {
 	 */
 	public static function wp_init() {
 		self::post_type();
+	}
+
+	/**
+	 * Determines whether the block editor is used for our post type.
+	 *
+	 * @param boolean $use
+	 * @param string $post_type
+	 *
+	 * @return boolean
+	 */
+	public static function use_block_editor_for_post_type( $use, $post_type ) {
+		$options = Documentation::get_options();
+		$document_use_block_editor = isset( $options['document_use_block_editor'] ) ? $options['document_use_block_editor'] : true;
+		return $document_use_block_editor;
 	}
 
 	/**
@@ -106,6 +121,7 @@ class Documentation_Post_Type {
 				'query_var'           => true,
 				'rewrite'             => empty( $document_slug ) ? true : array( 'slug' => $document_slug ),
 				'show_in_nav_menus'   => true,
+				'show_in_rest'        => true,
 				'show_ui'             => true,
 				'supports'            => $supports,
 				'taxonomies' => array( 'document_category', 'document_tag' )

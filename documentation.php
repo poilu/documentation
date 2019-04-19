@@ -76,4 +76,4 @@ if ( !defined( 'DOCUMENTATION_EXT_LIB' ) ) {
 if ( !defined( 'DOCUMENTATION_CORE_URL' ) ) {
 	define( 'DOCUMENTATION_CORE_URL', WP_PLUGIN_URL . '/documentation' );
 }
-require_once( DOCUMENTATION_CORE_LIB . '/boot.php');
+require_once( DOCUMENTATION_CORE_LIB . '/class-documentation-controller.php');
