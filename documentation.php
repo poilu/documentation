@@ -3,13 +3,13 @@
  * Plugin Name: Documentation
  * Plugin URI: http://www.itthinx.com/plugins/documentation
  * Description: A documentation management system.
- * Version: 1.5.1
+ * Version: 1.6.0
  * Author: itthinx
  * Author URI: http://www.itthinx.com
  * Donate-Link: http://www.itthinx.com
  * License: GPLv3
  * 
- * Copyright (c) 2013 - 2017 "kento" Karim Rahimpur www.itthinx.com
+ * Copyright (c) 2013 - 2019 "kento" Karim Rahimpur www.itthinx.com
  * 
  * This code is released under the GNU General Public License Version 3.
  * The following additional terms apply to all files as per section
@@ -54,7 +54,7 @@ if ( !defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'DOCUMENTATION_CORE_VERSION', '1.5.1' );
+define( 'DOCUMENTATION_CORE_VERSION', '1.6.0' );
 define( 'DOCUMENTATION_PLUGIN_FILE', __FILE__ );
 define( 'DOCUMENTATION_PLUGIN_DOMAIN', 'documentation' );
 define( 'DOCUMENTATION_PLUGIN_URL', plugin_dir_url( DOCUMENTATION_PLUGIN_FILE ) );
@@ -76,4 +76,4 @@ if ( !defined( 'DOCUMENTATION_EXT_LIB' ) ) {
 if ( !defined( 'DOCUMENTATION_CORE_URL' ) ) {
 	define( 'DOCUMENTATION_CORE_URL', WP_PLUGIN_URL . '/documentation' );
 }
-require_once( DOCUMENTATION_CORE_LIB . '/boot.php');
+require_once( DOCUMENTATION_CORE_LIB . '/class-documentation-controller.php');

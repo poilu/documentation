@@ -2,9 +2,10 @@
 Contributors: itthinx
 Donate link: http://www.itthinx.com/plugins/documentation
 Tags: doc, docs, document, documents, documentation, manual, manuals, platform, system, wiki, wikis, woocommerce
-Requires at least: 4.0
-Tested up to: 4.8
-Stable tag: 1.5.1
+Requires at least: 4.6
+Tested up to: 5.1
+Requires PHP: 5.6.0
+Stable tag: 1.6.0
 License: GPLv3
 
 A documentation management system.
@@ -80,48 +81,29 @@ The documentation pages are [here](http://www.itthinx.com/documentation/document
 
 == Screenshots ==
 
-1. Documents Menu
-2. Example documentation as viewed on the back end.
-3. Document Hierarchy widget settings
-4. Document Hierarchy widget example output
-5. Document Children widget settings
-6. Document Children widget example output
-7. Documents widget settings
-8. Documents widget example output
-9. [documentation_hierarchy] shortcode example output
+1. Some example documents as viewed on the back end.
+2. Editing an example document.
+3. Documents Menu
+4. Settings.
+5. Document Hierarchy widget settings
+6. Document Hierarchy widget example output
+7. Document Children widget settings
+8. Document Children widget example output
+9. Documents widget settings
+10. Documents widget example output
+11. [documentation_hierarchy] shortcode example output
 
 == Changelog ==
 
-= 1.5.1 =
-* Added some additional post type labels.
-* Customized the post updated messages for the document post type.
-* Fixed the output of Documentation_Renderer::list_children() to surround the items with corresponding ul tags.
-  This also fixes the output of the [documentation_list_children] shortcode and the Documentation Children widget
-  who use this method.
-* Added the documentation_list_children_prefix and documentation_list_children_suffix filters.
-* Security improvement, added ABSPATH checks.
-
-= 1.5.0 =
-* Replaced deprecated widget constructor in Documentation_Documents_Widget.
-* Fixed use of undefined constant.
-* Replaced use of the DOCUMENTATION_PLUGIN_DOMAIN constant with the string literal 'documentation'.
-* Added the Add-Ons section.
-* Added the Notice class.
-* Added links to the documenation pages.
-* Added the Document Categories widget.
-
-= 1.4.1 =
-* WordPress 4.8 compatibility tested.
-
-= 1.4.0 =
-* WordPress 4.7.2 compatibility tested.
-* Improved handling of number of documents shown for Documents widget.
-* Added the [documentation_categories] shortcode.
+= 1.6.0 =
+* WordPress 5.1 compatible.
+* Added support for the WordPress Block editor to edit documents.
+* Added an option to choose whether to use the Block editor to edit documents.
+* Added an activation hook so that viewing documents does not require to visit Settings > Permalinks first.
+* Renamed the file in charge of booting the plugin boot.php to class-documentation-controller.php to reflect the implemented class' name.
 
 The full changelog is available at https://github.com/itthinx/documentation/blob/master/changelog.txt
 
 == Upgrade Notice ==
 
-= 1.5.1 =
-The 1.5.x release adds a new widget to display Document Categories, a new section with recommended helpful add-ons and contains several fixes and improvements.
-Version 1.5.1 adds an internal security improvement, some customized messages for a more coherent back end feedback when working with documents and fixes the output when listing children of a document.
+Compatible with the latest version of WordPress and now supports the Block editor (enabled by default, can be disabled in the plugin's settings).
