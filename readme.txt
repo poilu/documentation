@@ -5,7 +5,7 @@ Tags: doc, docs, document, documents, documentation, manual, manuals, platform, 
 Requires at least: 4.6
 Tested up to: 5.1
 Requires PHP: 5.6.0
-Stable tag: 1.6.0
+Stable tag: 1.6.1
 License: GPLv3
 
 A documentation management system.
@@ -94,6 +94,10 @@ The documentation pages are [here](http://www.itthinx.com/documentation/document
 11. [documentation_hierarchy] shortcode example output
 
 == Changelog ==
+
+= 1.6.1 =
+* Fixed missing document categories and tags meta boxes when using the Block editor.
+* Minor code improvements.
 
 = 1.6.0 =
 * WordPress 5.1 compatible.

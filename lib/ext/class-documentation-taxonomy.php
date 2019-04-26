@@ -68,6 +68,7 @@ class Documentation_Taxonomy {
 				'query_var'    => true,
 				'rewrite'      => array( 'slug' => 'document_category' ),
 				'show_in_nav_menus' => true,
+				'show_in_rest'        => true,
 				'show_tagcloud'     => true,
 				'show_ui'           => true,
 				'show_admin_column' => true
@@ -82,6 +83,7 @@ class Documentation_Taxonomy {
 				'query_var' => true,
 				'rewrite' => array( 'slug' => 'document_tag' ),
 				'public' => true,
+				'show_in_rest' => true,
 				'show_ui' => true,
 				'show_admin_column' => true,
 			)
