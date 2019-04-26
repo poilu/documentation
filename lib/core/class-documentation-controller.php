@@ -86,6 +86,7 @@ class Documentation_Controller {
 	 */
 	public static function activation() {
 		Documentation_Post_Type::post_type();
+		Documentation_Taxonomy::taxonomy();
 		flush_rewrite_rules( false );
 	}
 

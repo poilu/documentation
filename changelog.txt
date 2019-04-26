@@ -2,6 +2,7 @@
 
 = 1.6.1 =
 * Fixed missing document categories and tags meta boxes when using the Block editor.
+* Added pre-registration of document taxonomies on activation to help WordPress recognize them.
 * Minor code improvements.
 
 = 1.6.0 =
