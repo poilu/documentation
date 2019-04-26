@@ -40,20 +40,20 @@ class Documentation_Controller {
 	public static function boot() {
 		add_action( 'init', array( __CLASS__, 'init' ) );
 		add_action( 'admin_notices', array( __CLASS__, 'admin_notices' ) );
-		require_once( DOCUMENTATION_CORE_LIB . '/class-documentation.php' );
-		require_once( DOCUMENTATION_EXT_LIB . '/class-documentation-post-type.php' );
-		require_once( DOCUMENTATION_EXT_LIB . '/class-documentation-taxonomy.php' );
+		require_once DOCUMENTATION_CORE_LIB . '/class-documentation.php';
+		require_once DOCUMENTATION_EXT_LIB . '/class-documentation-post-type.php';
+		require_once DOCUMENTATION_EXT_LIB . '/class-documentation-taxonomy.php';
 		if ( !is_admin() ) {
-			require_once( DOCUMENTATION_VIEWS_LIB . '/class-documentation-shortcodes.php' );
+			require_once DOCUMENTATION_VIEWS_LIB . '/class-documentation-shortcodes.php';
 		} else {
-			require_once( DOCUMENTATION_ADMIN_LIB . '/class-documentation-settings.php' );
-			require_once( DOCUMENTATION_ADMIN_LIB . '/class-documentation-add-ons.php' );
+			require_once DOCUMENTATION_ADMIN_LIB . '/class-documentation-settings.php';
+			require_once DOCUMENTATION_ADMIN_LIB . '/class-documentation-add-ons.php';
 		}
-		require_once( DOCUMENTATION_VIEWS_LIB . '/class-documentation-categories-widget.php' );
-		require_once( DOCUMENTATION_VIEWS_LIB . '/class-documentation-documents-widget.php' );
-		require_once( DOCUMENTATION_VIEWS_LIB . '/class-documentation-document-children-widget.php' );
-		require_once( DOCUMENTATION_VIEWS_LIB . '/class-documentation-document-hierarchy-widget.php' );
-		require_once( DOCUMENTATION_CORE_LIB . '/class-documentation-search.php' );
+		require_once DOCUMENTATION_VIEWS_LIB . '/class-documentation-categories-widget.php';
+		require_once DOCUMENTATION_VIEWS_LIB . '/class-documentation-documents-widget.php';
+		require_once DOCUMENTATION_VIEWS_LIB . '/class-documentation-document-children-widget.php';
+		require_once DOCUMENTATION_VIEWS_LIB . '/class-documentation-document-hierarchy-widget.php';
+		require_once DOCUMENTATION_CORE_LIB . '/class-documentation-search.php';
 		register_activation_hook( DOCUMENTATION_PLUGIN_FILE, array( __CLASS__, 'activation' ) );
 		register_deactivation_hook( DOCUMENTATION_PLUGIN_FILE, array( __CLASS__, 'deactivation' ) );
 	}
@@ -86,6 +86,7 @@ class Documentation_Controller {
 	 */
 	public static function activation() {
 		Documentation_Post_Type::post_type();
+		Documentation_Taxonomy::taxonomy();
 		flush_rewrite_rules( false );
 	}
 
