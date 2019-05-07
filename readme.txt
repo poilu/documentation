@@ -95,19 +95,8 @@ The documentation pages are [here](http://www.itthinx.com/documentation/document
 
 == Changelog ==
 
-= 1.6.1 =
-* Fixed missing document categories and tags meta boxes when using the Block editor.
-* Minor code improvements.
-
-= 1.6.0 =
-* WordPress 5.1 compatible.
-* Added support for the WordPress Block editor to edit documents.
-* Added an option to choose whether to use the Block editor to edit documents.
-* Added an activation hook so that viewing documents does not require to visit Settings > Permalinks first.
-* Renamed the file in charge of booting the plugin boot.php to class-documentation-controller.php to reflect the implemented class' name.
-
 The full changelog is available at https://github.com/itthinx/documentation/blob/master/changelog.txt
 
 == Upgrade Notice ==
 
-Compatible with the latest version of WordPress and now supports the Block editor (enabled by default, can be disabled in the plugin's settings).
+Compatible with the latest version of WordPress.
