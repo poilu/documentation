@@ -1,5 +1,8 @@
 == Documentation plugin by itthinx - changelog.txt ==
 
+= 1.7.0 =
+* WordPress 5.2 compatible.
+
 = 1.6.1 =
 * Fixed missing document categories and tags meta boxes when using the Block editor.
 * Added pre-registration of document taxonomies on activation to help WordPress recognize them.
