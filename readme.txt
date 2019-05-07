@@ -95,7 +95,7 @@ The documentation pages are [here](http://www.itthinx.com/documentation/document
 
 == Changelog ==
 
-The full changelog is available at https://github.com/itthinx/documentation/blob/master/changelog.txt
+For the full changelog see [changelog.txt](https://github.com/itthinx/documentation/blob/master/changelog.txt).
 
 == Upgrade Notice ==
 
