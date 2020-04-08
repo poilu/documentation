@@ -40,6 +40,9 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 	 */
 	static $cache_flag = 'widget';
 
+	/**
+	 * @var array
+	 */
 	static $defaults = null;
 
 	/**
@@ -220,7 +223,7 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 		}
 
 		// sort_column
-		$columns = array( 'trim', explode( ',', $new_instance['sort_column'] ) );
+		$columns = array_map( 'trim', explode( ',', $new_instance['sort_column'] ) );
 		$sort_column = array();
 		foreach( $columns as $column ) {
 			switch( $column ) {
@@ -235,8 +238,8 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 					break;
 			}
 		}
-		if ( count( $sort_column )  > 0 ) {
-		$settings['sort_column'] = implode( ',', $sort_column );
+		if ( count( $sort_column ) > 0 ) {
+			$settings['sort_column'] = implode( ',', $sort_column );
 		} else {
 			unset( $settings['sort_column'] );
 		}
@@ -250,8 +253,8 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 		}
 
 		// show ...
-		$settings['show_author']        = !empty( $new_instance['show_author'] );
-		$settings['show_date']          = !empty( $new_instance['show_date'] );
+		$settings['show_author'] = !empty( $new_instance['show_author'] );
+		$settings['show_date']   = !empty( $new_instance['show_date'] );
 
 		$this->cache_delete();
 
@@ -264,8 +267,6 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 	 * @see WP_Widget::form()
 	 */
 	function form( $instance ) {
-
-		$sort_column = 'menu_order,post_title'; // for declaration, but extracted next
 
 		extract( self::$defaults );
 
@@ -326,7 +327,7 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 // 		echo '</label>';
 // 		echo '</p>';
 
-		$sort_columns = isset( $instance['sort_columns'] ) ? $instance['sort_columns'] : '';
+		$sort_column = isset( $instance['sort_column'] ) ? $instance['sort_column'] : '';
 		echo '<p>';
 		echo sprintf( '<label title="%s" >', __( "Sorting criteria, one or more options separated by comma. Possible choices are post_title, menu_order, post_date, post_modified, ID, post_author and post_name.", 'documentation' ) );
 		echo __( 'Order by ...', 'documentation' );
