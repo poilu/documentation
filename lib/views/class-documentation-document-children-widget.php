@@ -25,7 +25,7 @@ if ( !defined( 'ABSPATH' ) ) {
 
 /**
  * Document children widget.
- * 
+ *
  * Lists the children of the current or a chosen document.
  */
 class Documentation_Document_Children_Widget extends WP_Widget {
@@ -132,7 +132,7 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 
 	/**
 	 * Widget output
-	 * 
+	 *
 	 * @see WP_Widget::widget()
 	 * @link http://codex.wordpress.org/Class_Reference/WP_Object_Cache
 	 */
@@ -168,7 +168,7 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 
 	/**
 	 * Save widget options
-	 * 
+	 *
 	 * @see WP_Widget::update()
 	 */
 	function update( $new_instance, $old_instance ) {
@@ -186,7 +186,7 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 			unset( $settings['child_of'] );
 		} else if ( ( "[current]" == $child_of ) || ( "{current}" == $child_of ) )  {
 			$settings['child_of'] = "{current}";
-		} else if ( $post = get_post( $child_of ) && ( $post !== null ) ) { 
+		} else if ( $post = get_post( $child_of ) && ( $post !== null ) ) {
 			$settings['child_of'] = $child_of;
 		}
 
@@ -253,7 +253,7 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 	
 	/**
 	 * Output admin widget options form
-	 * 
+	 *
 	 * @see WP_Widget::form()
 	 */
 	function form( $instance ) {
@@ -283,7 +283,7 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 			'<label title="%s">',
 			__( "Leave empty to show all documents. To show child documents for a specific document, indicate the document ID. To show child documents for the current document, indicate: {current}.", 'documentation' )
 		);
-		echo __( 'Children of ...', 'documentation' ); 
+		echo __( 'Children of ...', 'documentation' );
 		echo '<input class="widefat" id="' . $this->get_field_id( 'child_of' ) . '" name="' . $this->get_field_name( 'child_of' ) . '" type="text" value="' . esc_attr( $child_of ) . '" />';
 		echo '</label>';
 		echo '<br/>';
@@ -311,7 +311,7 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 // 		echo '<select class="widefat" name="' . $this->get_field_name( 'orderby' ) . '">';
 // 		foreach ( self::$orderby_options as $orderby_option_key => $orderby_option_name ) {
 // 			$selected = ( $orderby_option_key == $orderby ? ' selected="selected" ' : "" );
-// 			echo '<option ' . $selected . 'value="' . $orderby_option_key . '">' . $orderby_option_name . '</option>'; 
+// 			echo '<option ' . $selected . 'value="' . $orderby_option_key . '">' . $orderby_option_name . '</option>';
 // 		}
 // 		echo '</select>';
 // 		echo '</label>';
@@ -333,7 +333,7 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 		echo '<select class="widefat" name="' . $this->get_field_name( 'sort_order' ) . '">';
 		foreach ( self::$order_options as $order_option_key => $order_option_name ) {
 			$selected = ( $order_option_key == $order ? ' selected="selected" ' : "" );
-			echo '<option ' . $selected . 'value="' . $order_option_key . '">' . $order_option_name . '</option>'; 
+			echo '<option ' . $selected . 'value="' . $order_option_key . '">' . $order_option_name . '</option>';
 		}
 		echo '</select>';
 		echo '</label>';
@@ -358,7 +358,7 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 		// show_author
 		$checked = ( ( ( !isset( $instance['show_author'] ) && self::$defaults['show_author'] ) || ( isset( $instance['show_author'] ) && ( $instance['show_author'] === true ) ) ) ? 'checked="checked"' : '' );
 		echo '<p>';
-		echo sprintf( '<label title="%s">', __( "Whether to show the author of each document.", 'documentation' ) ); 
+		echo sprintf( '<label title="%s">', __( "Whether to show the author of each document.", 'documentation' ) );
 		echo '<input type="checkbox" ' . $checked . ' value="1" name="' . $this->get_field_name( 'show_author' ) . '" />';
 		echo __( 'Show author', 'documentation' );
 		echo '</label>';

@@ -122,7 +122,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 
 	/**
 	 * Widget output
-	 * 
+	 *
 	 * @see WP_Widget::widget()
 	 * @link http://codex.wordpress.org/Class_Reference/WP_Object_Cache
 	 */
@@ -158,7 +158,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 
 	/**
 	 * Save widget options
-	 * 
+	 *
 	 * @see WP_Widget::update()
 	 */
 	function update( $new_instance, $old_instance ) {
@@ -202,7 +202,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 			unset( $settings['category_id'] );
 		} else if ( ( "[current]" == $category_id ) || ( "{current}" == $category_id ) )  {
 			$settings['category_id'] = "{current}";
-		} else if ( $category = get_term( $category_id, 'document_category' ) && !is_wp_error( $category ) ) { 
+		} else if ( $category = get_term( $category_id, 'document_category' ) && !is_wp_error( $category ) ) {
 			$settings['category_id'] = $category_id;
 		}
 
@@ -218,7 +218,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 
 	/**
 	 * Output admin widget options form
-	 * 
+	 *
 	 * @see WP_Widget::form()
 	 */
 	function form( $instance ) {
@@ -251,7 +251,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 		echo '<select class="widefat" name="' . $this->get_field_name( 'orderby' ) . '">';
 		foreach ( self::$orderby_options as $orderby_option_key => $orderby_option_name ) {
 			$selected = ( $orderby_option_key == $orderby ? ' selected="selected" ' : "" );
-			echo '<option ' . $selected . 'value="' . $orderby_option_key . '">' . $orderby_option_name . '</option>'; 
+			echo '<option ' . $selected . 'value="' . $orderby_option_key . '">' . $orderby_option_name . '</option>';
 		}
 		echo '</select>';
 		echo '</label>';
@@ -265,7 +265,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 		echo '<select class="widefat" name="' . $this->get_field_name( 'order' ) . '">';
 		foreach ( self::$order_options as $order_option_key => $order_option_name ) {
 			$selected = ( $order_option_key == $order ? ' selected="selected" ' : "" );
-			echo '<option ' . $selected . 'value="' . $order_option_key . '">' . $order_option_name . '</option>'; 
+			echo '<option ' . $selected . 'value="' . $order_option_key . '">' . $order_option_name . '</option>';
 		}
 		echo '</select>';
 		echo '</label>';
@@ -285,7 +285,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 			'<label title="%s">',
 			__( "Leave empty to show documents in all document categories. To show documents in a specific category, indicate the category ID. To show documents in the current document category, indicate: {current} (when not on a document page, documents for all categories are displayed).", 'documentation' )
 		);
-		echo __( 'Category ID', 'documentation' ); 
+		echo __( 'Category ID', 'documentation' );
 		echo '<input class="widefat" id="' . $this->get_field_id( 'category_id' ) . '" name="' . $this->get_field_name( 'category_id' ) . '" type="text" value="' . esc_attr( $category_id ) . '" />';
 		echo '</label>';
 		echo '<br/>';
@@ -299,7 +299,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 		// show_author
 		$checked = ( ( ( !isset( $instance['show_author'] ) && self::$defaults['show_author'] ) || ( isset( $instance['show_author'] ) && ( $instance['show_author'] === true ) ) ) ? 'checked="checked"' : '' );
 		echo '<p>';
-		echo sprintf( '<label title="%s">', __( "Whether to show the author of each document.", 'documentation' ) ); 
+		echo sprintf( '<label title="%s">', __( "Whether to show the author of each document.", 'documentation' ) );
 		echo '<input type="checkbox" ' . $checked . ' value="1" name="' . $this->get_field_name( 'show_author' ) . '" />';
 		echo __( 'Show author', 'documentation' );
 		echo '</label>';
@@ -317,7 +317,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 		// show_comment_count
 		$checked = ( ( ( !isset( $instance['show_comment_count'] ) && self::$defaults['show_comment_count'] ) || ( isset( $instance['show_comment_count'] ) && ( $instance['show_comment_count'] === true ) ) ) ? 'checked="checked"' : '' );
 		echo '<p>';
-		echo sprintf( '<label title="%s">', __( "Whether to show the comment count for each document.", 'documentation' ) ); 
+		echo sprintf( '<label title="%s">', __( "Whether to show the comment count for each document.", 'documentation' ) );
 		echo '<input type="checkbox" ' . $checked . ' value="1" name="' . $this->get_field_name( 'show_comment_count' ) . '" />';
 		echo __( 'Show number of replies', 'documentation' );
 		echo '</label>';
@@ -377,7 +377,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 		}
 
 		$output = '';
-		$documents = get_posts( $args ); 
+		$documents = get_posts( $args );
 		if ( count( $documents ) > 0 ) {
 			$output .= '<ul>';
 			foreach( $documents as $document ) {

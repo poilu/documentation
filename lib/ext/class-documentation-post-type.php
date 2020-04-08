@@ -216,7 +216,7 @@ class Documentation_Post_Type {
 
 	/**
 	 * Determine whether comments are open.
-	 * 
+	 *
 	 * @param boolean $open
 	 * @param int $post_id
 	 * @return boolean

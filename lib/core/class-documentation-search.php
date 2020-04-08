@@ -166,7 +166,7 @@ class Documentation_Search {
 
 	/**
 	 * Sort helper using the i index.
-	 * 
+	 *
 	 * @param array $e1
 	 * @param array $e2
 	 * @return int
@@ -177,9 +177,9 @@ class Documentation_Search {
 
 	/**
 	 * Shortcode handler, renders a documentation search form.
-	 * 
+	 *
 	 * Enqueues required scripts and styles.
-	 * 
+	 *
 	 * @param array $atts order, order_by, title, excerpt, content, limit
 	 * @param array $content not used
 	 * @return string form HTML

@@ -157,7 +157,7 @@ class Documentation_Renderer {
 		}
 
 		$output = '';
-		$documents = get_posts( $args ); 
+		$documents = get_posts( $args );
 		if ( count( $documents ) > 0 ) {
 			$output .= '<ul>';
 			foreach( $documents as $document ) {
@@ -187,11 +187,11 @@ class Documentation_Renderer {
 
 	/**
 	 * List children.
-	 * 
+	 *
 	 * @param array $atts
-	 * 
+	 *
 	 * @return string
-	 * 
+	 *
 	 * @uses wp_list_pages
 	 * @link http://codex.wordpress.org/Function_Reference/wp_list_pages
 	 */
@@ -228,30 +228,30 @@ class Documentation_Renderer {
 
 	/**
 	 * Document hierarchy renderer.
-	 * 
+	 *
 	 * Used to display a document hierarchy which can be easily understood and
 	 * navigated through, for example when we want to display the current
 	 * relevant sublevels within the document hierarchy.
-	 * 
+	 *
 	 * Attributes:
-	 * 
+	 *
 	 * - root_node @todo consider later
-	 * - root_depth : number of levels to include from the root level, defaults to 1 including all documents at root level (without parents); set to 0 to hide all documents at root level except the parent of the current document 
+	 * - root_depth : number of levels to include from the root level, defaults to 1 including all documents at root level (without parents); set to 0 to hide all documents at root level except the parent of the current document
 	 * - supernode_height : number of levels to include above the current document, defaults to 1
 	 * - supernode_subnode_depth : number of levels to include below each supernode, defaults to 1
 	 * - subnode_depth : number of levels to include below the current document, defaults to 1
-	 * 
+	 *
 	 * // @todo support for heading scanning is not implemented yet
 	 * - scan_headings : whether to scan the current document's heading, defaults to false; if set to true, headings are displayed as a sublevel hierarchy
 	 * - create_heading_anchors : if scan_headings is enabled, creates anchors for headings and links the headings-based sublevel hierarchy
 	 * - min_heading : minimum heading level to take into account, defaults to 1 for h1
-	 * - max_heading : maximum heading level to take into account, defaults to 3 for h3 
-	 * 
+	 * - max_heading : maximum heading level to take into account, defaults to 3 for h3
+	 *
 	 * Notes:
-	 * 
+	 *
 	 * - Where "root level" is mentioned, by default this means documents that have no parents.
 	 * - The default "root node" is the virtual document with ID 0 that is assumed to be the parent of all documents without a parent document.
-	 * 
+	 *
 	 * @param array $atts
 	 * @return string
 	 */
@@ -345,9 +345,9 @@ class Documentation_Renderer {
 	/**
 	 * Returns an array containing the IDs of all subnodes for the ID
 	 * of the starting node provided in $node.
-	 * 
+	 *
 	 * Starting Node children and children of subnodes are included.
-	 * 
+	 *
 	 * @param array $hierarchy
 	 * @param int $node ID of the starting node
 	 * @param int $height number of subnode levels to take into account
@@ -372,9 +372,9 @@ class Documentation_Renderer {
 	/**
 	 * Returns an array containing the IDs of all supernodes for the ID
 	 * of the starting node provided in $node.
-	 * 
+	 *
 	 * No children of supernodes are included.
-	 * 
+	 *
 	 * @param array $hierarchy
 	 * @param int $node ID of the starting node
 	 * @param int $height number of supernode levels to take into account
@@ -396,7 +396,7 @@ class Documentation_Renderer {
 
 	/**
 	 * Adapted from wp_list_pages() for our document post type.
-	 *  
+	 *
 	 * @see wp_list_pages()
 	 * @param string|array $args
 	 * @return string|null echoes output by default; determined by the value of 'echo' in $args

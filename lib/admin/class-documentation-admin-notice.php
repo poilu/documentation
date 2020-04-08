@@ -30,21 +30,21 @@ class Documentation_Admin_Notice {
 
 	/**
 	 * Time mark.
-	 * 
+	 *
 	 * @var string
 	 */
 	const INIT_TIME = 'documentation-init-time';
 
 	/**
 	 * Used to store user meta and hide the notice asking to review.
-	 * 
+	 *
 	 * @var string
 	 */
 	const HIDE_REVIEW_NOTICE = 'documentation-hide-review-notice';
 
 	/**
 	 * The number of seconds in seven days, since init date to show the notice.
-	 * 
+	 *
 	 * @var int
 	 */
 	const SHOW_LAPSE = 604800;

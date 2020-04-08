@@ -25,7 +25,7 @@ if ( !defined( 'ABSPATH' ) ) {
 
 /**
  * Document hierarchy widget.
- * 
+ *
  * Lists the hierarchy of the current or a chosen document.
  */
 class Documentation_Document_Hierarchy_Widget extends WP_Widget {
@@ -111,7 +111,7 @@ class Documentation_Document_Hierarchy_Widget extends WP_Widget {
 
 	/**
 	 * Widget output
-	 * 
+	 *
 	 * @see WP_Widget::widget()
 	 * @link http://codex.wordpress.org/Class_Reference/WP_Object_Cache
 	 */
@@ -147,7 +147,7 @@ class Documentation_Document_Hierarchy_Widget extends WP_Widget {
 
 	/**
 	 * Save widget options
-	 * 
+	 *
 	 * @see WP_Widget::update()
 	 */
 	function update( $new_instance, $old_instance ) {
@@ -186,7 +186,7 @@ class Documentation_Document_Hierarchy_Widget extends WP_Widget {
 
 	/**
 	 * Output admin widget options form
-	 * 
+	 *
 	 * @see WP_Widget::form()
 	 */
 	function form( $instance ) {

@@ -133,7 +133,7 @@ class Documentation_Categories_Widget extends WP_Widget {
 
 	/**
 	 * Widget output
-	 * 
+	 *
 	 * @see WP_Widget::widget()
 	 * @link http://codex.wordpress.org/Class_Reference/WP_Object_Cache
 	 */
@@ -183,7 +183,7 @@ class Documentation_Categories_Widget extends WP_Widget {
 
 	/**
 	 * Save widget options
-	 * 
+	 *
 	 * @see WP_Widget::update()
 	 */
 	function update( $new_instance, $old_instance ) {
@@ -259,7 +259,7 @@ class Documentation_Categories_Widget extends WP_Widget {
 
 	/**
 	 * Output admin widget options form
-	 * 
+	 *
 	 * @see WP_Widget::form()
 	 */
 	function form( $instance ) {
@@ -289,7 +289,7 @@ class Documentation_Categories_Widget extends WP_Widget {
 			'<label title="%s">',
 			__( "Leave empty to show all categories. To show children of a specific category, indicate the category name, slug or ID. To show those of the current category, indicate: {current}.", 'documentation' )
 		);
-		echo __( 'Children of &hellip;', 'documentation' ); 
+		echo __( 'Children of &hellip;', 'documentation' );
 		echo '<input class="widefat" id="' . $this->get_field_id( 'child_of' ) . '" name="' . $this->get_field_name( 'child_of' ) . '" type="text" value="' . esc_attr( $child_of ) . '" />';
 		echo '</label>';
 		echo '<br/>';
