@@ -1,5 +1,8 @@
 == Documentation plugin by itthinx - changelog.txt ==
 
+= 1.8.0 =
+* WordPress 5.4 compatible.
+
 = 1.7.0 =
 * WordPress 5.2 compatible.
 
