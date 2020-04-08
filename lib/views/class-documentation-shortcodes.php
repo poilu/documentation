@@ -39,7 +39,7 @@ class Documentation_Shortcodes {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param array $atts
 	 * @param string $content
 	 */
@@ -50,7 +50,7 @@ class Documentation_Shortcodes {
 
 	/**
 	 * List children shortcode.
-	 * 
+	 *
 	 * @param array $atts
 	 * @param string $content (not used)
 	 * @return string
@@ -62,16 +62,16 @@ class Documentation_Shortcodes {
 
 	/**
 	 * Shortcode handler that produces a documentation hierarchy.
-	 * 
+	 *
 	 * The following options are accepted through $atts:
-	 * 
+	 *
 	 * - root_depth : number of levels to include from the root level, defaults to 1 including all documents at root level (without parents); set to 0 to hide all documents at root level except the parent of the current document
 	 * - supernode_height : number of levels to include above the current document, defaults to 1
 	 * - supernode_subnode_depth : number of levels to include below each supernode, defaults to 1
 	 * - subnode_depth : number of levels to include below the current document, defaults to 1
-	 * 
+	 *
 	 * @see Documentation_Renderer::document_hierarchy()
-	 * 
+	 *
 	 * @param array $atts
 	 * @param string $content (not used)
 	 * @return string
@@ -83,7 +83,7 @@ class Documentation_Shortcodes {
 
 	/**
 	 * Renders document categories.
-	 * 
+	 *
 	 * Accepted attributes are:
 	 * - child_of to indicate a category id and show its children, default is empty
 	 * - depth indentation category depth, default is 0 for all, only used when hierarchical
@@ -92,7 +92,7 @@ class Documentation_Shortcodes {
 	 * - order ASC or DESC
 	 * - orderby to order by name, slug, id or description; default is 'name'
 	 * - show_count to show the number of entries per category
-	 * 
+	 *
 	 * @param array $atts
 	 * @param string $content (not used)
 	 */

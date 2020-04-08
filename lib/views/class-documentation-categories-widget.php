@@ -42,18 +42,21 @@ class Documentation_Categories_Widget extends WP_Widget {
 
 	/**
 	 * Default values.
+	 *
 	 * @var array
 	 */
 	static $defaults = null;
 
 	/**
 	 * Sort criteria and labels.
+	 *
 	 * @var array
 	 */
 	static $orderby_options;
 
 	/**
 	 * Sort direction and labels.
+	 *
 	 * @var array
 	 */
 	static $order_options;
@@ -61,7 +64,7 @@ class Documentation_Categories_Widget extends WP_Widget {
 	/**
 	 * Initialize.
 	 */
-	static function init() {
+	public static function init() {
 
 		self::$defaults = array(
 			'child_of'           => 0,
@@ -85,11 +88,11 @@ class Documentation_Categories_Widget extends WP_Widget {
 			'DESC' => __( 'Descending', 'documentation' )
 		);
 
-// 		if ( !has_action( 'wp_print_styles', array( __CLASS__, '_wp_print_styles' ) ) ) {
-// 			add_action( 'wp_print_styles', array( __CLASS__, '_wp_print_styles' ) );
-// 		}
+		// if ( !has_action( 'wp_print_styles', array( __CLASS__, '_wp_print_styles' ) ) ) {
+		// 	add_action( 'wp_print_styles', array( __CLASS__, '_wp_print_styles' ) );
+		// }
 		if ( !has_action( 'comment_post', array( __CLASS__, 'cache_delete' ) ) ) {
-			add_action( 'comment_post', array(__CLASS__, 'cache_delete' ) );
+			add_action( 'comment_post', array( __CLASS__, 'cache_delete' ) );
 		}
 		if ( !has_action( 'transition_comment_status', array( __CLASS__, 'cache_delete' ) ) ) {
 			add_action( 'transition_comment_status', array( __CLASS__, 'cache_delete' ) );
@@ -100,7 +103,7 @@ class Documentation_Categories_Widget extends WP_Widget {
 	/**
 	 * Registers the widget.
 	 */
-	static function widgets_init() {
+	public static function widgets_init() {
 		register_widget( 'Documentation_Categories_Widget' );
 	}
 
@@ -114,14 +117,14 @@ class Documentation_Categories_Widget extends WP_Widget {
 	/**
 	 * Clears cached widget.
 	 */
-	static function cache_delete() {
+	public static function cache_delete() {
 		wp_cache_delete( self::$cache_id, self::$cache_flag );
 	}
 
 	/**
 	 * Enqueue styles if at least one widget is used.
 	 */
-	static function _wp_print_styles() {
+	public static function _wp_print_styles() {
 		global $wp_registered_widgets;
 		foreach ( $wp_registered_widgets as $widget ) {
 			if ( $widget['name'] == 'Document Categories' ) {
@@ -133,11 +136,11 @@ class Documentation_Categories_Widget extends WP_Widget {
 
 	/**
 	 * Widget output
-	 * 
+	 *
 	 * @see WP_Widget::widget()
 	 * @link http://codex.wordpress.org/Class_Reference/WP_Object_Cache
 	 */
-	function widget( $args, $instance ) {
+	public function widget( $args, $instance ) {
 		$cache = wp_cache_get( self::$cache_id, self::$cache_flag );
 		if ( ! is_array( $cache ) ) {
 			$cache = array();
@@ -146,6 +149,11 @@ class Documentation_Categories_Widget extends WP_Widget {
 			echo $cache[$args['widget_id']];
 			return;
 		}
+
+		$before_widget = '';
+		$after_widget  = '';
+		$before_title  = '';
+		$after_title   = '';
 
 		extract( $args );
 
@@ -170,6 +178,7 @@ class Documentation_Categories_Widget extends WP_Widget {
 	/**
 	 * Look for a term by id, slug or name.
 	 * @param string $key
+	 *
 	 * @return WP_Term or false
 	 */
 	private static function get_term( $key ) {
@@ -183,10 +192,10 @@ class Documentation_Categories_Widget extends WP_Widget {
 
 	/**
 	 * Save widget options
-	 * 
+	 *
 	 * @see WP_Widget::update()
 	 */
-	function update( $new_instance, $old_instance ) {
+	public function update( $new_instance, $old_instance ) {
 
 		global $wpdb;
 
@@ -199,7 +208,7 @@ class Documentation_Categories_Widget extends WP_Widget {
 		$child_of = $new_instance['child_of'];
 		if ( empty( $child_of ) ) {
 			unset( $settings['child_of'] );
-		} else if ( ("[current]" == $child_of ) || ("{current}" == $child_of ) )  {
+		} else if ( ( "[current]" == $child_of ) || ( "{current}" == $child_of ) )  {
 			$settings['child_of'] = "{current}";
 		} else {
 			$term = get_term_by( 'id', $new_instance['child_of'], 'document_category' );
@@ -259,15 +268,15 @@ class Documentation_Categories_Widget extends WP_Widget {
 
 	/**
 	 * Output admin widget options form
-	 * 
+	 *
 	 * @see WP_Widget::form()
 	 */
-	function form( $instance ) {
+	public function form( $instance ) {
 
 		extract( self::$defaults );
 
 		// title
-		$title = isset( $instance['title'] ) ? $instance['title'] : "";
+		$title = isset( $instance['title'] ) ? $instance['title'] : '';
 		echo '<p>';
 		echo sprintf( '<label title="%s">', sprintf( __( 'The widget title.', 'documentation' ) ) );
 		echo __( 'Title', 'documentation' );
@@ -289,7 +298,7 @@ class Documentation_Categories_Widget extends WP_Widget {
 			'<label title="%s">',
 			__( "Leave empty to show all categories. To show children of a specific category, indicate the category name, slug or ID. To show those of the current category, indicate: {current}.", 'documentation' )
 		);
-		echo __( 'Children of &hellip;', 'documentation' ); 
+		echo __( 'Children of &hellip;', 'documentation' );
 		echo '<input class="widefat" id="' . $this->get_field_id( 'child_of' ) . '" name="' . $this->get_field_name( 'child_of' ) . '" type="text" value="' . esc_attr( $child_of ) . '" />';
 		echo '</label>';
 		echo '<br/>';
@@ -330,7 +339,7 @@ class Documentation_Categories_Widget extends WP_Widget {
 		echo '</p>';
 
 		// orderby
-		$orderby = isset( $instance['orderby'] ) ? $instance['orderby'] : $orderby;
+		$orderby = isset( $instance['orderby'] ) ? $instance['orderby'] : '';
 		echo '<p>';
 		echo sprintf( '<label title="%s">', __( 'Sorting criteria.', 'documentation' ) );
 		echo __( 'Order by ...', 'documentation' );
@@ -344,7 +353,7 @@ class Documentation_Categories_Widget extends WP_Widget {
 		echo '</p>';
 
 		// order
-		$order = isset( $instance['order'] ) ? $instance['order'] : $order;
+		$order = isset( $instance['order'] ) ? $instance['order'] : '';
 		echo '<p>';
 		echo sprintf( '<label title="%s">', __( "Sort order.", 'documentation' ) );
 		echo __( 'Sort order', 'documentation' );
@@ -370,6 +379,7 @@ class Documentation_Categories_Widget extends WP_Widget {
 
 	/**
 	 * Render the widget.
+	 *
 	 * @param array $instance
 	 */
 	public static function render( $instance ) {

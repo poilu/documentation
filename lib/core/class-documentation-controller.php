@@ -13,7 +13,7 @@
  * GNU General Public License for more details.
  *
  * This header and all notices must be kept intact.
- * 
+ *
  * @author Karim Rahimpur
  * @package documentation
  * @since documentation 1.6.0

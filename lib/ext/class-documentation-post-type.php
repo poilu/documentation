@@ -28,6 +28,11 @@ if ( !defined( 'ABSPATH' ) ) {
  */
 class Documentation_Post_Type {
 
+	/**
+	 * Determines the the_content filter priority.
+	 *
+	 * @var int
+	 */
 	const THE_CONTENT_FILTER_PRIORITY = 0;
 
 	/**
@@ -131,7 +136,10 @@ class Documentation_Post_Type {
 
 	/**
 	 * Hooked on the post_updated_messages filter to customize messages for our document post type.
-	 * @param array $messages
+	 *
+	 * @param string[] $messages
+	 *
+	 * @return string[]
 	 */
 	public static function post_updated_messages( $messages ) {
 		global $post, $post_ID;
@@ -167,7 +175,7 @@ class Documentation_Post_Type {
 			3 => __( 'Custom field deleted.', 'documentation' ),
 			4 => __( 'Document updated.', 'documentation' ),
 			/* translators: %s: date and time of the revision */
-			5 => isset($_GET['revision']) ? sprintf( __( 'Document restored to revision from %s.', 'documentation' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+			5 => isset( $_GET['revision'] ) ? sprintf( __( 'Document restored to revision from %s.', 'documentation' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
 			6 => __( 'Document published.', 'documentation' ) . $view_post_link_html,
 			7 => __( 'Document saved.', 'documentation' ),
 			8 => __( 'Document submitted.', 'documentation' ) . $preview_post_link_html,
@@ -179,6 +187,7 @@ class Documentation_Post_Type {
 
 	/**
 	 * Returns true if the current or the indicated post is a document.
+	 *
 	 * @return boolean
 	 */
 	public static function is_document( $post = null ) {
@@ -199,7 +208,9 @@ class Documentation_Post_Type {
 
 	/**
 	 * Process data for post being saved.
+	 *
 	 * Currently not used.
+	 *
 	 * @param int $post_id
 	 * @param object $post
 	 */
@@ -216,9 +227,10 @@ class Documentation_Post_Type {
 
 	/**
 	 * Determine whether comments are open.
-	 * 
+	 *
 	 * @param boolean $open
 	 * @param int $post_id
+	 *
 	 * @return boolean
 	 */
 	public static function comments_open( $open, $post_id ) {
@@ -242,6 +254,7 @@ class Documentation_Post_Type {
 	 * "[[" is replaced by "&#91;" and "]]" is replaced by "&#93;".
 	 *
 	 * @param string $content
+	 *
 	 * @return string
 	 */
 	public static function the_content( $content ) {

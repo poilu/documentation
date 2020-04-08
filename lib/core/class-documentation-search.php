@@ -38,6 +38,9 @@ class Documentation_Search {
 	const ORDER         = 'order';
 	const ORDER_BY      = 'order_by';
 
+	/**
+	 * Registers action and shortcode handlers.
+	 */
 	public static function init() {
 		add_action( 'init', array( __CLASS__, 'wp_init' ) );
 		add_shortcode( 'documentation_search_form', array( __CLASS__, 'documentation_search_form' ) );
@@ -47,6 +50,9 @@ class Documentation_Search {
 
 	}
 
+	/**
+	 * Registers additional scripts to be loaded.
+	 */
 	public static function wp_enqueue_scripts() {
 		wp_register_script( 'typewatch', DOCUMENTATION_PLUGIN_URL . 'js/jquery.typewatch.js', array( 'jquery' ), DOCUMENTATION_CORE_VERSION, true );
 		wp_register_script( 'document-search', DOCUMENTATION_PLUGIN_URL . 'js/document-search.js', array( 'jquery', 'typewatch' ), DOCUMENTATION_CORE_VERSION, true );
@@ -55,6 +61,7 @@ class Documentation_Search {
 
 	/**
 	 * Handles a search request and renders results as JSON encoded string.
+	 *
 	 * @todo add order options
 	 */
 	public static function wp_init() {
@@ -166,9 +173,10 @@ class Documentation_Search {
 
 	/**
 	 * Sort helper using the i index.
-	 * 
+	 *
 	 * @param array $e1
 	 * @param array $e2
+	 *
 	 * @return int
 	 */
 	public static function usort( $e1, $e2 ) {
@@ -177,11 +185,12 @@ class Documentation_Search {
 
 	/**
 	 * Shortcode handler, renders a documentation search form.
-	 * 
+	 *
 	 * Enqueues required scripts and styles.
-	 * 
+	 *
 	 * @param array $atts order, order_by, title, excerpt, content, limit
 	 * @param array $content not used
+	 *
 	 * @return string form HTML
 	 */
 	public static function documentation_search_form( $atts = array(), $content = '' ) {
@@ -253,10 +262,10 @@ class Documentation_Search {
 
 		$output .= '<script type="text/javascript">';
 		$output .= 'if ( typeof jQuery !== "undefined" ) {';
-		$output .= 'jQuery(document).ready(function(){';
+		$output .= 'jQuery( document ).ready( function() {';
 		$output .= sprintf(
-			'jQuery("#%s").typeWatch( {
-				callback: function (value) { documentationSearch(\'%s\', \'%s\', \'%s\', \'%s\', value); },
+			'jQuery( "#%s" ).typeWatch( {
+				callback: function ( value ) { documentationSearch( \'%s\', \'%s\', \'%s\', \'%s\', value ); },
 				wait: 750,
 				highlight: true,
 				captureLength: 2

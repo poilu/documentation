@@ -1,7 +1,7 @@
 <?php
 /**
  * class-documentation-taxonomy.php
- * 
+ *
  * Copyright (c) 2013 "kento" Karim Rahimpur www.itthinx.com
  *
  * This code is released under the GNU General Public License.

@@ -28,6 +28,11 @@ if ( !defined( 'ABSPATH' ) ) {
  */
 class Documentation {
 
+	/**
+	 * Determines the plugin's options constant.
+	 *
+	 * @var string
+	 */
 	const OPTIONS = 'documentation_options';
 
 	/**
@@ -38,6 +43,7 @@ class Documentation {
 
 	/**
 	 * Get the plugin's options array.
+	 *
 	 * @return array
 	 */
 	public static function get_options() {
@@ -52,6 +58,7 @@ class Documentation {
 
 	/**
 	 * Set the plugin's options.
+	 *
 	 * @param array $data
 	 */
 	public static function set_options( $data ) {
