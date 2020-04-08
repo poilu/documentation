@@ -11,6 +11,7 @@
 * Added missing scopes on methods.
 * Improved several code sections for clarity.
 * Fixed the "Order by ..." option in the Document Children widget couldn't be changed.
+* Added the choice of "Order" to the "Order by ..." option of the Documents widget to allow documents listed as per their established order on the back end.
 
 = 1.7.0 =
 * WordPress 5.2 compatible.

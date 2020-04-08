@@ -45,7 +45,7 @@ class Documentation_Document_Hierarchy_Widget extends WP_Widget {
 	/**
 	 * Initialize.
 	 */
-	static function init() {
+	public static function init() {
 
 		self::$defaults = array(
 			'root_depth'               => 1,
@@ -78,7 +78,7 @@ class Documentation_Document_Hierarchy_Widget extends WP_Widget {
 	/**
 	 * Registers the widget.
 	 */
-	static function widgets_init() {
+	public static function widgets_init() {
 		register_widget( 'Documentation_Document_Hierarchy_Widget' );
 	}
 
@@ -92,14 +92,14 @@ class Documentation_Document_Hierarchy_Widget extends WP_Widget {
 	/**
 	 * Clears cached widget.
 	 */
-	static function cache_delete() {
+	public static function cache_delete() {
 		wp_cache_delete( self::$cache_id, self::$cache_flag );
 	}
 
 	/**
 	 * Enqueue styles if at least one widget is used.
 	 */
-	static function _wp_print_styles() {
+	public static function _wp_print_styles() {
 		global $wp_registered_widgets;
 		foreach ( $wp_registered_widgets as $widget ) {
 			if ( $widget['name'] == 'Document Hierarchy' ) {
@@ -115,7 +115,7 @@ class Documentation_Document_Hierarchy_Widget extends WP_Widget {
 	 * @see WP_Widget::widget()
 	 * @link http://codex.wordpress.org/Class_Reference/WP_Object_Cache
 	 */
-	function widget( $args, $instance ) {
+	public function widget( $args, $instance ) {
 		$cache = wp_cache_get( self::$cache_id, self::$cache_flag );
 		if ( ! is_array( $cache ) ) {
 			$cache = array();
@@ -155,7 +155,7 @@ class Documentation_Document_Hierarchy_Widget extends WP_Widget {
 	 *
 	 * @see WP_Widget::update()
 	 */
-	function update( $new_instance, $old_instance ) {
+	public function update( $new_instance, $old_instance ) {
 
 		global $wpdb;
 
@@ -194,10 +194,10 @@ class Documentation_Document_Hierarchy_Widget extends WP_Widget {
 	 *
 	 * @see WP_Widget::form()
 	 */
-	function form( $instance ) {
+	public function form( $instance ) {
 
 		// title
-		$title = isset( $instance['title'] ) ? $instance['title'] : "";
+		$title = isset( $instance['title'] ) ? $instance['title'] : '';
 		echo '<p>';
 		echo sprintf( '<label title="%s">', sprintf( __( 'The widget title.', 'documentation' ) ) );
 		echo __( 'Title', 'documentation' );
@@ -273,6 +273,7 @@ class Documentation_Document_Hierarchy_Widget extends WP_Widget {
 	/**
 	 * Render the widget.
 	 * @param array $instance
+	 *
 	 * @return string
 	 */
 	public static function render( $instance ) {

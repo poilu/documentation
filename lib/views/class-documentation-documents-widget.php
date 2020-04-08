@@ -63,12 +63,13 @@ class Documentation_Documents_Widget extends WP_Widget {
 	/**
 	 * Initialize.
 	 */
-	static function init() {
+	public static function init() {
 		self::$orderby_options = array(
 			'post_author'   => __( 'Author', 'documentation' ),
 			'post_date'     => __( 'Date', 'documentation' ),
 			'post_title'    => __( 'Title', 'documentation' ),
 			'comment_count' => __( 'Comment Count', 'documentation' ),
+			'menu_order'    => __( 'Order', 'documentation' )
 		);
 		self::$order_options = array(
 			'ASC'  => __( 'Ascending', 'documentation' ),
@@ -89,7 +90,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 	/**
 	 * Registers the widget.
 	 */
-	static function widgets_init() {
+	public static function widgets_init() {
 		register_widget( 'Documentation_Documents_Widget' );
 	}
 
@@ -103,14 +104,14 @@ class Documentation_Documents_Widget extends WP_Widget {
 	/**
 	 * Clears cached widget.
 	 */
-	static function cache_delete() {
+	public static function cache_delete() {
 		wp_cache_delete( self::$cache_id, self::$cache_flag );
 	}
 
 	/**
 	 * Enqueue styles if at least one widget is used.
 	 */
-	static function _wp_print_styles() {
+	public static function _wp_print_styles() {
 		global $wp_registered_widgets;
 		foreach ( $wp_registered_widgets as $widget ) {
 			if ( $widget['name'] == 'Documents' ) {
@@ -126,7 +127,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 	 * @see WP_Widget::widget()
 	 * @link http://codex.wordpress.org/Class_Reference/WP_Object_Cache
 	 */
-	function widget( $args, $instance ) {
+	public function widget( $args, $instance ) {
 		$cache = wp_cache_get( self::$cache_id, self::$cache_flag );
 		if ( ! is_array( $cache ) ) {
 			$cache = array();
@@ -166,7 +167,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 	 *
 	 * @see WP_Widget::update()
 	 */
-	function update( $new_instance, $old_instance ) {
+	public function update( $new_instance, $old_instance ) {
 
 		global $wpdb;
 
@@ -228,7 +229,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 	 *
 	 * @see WP_Widget::form()
 	 */
-	function form( $instance ) {
+	public function form( $instance ) {
 
 		extract( self::$defaults );
 
@@ -251,7 +252,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 		echo '</p>';
 
 		// orderby
-		$orderby = isset( $instance['orderby'] ) ? $instance['orderby'] : 'post_date';
+		$orderby = isset( $instance['orderby'] ) ? $instance['orderby'] : '';
 		echo '<p>';
 		echo sprintf( '<label title="%s">', __( 'Sorting criteria.', 'documentation' ) );
 		echo __( 'Order by ...', 'documentation' );
@@ -265,7 +266,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 		echo '</p>';
 
 		// order
-		$order = isset( $instance['order'] ) ? $instance['order'] : 'DESC';
+		$order = isset( $instance['order'] ) ? $instance['order'] : '';
 		echo '<p>';
 		echo sprintf( '<label title="%s">', __( "Sort order.", 'documentation' ) );
 		echo __( 'Sort order', 'documentation' );
@@ -331,6 +332,13 @@ class Documentation_Documents_Widget extends WP_Widget {
 		echo '</p>';
 	}
 
+	/**
+	 * Returns the rendered instance.
+	 *
+	 * @param array $instance
+	 *
+	 * @return string
+	 */
 	public static function render( $instance ) {
 
 		unset( $instance['title'] ); // remove so that get_posts() used in our render() doesn't filter posts by title

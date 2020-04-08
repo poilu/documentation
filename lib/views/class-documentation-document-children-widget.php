@@ -271,7 +271,7 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 		extract( self::$defaults );
 
 		// title
-		$title = isset( $instance['title'] ) ? $instance['title'] : "";
+		$title = isset( $instance['title'] ) ? $instance['title'] : '';
 		echo '<p>';
 		echo sprintf( '<label title="%s">', sprintf( __( 'The widget title.', 'documentation' ) ) );
 		echo __( 'Title', 'documentation' );
