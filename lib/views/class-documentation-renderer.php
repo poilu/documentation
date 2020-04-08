@@ -406,7 +406,7 @@ class Documentation_Renderer {
 		$defaults = array(
 			'depth' => 0,
 			'show_date' => '',
-			'date_format' => get_option('date_format'),
+			'date_format' => get_option( 'date_format' ),
 			'child_of' => 0,
 			'exclude' => '',
 			'title_li' => __( 'Documents', 'documentation' ),
@@ -435,7 +435,7 @@ class Documentation_Renderer {
 		$r['hierarchical'] = 0;
 		$pages = get_pages( $r );
 
-		if ( !empty($pages) ) {
+		if ( !empty( $pages ) ) {
 			if ( $r['title_li'] ) {
 				$output .= '<li class="pagenav">' . $r['title_li'] . '<ul>';
 			}

@@ -253,10 +253,10 @@ class Documentation_Search {
 
 		$output .= '<script type="text/javascript">';
 		$output .= 'if ( typeof jQuery !== "undefined" ) {';
-		$output .= 'jQuery(document).ready(function(){';
+		$output .= 'jQuery( document ).ready( function() {';
 		$output .= sprintf(
-			'jQuery("#%s").typeWatch( {
-				callback: function (value) { documentationSearch(\'%s\', \'%s\', \'%s\', \'%s\', value); },
+			'jQuery( "#%s" ).typeWatch( {
+				callback: function ( value ) { documentationSearch( \'%s\', \'%s\', \'%s\', \'%s\', value ); },
 				wait: 750,
 				highlight: true,
 				captureLength: 2

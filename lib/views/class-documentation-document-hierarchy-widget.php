@@ -66,7 +66,7 @@ class Documentation_Document_Hierarchy_Widget extends WP_Widget {
 
 		// @todo we don't need these unless the comment counts are displayed
 // 		if ( !has_action( 'comment_post', array( __CLASS__, 'cache_delete' ) ) ) {
-// 			add_action( 'comment_post', array(__CLASS__, 'cache_delete' ) );
+// 			add_action( 'comment_post', array( __CLASS__, 'cache_delete' ) );
 // 		}
 // 		if ( !has_action( 'transition_comment_status', array( __CLASS__, 'cache_delete' ) ) ) {
 // 			add_action( 'transition_comment_status', array( __CLASS__, 'cache_delete' ) );

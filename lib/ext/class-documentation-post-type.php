@@ -167,7 +167,7 @@ class Documentation_Post_Type {
 			3 => __( 'Custom field deleted.', 'documentation' ),
 			4 => __( 'Document updated.', 'documentation' ),
 			/* translators: %s: date and time of the revision */
-			5 => isset($_GET['revision']) ? sprintf( __( 'Document restored to revision from %s.', 'documentation' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+			5 => isset( $_GET['revision'] ) ? sprintf( __( 'Document restored to revision from %s.', 'documentation' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
 			6 => __( 'Document published.', 'documentation' ) . $view_post_link_html,
 			7 => __( 'Document saved.', 'documentation' ),
 			8 => __( 'Document submitted.', 'documentation' ) . $preview_post_link_html,

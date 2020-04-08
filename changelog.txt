@@ -2,6 +2,10 @@
 
 = 1.8.0 =
 * WordPress 5.4 compatible.
+* Updated plugin tags.
+* Updated minimum required WordPress version to 5.0.
+* Improved code formattting.
+* Updated various links.
 
 = 1.7.0 =
 * WordPress 5.2 compatible.

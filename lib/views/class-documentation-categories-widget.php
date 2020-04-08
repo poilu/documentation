@@ -89,7 +89,7 @@ class Documentation_Categories_Widget extends WP_Widget {
 // 			add_action( 'wp_print_styles', array( __CLASS__, '_wp_print_styles' ) );
 // 		}
 		if ( !has_action( 'comment_post', array( __CLASS__, 'cache_delete' ) ) ) {
-			add_action( 'comment_post', array(__CLASS__, 'cache_delete' ) );
+			add_action( 'comment_post', array( __CLASS__, 'cache_delete' ) );
 		}
 		if ( !has_action( 'transition_comment_status', array( __CLASS__, 'cache_delete' ) ) ) {
 			add_action( 'transition_comment_status', array( __CLASS__, 'cache_delete' ) );
@@ -199,7 +199,7 @@ class Documentation_Categories_Widget extends WP_Widget {
 		$child_of = $new_instance['child_of'];
 		if ( empty( $child_of ) ) {
 			unset( $settings['child_of'] );
-		} else if ( ("[current]" == $child_of ) || ("{current}" == $child_of ) )  {
+		} else if ( ( "[current]" == $child_of ) || ( "{current}" == $child_of ) )  {
 			$settings['child_of'] = "{current}";
 		} else {
 			$term = get_term_by( 'id', $new_instance['child_of'], 'document_category' );

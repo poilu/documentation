@@ -56,7 +56,7 @@ class Documentation_Walker_Document extends Walker {
 	 * @param array $args
 	 */
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
-		$indent = str_repeat("\t", $depth);
+		$indent = str_repeat( "\t", $depth );
 		$output .= "\n$indent<ul class='children'>\n";
 	}
 
@@ -69,7 +69,7 @@ class Documentation_Walker_Document extends Walker {
 	 * @param array $args
 	 */
 	function end_lvl( &$output, $depth = 0, $args = array() ) {
-		$indent = str_repeat("\t", $depth);
+		$indent = str_repeat( "\t", $depth );
 		$output .= "$indent</ul>\n";
 	}
 
@@ -85,17 +85,17 @@ class Documentation_Walker_Document extends Walker {
 	 */
 	function start_el( &$output, $page, $depth = 0, $args = array(), $current_page = 0 ) {
 		if ( $depth )
-			$indent = str_repeat("\t", $depth);
+			$indent = str_repeat( "\t", $depth );
 		else
 			$indent = '';
 
-		extract($args, EXTR_SKIP);
-		$css_class = array('page_item', 'page-item-'.$page->ID);
+		extract( $args, EXTR_SKIP );
+		$css_class = array( 'page_item', 'page-item-' . $page->ID );
 
 		if( isset( $args['pages_with_children'][ $page->ID ] ) )
 			$css_class[] = 'page_item_has_children';
 
-		if ( !empty($current_page) ) {
+		if ( !empty( $current_page ) ) {
 			$_current_page = get_post( $current_page );
 			if ( in_array( $page->ID, $_current_page->ancestors ) )
 				$css_class[] = 'current_page_ancestor';
@@ -103,7 +103,7 @@ class Documentation_Walker_Document extends Walker {
 				$css_class[] = 'current_page_item';
 			elseif ( $_current_page && $page->ID == $_current_page->post_parent )
 				$css_class[] = 'current_page_parent';
-		} elseif ( $page->ID == get_option('page_for_posts') ) {
+		} elseif ( $page->ID == get_option( 'page_for_posts' ) ) {
 			$css_class[] = 'current_page_parent';
 		}
 
@@ -115,13 +115,13 @@ class Documentation_Walker_Document extends Walker {
 		/** This filter is documented in wp-includes/post-template.php */
 		$output .= $indent . '<li class="' . $css_class . '"><a href="' . get_permalink($page->ID) . '">' . $link_before . apply_filters( 'the_title', $page->post_title, $page->ID ) . $link_after . '</a>';
 
-		if ( !empty($show_date) ) {
+		if ( !empty( $show_date ) ) {
 			if ( 'modified' == $show_date )
 				$time = $page->post_modified;
 			else
 				$time = $page->post_date;
 
-			$output .= " " . mysql2date($date_format, $time);
+			$output .= " " . mysql2date( $date_format, $time );
 		}
 	}
 

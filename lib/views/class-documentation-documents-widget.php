@@ -200,7 +200,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 		$category_id = trim( $new_instance['category_id'] );
 		if ( empty( $category_id ) ) {
 			unset( $settings['category_id'] );
-		} else if ( ("[current]" == $category_id ) || ("{current}" == $category_id ) )  {
+		} else if ( ( "[current]" == $category_id ) || ( "{current}" == $category_id ) )  {
 			$settings['category_id'] = "{current}";
 		} else if ( $category = get_term( $category_id, 'document_category' ) && !is_wp_error( $category ) ) { 
 			$settings['category_id'] = $category_id;
@@ -383,14 +383,14 @@ class Documentation_Documents_Widget extends WP_Widget {
 			foreach( $documents as $document ) {
 				$author = '';
 				if ( $show_author ) {
-					$author = ' ' . sprintf( '<span class="author">by %s</span>', get_the_author_meta('display_name', $document->post_author ) );
+					$author = ' ' . sprintf( '<span class="author">by %s</span>', get_the_author_meta( 'display_name', $document->post_author ) );
 					// get_author_posts_url( $document->post_author )
 				}
 				$date = '';
 				if ( $show_date ) {
 					$date = sprintf(
 						', <span class="date">%s</span>',
-						mysql2date( get_option('date_format'), $document->post_date )
+						mysql2date( get_option( 'date_format' ), $document->post_date )
 					);
 				}
 				$comment_count = '';

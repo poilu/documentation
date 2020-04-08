@@ -9,7 +9,7 @@
  * Donate-Link: http://www.itthinx.com
  * License: GPLv3
  * 
- * Copyright (c) 2013 - 2019 "kento" Karim Rahimpur www.itthinx.com
+ * Copyright (c) 2013 - 2020 "kento" Karim Rahimpur www.itthinx.com
  * 
  * This code is released under the GNU General Public License Version 3.
  * The following additional terms apply to all files as per section

@@ -1,8 +1,8 @@
 === Documentation ===
 Contributors: itthinx
-Donate link: http://www.itthinx.com/plugins/documentation
-Tags: doc, docs, document, documents, documentation, manual, manuals, platform, system, wiki, wikis, woocommerce
-Requires at least: 4.6
+Donate link: https://www.itthinx.com/plugins/documentation
+Tags: documentation, document, documents, woocommerce, wiki, manual, manuals
+Requires at least: 5.0
 Tested up to: 5.4
 Requires PHP: 5.6.0
 Stable tag: 1.8.0
@@ -18,7 +18,7 @@ Leveraging WordPress' framework and internal structures, the system provides a c
 Documents are complemented by their dedicated document categories and document tags, which allows to keep the documentation structures separate from the more blog-oriented posts or CMS-like pages.
 It can be used to build a dedicated documentation site, a subsite for documentation in a multisite network or other creative deployments.
 
-Documents can be attached to products in WooCommerce using [WooCommerce Documentation](http://www.itthinx.com/plugins/woocommerce-documentation/).
+Documents can be attached to products in WooCommerce using [WooCommerce Documentation](https://www.itthinx.com/shop/woocommerce-documentation/).
 
 ### Widgets ###
 
@@ -43,7 +43,7 @@ The following shortcodes are available:
 
 You should have a look at these tools. They will help you get the most out of this Documentation Management System.
 
-- [WooCommerce Documentation](http://www.itthinx.com/shop/woocommerce-documentation/) This extension for WooCommerce and the Documentation plugin for WordPress allows to link documentation pages to products and display them automatically on the product pages.
+- [WooCommerce Documentation](https://www.itthinx.com/shop/woocommerce-documentation/) This extension for WooCommerce and the Documentation plugin for WordPress allows to link documentation pages to products and display them automatically on the product pages.
 - [Groups](https://wordpress.org/plugins/groups/) Groups is designed as an efficient, powerful and flexible solution for group-oriented memberships and content access control. Use it to control who can view documents and more.
 - [Groups Restrict Categories](https://www.itthinx.com/shop/groups-restrict-categories/) An extension based on Groups, provides access restrictions for categories and tags, custom post types and taxonomies. Very useful to restrict whole sets of documents based on their document categories or tags.
 - [Search Live](https://wordpress.org/plugins/search-live/) Search Live supplies effective integrated live search facilities and advanced search features. Makes it really easy to find the desired documents.
@@ -54,19 +54,20 @@ You should have a look at these tools. They will help you get the most out of th
 
 ### Documentation ###
 
-Please refer to the [documentation](http://docs.itthinx.com/document/documentation/) pages for details.
+Please refer to the [documentation](https://docs.itthinx.com/document/documentation/) pages for details.
+The site uses the [Documentation](https://wordpress.org/plugins/documentation/) plugin and is a good example of deployment, with an extensive set of documentation sections and pages.
 
 ### Feedback ###
 
 Feedback is welcome!
 
-If you need help, have problems, want to leave feedback or want to provide constructive criticism, please do so here at the [Documentation plugin page](http://www.itthinx.com/plugins/documentation/).
+If you need help, have problems, want to leave feedback or want to provide constructive criticism, please do so here at the [Documentation plugin page](https://www.itthinx.com/plugins/documentation/).
 
 Please try to solve problems there before you rate this plugin or say it doesn't work. There goes a _lot_ of work into providing you with free quality plugins! Please appreciate that and help with your feedback. Thanks!
 
 #### Twitter ####
 
-Follow [@itthinx](http://twitter.com/itthinx) on Twitter for updates on this and other plugins.
+Follow [@itthinx](https://twitter.com/itthinx) on Twitter for updates on this and other plugins.
 
 == Installation ==
 
@@ -77,7 +78,7 @@ Follow [@itthinx](http://twitter.com/itthinx) on Twitter for updates on this and
 
 = Where is the documentation? =
 
-The documentation pages are [here](http://www.itthinx.com/documentation/documentation/).
+The documentation pages are [here](https://www.itthinx.com/documentation/documentation/) and we obviously use our [Documentation](https://wordpress.org/plugins/documentation/) plugin to maintain them.
 
 == Screenshots ==
 
