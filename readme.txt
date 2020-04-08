@@ -12,11 +12,14 @@ A documentation management system.
 
 == Description ==
 
-_Documentation_ is intended to provide sound basic structures for a Documentation Management System.
+[Documentation](https://www.itthinx.com/plugins/documentation/) provides sound structures and tools to maintain a Documentation Management System based on WordPress.
 
 Leveraging WordPress' framework and internal structures, the system provides a completely new section to manage documents independently from normal posts or pages.
 Documents are complemented by their dedicated document categories and document tags, which allows to keep the documentation structures separate from the more blog-oriented posts or CMS-like pages.
 It can be used to build a dedicated documentation site, a subsite for documentation in a multisite network or other creative deployments.
+
+See our [documentation portal](http://docs.itthinx.com) for an example where we use the system to maintain a considerable amount of documentation for our tools.
+Simple to use, yet powerful to maintain even thousands of documentation pages.
 
 Documents can be attached to products in WooCommerce using [WooCommerce Documentation](https://www.itthinx.com/shop/woocommerce-documentation/).
 

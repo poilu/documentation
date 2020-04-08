@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Documentation
  * Plugin URI: http://www.itthinx.com/plugins/documentation
- * Description: A documentation management system.
+ * Description: A Documentation Management System.
  * Version: 1.8.0
  * Author: itthinx
  * Author URI: http://www.itthinx.com
