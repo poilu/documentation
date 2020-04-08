@@ -146,6 +146,11 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 			return;
 		}
 
+		$before_widget = '';
+		$after_widget  = '';
+		$before_title  = '';
+		$after_title   = '';
+
 		extract( $args );
 
 		$title = apply_filters( 'widget_title', $instance['title'] );
@@ -179,15 +184,17 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 
 		// title
 		$settings['title'] = strip_tags( $new_instance['title'] );
-		
+
 		// child of ...
 		$child_of = $new_instance['child_of'];
 		if ( empty( $child_of ) ) {
 			unset( $settings['child_of'] );
 		} else if ( ( "[current]" == $child_of ) || ( "{current}" == $child_of ) )  {
 			$settings['child_of'] = "{current}";
-		} else if ( $post = get_post( $child_of ) && ( $post !== null ) ) {
-			$settings['child_of'] = $child_of;
+		} else if ( $post = get_post( $child_of ) ) {
+			if ( $post !== null ) {
+				$settings['child_of'] = $child_of;
+			}
 		}
 
 		// depth
@@ -250,16 +257,18 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 
 		return $settings;
 	}
-	
+
 	/**
 	 * Output admin widget options form
 	 *
 	 * @see WP_Widget::form()
 	 */
 	function form( $instance ) {
-		
+
+		$sort_column = 'menu_order,post_title'; // for declaration, but extracted next
+
 		extract( self::$defaults );
-		
+
 		// title
 		$title = isset( $instance['title'] ) ? $instance['title'] : "";
 		echo '<p>';
@@ -268,7 +277,7 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 		echo '<input class="widefat" id="' . $this->get_field_id( 'title' ) . '" name="' . $this->get_field_name( 'title' ) . '" type="text" value="' . esc_attr( $title ) . '" />';
 		echo '</label>';
 		echo '</p>';
-		
+
 		// child of
 		$child_of = '';
 		if ( isset( $instance['child_of'] ) ) {
@@ -293,7 +302,7 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 			echo '<span class="description"> ' . sprintf( __( "Document: <em>%s</em>", 'documentation' ) , wp_strip_all_tags( $post->post_title ) ) . '</span>';
 		}
 		echo '</p>';
-		
+
 		// depth
 		$depth = isset( $instance['depth'] ) ? intval( $instance['depth'] ) : '';
 		echo '<p>';
@@ -302,7 +311,7 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 		echo '<input class="widefat" id="' . $this->get_field_id( 'depth' ) . '" name="' . $this->get_field_name( 'depth' ) . '" type="text" value="' . esc_attr( $depth ) . '" />';
 		echo '</label>';
 		echo '</p>';
-		
+
 		// orderby
 // 		$orderby = isset( $instance['orderby'] ) ? $instance['orderby'] : '';
 // 		echo '<p>';
@@ -316,7 +325,7 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 // 		echo '</select>';
 // 		echo '</label>';
 // 		echo '</p>';
-		
+
 		$sort_columns = isset( $instance['sort_columns'] ) ? $instance['sort_columns'] : '';
 		echo '<p>';
 		echo sprintf( '<label title="%s" >', __( "Sorting criteria, one or more options separated by comma. Possible choices are post_title, menu_order, post_date, post_modified, ID, post_author and post_name.", 'documentation' ) );
@@ -363,7 +372,7 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 		echo __( 'Show author', 'documentation' );
 		echo '</label>';
 		echo '</p>';
-		
+
 		// show_date
 		$checked = ( ( ( !isset( $instance['show_date'] ) && self::$defaults['show_date'] ) || ( isset( $instance['show_date'] ) && ( $instance['show_date'] === true ) ) ) ? 'checked="checked"' : '' );
 		echo '<p>';

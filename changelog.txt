@@ -5,7 +5,11 @@
 * Updated plugin tags.
 * Updated minimum required WordPress version to 5.0.
 * Updated various links.
-* Cleaned up various code and documentation formatting.
+* Cleaned up code and documentation formatting.
+* Added missing code documentation.
+* Added missing variable declarations.
+* Added missing scopes on methods.
+* Improved several code sections for clarity.
 
 = 1.7.0 =
 * WordPress 5.2 compatible.

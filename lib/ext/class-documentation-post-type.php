@@ -28,6 +28,11 @@ if ( !defined( 'ABSPATH' ) ) {
  */
 class Documentation_Post_Type {
 
+	/**
+	 * Determines the the_content filter priority.
+	 *
+	 * @var int
+	 */
 	const THE_CONTENT_FILTER_PRIORITY = 0;
 
 	/**
@@ -131,7 +136,10 @@ class Documentation_Post_Type {
 
 	/**
 	 * Hooked on the post_updated_messages filter to customize messages for our document post type.
-	 * @param array $messages
+	 *
+	 * @param string[] $messages
+	 *
+	 * @return string[]
 	 */
 	public static function post_updated_messages( $messages ) {
 		global $post, $post_ID;
@@ -179,6 +187,7 @@ class Documentation_Post_Type {
 
 	/**
 	 * Returns true if the current or the indicated post is a document.
+	 *
 	 * @return boolean
 	 */
 	public static function is_document( $post = null ) {
@@ -199,7 +208,9 @@ class Documentation_Post_Type {
 
 	/**
 	 * Process data for post being saved.
+	 *
 	 * Currently not used.
+	 *
 	 * @param int $post_id
 	 * @param object $post
 	 */
@@ -219,6 +230,7 @@ class Documentation_Post_Type {
 	 *
 	 * @param boolean $open
 	 * @param int $post_id
+	 *
 	 * @return boolean
 	 */
 	public static function comments_open( $open, $post_id ) {
@@ -242,6 +254,7 @@ class Documentation_Post_Type {
 	 * "[[" is replaced by "&#91;" and "]]" is replaced by "&#93;".
 	 *
 	 * @param string $content
+	 *
 	 * @return string
 	 */
 	public static function the_content( $content ) {

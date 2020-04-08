@@ -125,6 +125,11 @@ class Documentation_Document_Hierarchy_Widget extends WP_Widget {
 			return;
 		}
 
+		$before_widget = '';
+		$after_widget  = '';
+		$before_title  = '';
+		$after_title   = '';
+
 		extract( $args );
 
 		$title = apply_filters( 'widget_title', $instance['title'] );

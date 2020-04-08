@@ -136,6 +136,11 @@ class Documentation_Documents_Widget extends WP_Widget {
 			return;
 		}
 
+		$before_widget = '';
+		$after_widget  = '';
+		$before_title  = '';
+		$after_title   = '';
+
 		extract( $args );
 
 		$title = apply_filters( 'widget_title', $instance['title'] );
@@ -202,8 +207,10 @@ class Documentation_Documents_Widget extends WP_Widget {
 			unset( $settings['category_id'] );
 		} else if ( ( "[current]" == $category_id ) || ( "{current}" == $category_id ) )  {
 			$settings['category_id'] = "{current}";
-		} else if ( $category = get_term( $category_id, 'document_category' ) && !is_wp_error( $category ) ) {
-			$settings['category_id'] = $category_id;
+		} else if ( $category = get_term( $category_id, 'document_category' ) ) {
+			if ( !is_wp_error( $category ) ) {
+				$settings['category_id'] = $category_id;
+			}
 		}
 
 		// show ...
@@ -244,7 +251,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 		echo '</p>';
 
 		// orderby
-		$orderby = isset( $instance['orderby'] ) ? $instance['orderby'] : $orderby;
+		$orderby = isset( $instance['orderby'] ) ? $instance['orderby'] : 'post_date';
 		echo '<p>';
 		echo sprintf( '<label title="%s">', __( 'Sorting criteria.', 'documentation' ) );
 		echo __( 'Order by ...', 'documentation' );
@@ -258,7 +265,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 		echo '</p>';
 
 		// order
-		$order = isset( $instance['order'] ) ? $instance['order'] : $order;
+		$order = isset( $instance['order'] ) ? $instance['order'] : 'DESC';
 		echo '<p>';
 		echo sprintf( '<label title="%s">', __( "Sort order.", 'documentation' ) );
 		echo __( 'Sort order', 'documentation' );
