@@ -43,9 +43,8 @@ class Documentation_Controller {
 		require_once DOCUMENTATION_CORE_LIB . '/class-documentation.php';
 		require_once DOCUMENTATION_EXT_LIB . '/class-documentation-post-type.php';
 		require_once DOCUMENTATION_EXT_LIB . '/class-documentation-taxonomy.php';
-		if ( !is_admin() ) {
-			require_once DOCUMENTATION_VIEWS_LIB . '/class-documentation-shortcodes.php';
-		} else {
+		require_once DOCUMENTATION_VIEWS_LIB . '/class-documentation-shortcodes.php';
+		if ( is_admin() ) {
 			require_once DOCUMENTATION_ADMIN_LIB . '/class-documentation-settings.php';
 			require_once DOCUMENTATION_ADMIN_LIB . '/class-documentation-add-ons.php';
 		}
