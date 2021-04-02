@@ -1,5 +1,8 @@
 == Documentation plugin by itthinx - changelog.txt ==
 
+= 1.9.0 =
+* WordPress 5.7 compatible.
+
 = 1.8.1 =
 * Fixes a PHP Fatal error that can occur in certain configurations when trying to create a new post.
 
