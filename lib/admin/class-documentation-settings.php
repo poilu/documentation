@@ -88,11 +88,11 @@ class Documentation_Settings {
 		echo '</div>'; // .documentation-settings
 
 		echo '<div class="documentation-settings-info">';
-		echo __( 'Documents can be attached to products in WooCommerce using the <a href="http://www.itthinx.com/shop/woocommerce-documentation/">WooCommerce Documentation</a> extension.', 'documentation' );
+		echo __( 'Documents can be attached to products in WooCommerce using the <a href="https://www.itthinx.com/shop/woocommerce-documentation/">WooCommerce Documentation</a> extension.', 'documentation' );
 		echo '</div>'; // .documentation-settings-info
 
 		echo '<div class="documentation-documentation-info">';
-		echo __( 'For details on the usage of this documentation system, please visit the <a href="http://docs.itthinx.com/document/documentation/">Documentation</a> pages.', 'documentation' );
+		echo __( 'For details on the usage of this documentation system, please visit the <a href="https://docs.itthinx.com/document/documentation/">Documentation</a> pages.', 'documentation' );
 		echo '</div>'; // .documentation-documentation-info
 	}
 
@@ -106,7 +106,7 @@ class Documentation_Settings {
 	public static function admin_settings_link( $links ) {
 		if ( current_user_can( self::$capability ) ) {
 			$links[] = '<a href="' . get_admin_url( null, 'admin.php?page=documentation-settings' ) . '">' . __( 'Settings', 'documentation' ) . '</a>';
-			$links[] = '<a href="http://docs.itthinx.com/document/documentation/">' . __( 'Documentation', 'documentation' ) . '</a>';
+			$links[] = '<a href="https://docs.itthinx.com/document/documentation/">' . __( 'Documentation', 'documentation' ) . '</a>';
 		}
 		return $links;
 	}

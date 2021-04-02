@@ -1,15 +1,15 @@
 <?php
 /**
  * Plugin Name: Documentation
- * Plugin URI: http://www.itthinx.com/plugins/documentation
+ * Plugin URI: https://www.itthinx.com/plugins/documentation
  * Description: A Documentation Management System.
- * Version: 1.8.1
+ * Version: 1.9.0
  * Author: itthinx
- * Author URI: http://www.itthinx.com
- * Donate-Link: http://www.itthinx.com
+ * Author URI: https://www.itthinx.com
+ * Donate-Link: https://www.itthinx.com/shop/
  * License: GPLv3
  *
- * Copyright (c) 2013 - 2020 "kento" Karim Rahimpur www.itthinx.com
+ * Copyright (c) 2013 - 2021 "kento" Karim Rahimpur www.itthinx.com
  *
  * This code is released under the GNU General Public License Version 3.
  * The following additional terms apply to all files as per section
@@ -54,7 +54,7 @@ if ( !defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'DOCUMENTATION_CORE_VERSION', '1.8.1' );
+define( 'DOCUMENTATION_CORE_VERSION', '1.9.0' );
 define( 'DOCUMENTATION_PLUGIN_FILE', __FILE__ );
 define( 'DOCUMENTATION_PLUGIN_DOMAIN', 'documentation' );
 define( 'DOCUMENTATION_PLUGIN_URL', plugin_dir_url( DOCUMENTATION_PLUGIN_FILE ) );
