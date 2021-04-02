@@ -2,6 +2,9 @@
 
 = 1.9.0 =
 * WordPress 5.7 compatible.
+* Updated http:// links to use https:// where appropriate.
+* Updated copyright.
+* Updated Add-Ons.
 
 = 1.8.1 =
 * Fixes a PHP Fatal error that can occur in certain configurations when trying to create a new post.

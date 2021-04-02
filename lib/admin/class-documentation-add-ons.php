@@ -98,7 +98,7 @@ class Documentation_Add_Ons {
 				'title'   => 'WooCommerce Documentation',
 				'content' => 'This extension for WooCommerce and the Documentation plugin for WordPress allows to link documentation pages to products and display them automatically on the product pages.',
 				'image'   => DOCUMENTATION_PLUGIN_URL. 'images/add-ons/woocommerce-documentation.png',
-				'url'     => 'http://www.itthinx.com/shop/woocommerce-documentation/',
+				'url'     => 'https://www.itthinx.com/shop/woocommerce-documentation/',
 				'index'   => 100
 			),
 			'groups' => array(
@@ -106,6 +106,13 @@ class Documentation_Add_Ons {
 				'content' => 'Groups is designed as an efficient, powerful and flexible solution for group-oriented memberships and content access control. Use it to control who can view documents and more.',
 				'image'   => DOCUMENTATION_PLUGIN_URL . 'images/add-ons/groups.png',
 				'url'     => 'https://wordpress.org/plugins/groups/',
+				'index'   => 100
+			),
+			'groups-drip-content' => array(
+				'title'   => 'Groups Drip Content',
+				'content' => 'This extension for WordPress is used to release content on a schedule. It can be used with the popular Groups membership solution or without it. Content dripping can be based on user account creation, group memberships and specific dates and times.',
+				'image'   => DOCUMENTATION_PLUGIN_URL . 'images/add-ons/groups-drip-content.png',
+				'url'     => 'https://www.itthinx.com/shop/groups-drip-content/',
 				'index'   => 100
 			),
 			'groups-restrict-categories' => array(
@@ -187,14 +194,14 @@ class Documentation_Add_Ons {
 					'title'   => 'Affiliates Pro',
 					'content' => 'Boost Sales with the best Affiliate Marketing for your WordPress site.',
 					'image'   => DOCUMENTATION_PLUGIN_URL. 'images/add-ons/affiliates-pro.png',
-					'url'     => 'http://www.itthinx.com/shop/affiliates-pro/',
+					'url'     => 'https://www.itthinx.com/shop/affiliates-pro/',
 					'index'   => 200
 				),
 				'affiliates-enterprise' => array(
 					'title'   => 'Affiliates Enterprise',
 					'content' => 'Affiliates Enterprise provides an even more advanced affiliate management system for sellers, shops and developers, who want to boost sales with their own affiliate program. Features affiliate campaigns, tracking pixels and multiple tiers.',
 					'image'   => DOCUMENTATION_PLUGIN_URL. 'images/add-ons/affiliates-enterprise.png',
-					'url'     => 'http://www.itthinx.com/shop/affiliates-enterprise/',
+					'url'     => 'https://www.itthinx.com/shop/affiliates-enterprise/',
 					'index'   => 300
 				),
 		);
