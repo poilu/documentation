@@ -2,6 +2,9 @@
 
 = 1.10.0 =
 * WordPress 5.8 compatible.
+* Added support for the category attribute to the [documentation_documents] shortcode which takes one or more document category slugs, names or IDs separated by comma.
+* Added support for multiple IDs to the category_id attribute of the [documentation_documents] shortcode.
+* Added support for the category_children attribute of the [documentation_documents] shortcode, which allows to include document related to child categories of the given categories.
 
 = 1.9.0 =
 * WordPress 5.7 compatible.
