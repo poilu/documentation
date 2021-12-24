@@ -42,19 +42,24 @@ class Documentation_Renderer {
 
 		$atts = shortcode_atts(
 			array(
-				'category_id' => null,
+				'category_id'        => null,
+				'category'           => null,
 				'number'             => -1, // unlimited
 				'order'              => 'ASC',
 				'orderby'            => 'title',
 				'show_author'        => 'no',
 				'show_comment_count' => 'no',
-				'show_date'          => 'no'
+				'show_date'          => 'no',
+				'category_children'  => 'no'
 			),
 			$atts
 		);
 		
 		foreach( $atts as $key => $value ) {
 			switch( $key ) {
+				case 'category' :
+						$value = implode( ',', array_map( 'trim', explode( ',', $value ) ) );
+					break;
 				case 'category_id' :
 					if ( $value != '[current]' && $value != '{current}' ) {
 						$value = implode( ',', array_map( 'intval', explode( ',', $value ) ) );
@@ -97,6 +102,7 @@ class Documentation_Renderer {
 				case 'show_author' :
 				case 'show_comment_count' :
 				case 'show_date' :
+				case 'category_children' :
 					$value = strtolower( $value );
 					$value = $value == 'true' || $value == 'yes' || $value == '1';
 					break;
@@ -126,9 +132,32 @@ class Documentation_Renderer {
 		$show_comment_count = isset( $args['show_comment_count'] ) && $args['show_comment_count'];
 		unset( $args['show_comment_count'] );
 
+		$include_children = isset( $args['category_children'] ) && $args['category_children'];
+		unset( $args['category_children'] );
+
 		// dumb but post_title won't work
 		if ( isset( $args['orderby'] ) && ( $args['orderby'] == 'post_title' ) ) {
 			$args['orderby'] = 'title';
+		}
+
+		if ( !empty( $args['category'] ) ) {
+			if ( ( $args['category'] == '[current]' ) || $args['category'] == '{current}' ) {
+				$args['category_id'] = $args['category'];
+			} else {
+				$category_ids = array();
+				$categories = explode( ',', $args['category'] );
+				foreach ( $categories as $category ) {
+					foreach ( array( 'slug', 'name', 'term_id' ) as $field ) {
+						$term = get_term_by( $field, $category, 'document_category' );
+						if ( $term instanceof WP_Term ) {
+							$category_ids[] = intval( $term->term_id );
+							break;
+						}
+					}
+				}
+				$args['category_id'] = $category_ids;
+				unset( $args['category'] );
+			}
 		}
 
 		if ( !empty( $args['category_id'] ) ) {
@@ -137,19 +166,21 @@ class Documentation_Renderer {
 				global $wp_query;
 				if ( $o = $wp_query->get_queried_object() ) {
 					if ( isset( $o->taxonomy ) && ( $o->taxonomy == 'document_category' ) ) {
-						$category_id = $o->term_id;
+						$category_id = array( intval( $o->term_id ) );
 					}
 				}
 			} else {
-				$category_id = $args['category_id'];
+				$category_id = array_map( 'intval', array_map( 'trim', explode( ',', $args['category_id'] ) ) );
 			}
 			if ( $category_id ) {
 				$args['tax_query'] = array(
 					array(
 						'taxonomy'         => 'document_category',
-						'field'            => 'id',
+						'field'            => 'term_id',
 						'terms'            => $category_id,
-						'include_children' => false
+						'include_children' => $include_children,
+						'operator'         => 'IN', // this is the default but let's be explicit
+						'relation'         => 'OR'
 					)
 				);
 			}
