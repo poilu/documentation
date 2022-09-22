@@ -2,6 +2,7 @@
 
 = 1.11.0 =
 * WordPress 6.0 compatible.
+* Fixed PHP 8.x compatibility with instances of deprecated passing null to explode() instead of string.
 
 = 1.10.0 =
 * WordPress 5.8 compatible.
