@@ -3,7 +3,7 @@
  * Plugin Name: Documentation
  * Plugin URI: https://www.itthinx.com/plugins/documentation
  * Description: A Documentation Management System.
- * Version: 1.10.0
+ * Version: 1.11.0
  * Author: itthinx
  * Author URI: https://www.itthinx.com
  * Donate-Link: https://www.itthinx.com/shop/
@@ -54,7 +54,7 @@ if ( !defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'DOCUMENTATION_CORE_VERSION', '1.10.0' );
+define( 'DOCUMENTATION_CORE_VERSION', '1.11.0' );
 define( 'DOCUMENTATION_PLUGIN_FILE', __FILE__ );
 define( 'DOCUMENTATION_PLUGIN_DOMAIN', 'documentation' );
 define( 'DOCUMENTATION_PLUGIN_URL', plugin_dir_url( DOCUMENTATION_PLUGIN_FILE ) );

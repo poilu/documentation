@@ -58,10 +58,12 @@ class Documentation_Renderer {
 		foreach( $atts as $key => $value ) {
 			switch( $key ) {
 				case 'category' :
+					if ( $value !== null && is_string( $value ) ) {
 						$value = implode( ',', array_map( 'trim', explode( ',', $value ) ) );
+					}
 					break;
 				case 'category_id' :
-					if ( $value != '[current]' && $value != '{current}' ) {
+					if ( $value !== null && is_string( $value ) && $value !== '[current]' && $value !== '{current}' ) {
 						$value = implode( ',', array_map( 'intval', explode( ',', $value ) ) );
 					}
 					break;

@@ -41,16 +41,17 @@
 .documentation-settings-info {
 	margin: 1em 1em 0 0;
 	padding: 1em;
-	background-color: #a46497;
+	background-color: #fff;
+	border: 2px solid #674399;
 	border-radius: 4px;
-	color: #fff;
+	color: #333;
 }
 .documentation-settings-info a {
-	color: #3c3c3c;
+	color: #674399;
 	font-weight: bold;
 }
 .documentation-settings-info a:hover {
-	color: #1c1c1c;
+	color: #7f54b3;
 }
 .documentation-documentation-info {
 	margin: 1em 1em 0 0;
