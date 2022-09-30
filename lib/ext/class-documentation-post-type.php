@@ -46,6 +46,8 @@ class Documentation_Post_Type {
 		add_filter( 'the_content', array( __CLASS__, 'the_content' ), apply_filters( 'documentation_the_content_filter_priority', self::THE_CONTENT_FILTER_PRIORITY ) );
 		add_filter( 'post_updated_messages', array( __CLASS__, 'post_updated_messages' ) );
 		add_filter( 'use_block_editor_for_post_type', array( __CLASS__, 'use_block_editor_for_post_type' ), 10, 2 );
+
+		add_action( 'admin_init', array( __CLASS__, 'admin_init' ) );
 	}
 
 	/**
@@ -53,6 +55,26 @@ class Documentation_Post_Type {
 	 */
 	public static function wp_init() {
 		self::post_type();
+	}
+
+	public static function admin_init() {
+		    // gets the administrator role
+				$admins = get_role( 'administrator' );
+
+				$admins->add_cap( 'edit_document' ); 
+				$admins->add_cap( 'edit_documents' ); 
+				$admins->add_cap( 'edit_others_documents' ); 
+				$admins->add_cap( 'edit_published_documents' ); 
+				$admins->add_cap( 'edit_private_documents' ); 
+				$admins->add_cap( 'publish_documents' ); 
+				$admins->add_cap( 'read_document' ); 
+				$admins->add_cap( 'read_private_documents' ); 
+				$admins->add_cap( 'delete_document' );
+				$admins->add_cap( 'delete_documents' );
+				$admins->add_cap( 'delete_published_documents' );
+				$admins->add_cap( 'delete_private_documents' );
+				$admins->add_cap( 'delete_others_documents' ); 
+
 	}
 
 	/**
@@ -113,7 +135,7 @@ class Documentation_Post_Type {
 					'view_item'          => __( 'View Document', 'documentation' ),
 					'view_items'         => __( 'View Documents', 'documentation' ),
 				),
-// 				'capability_type'     => 'document', // @todo if used we need to assign them appropriately so at least admins have them, or use roles/groups; add-ons menu capability must be adjusted if changed
+ 				'capability_type'     => 'document', // @todo if used we need to assign them appropriately so at least admins have them, or use roles/groups; add-ons menu capability must be adjusted if changed
 				'description'         => __( 'Document', 'documentation' ),
 				'exclude_from_search' => false, // this option is unreliable, see http://core.trac.wordpress.org/ticket/17592
 				'has_archive'         => true,

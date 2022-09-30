@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Documentation
+ * Plugin Name: Documentation (CUSTOMIZED!)
  * Plugin URI: https://www.itthinx.com/plugins/documentation
- * Description: A Documentation Management System.
+ * Description: A Documentation Management System. (customized version with adjusted capability type)
  * Version: 1.10.0
  * Author: itthinx
  * Author URI: https://www.itthinx.com
