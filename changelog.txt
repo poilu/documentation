@@ -1,5 +1,8 @@
 == Documentation plugin by itthinx - changelog.txt ==
 
+= 1.12.0 =
+* WordPress 6.4 compatible.
+
 = 1.11.0 =
 * WordPress 6.0 compatible.
 * Fixed PHP 8.x compatibility with instances of deprecated passing null to explode() instead of string.
