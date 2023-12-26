@@ -4,6 +4,8 @@
  * Plugin URI: https://www.itthinx.com/plugins/documentation
  * Description: A Documentation Management System.
  * Version: 1.12.0
+ * Requires at least: 6.0
+ * Requires PHP: 7.4
  * Author: itthinx
  * Author URI: https://www.itthinx.com
  * Donate-Link: https://www.itthinx.com/shop/
