@@ -77,15 +77,15 @@ class Documentation_Categories_Widget extends WP_Widget {
 		);
 
 		self::$orderby_options = array(
-			'id'          => __( 'ID', 'documentation' ),
-			'name'        => __( 'Name', 'documentation' ),
-			'slug'        => __( 'Slug', 'documentation' ),
-			'description' => __( 'Description', 'documentation' )
+			'id'          => 'ID',
+			'name'        => 'Name',
+			'slug'        => 'Slug',
+			'description' => 'Description'
 		);
 
 		self::$order_options = array(
-			'ASC'  => __( 'Ascending', 'documentation' ),
-			'DESC' => __( 'Descending', 'documentation' )
+			'ASC'  => 'Ascending',
+			'DESC' => 'Descending',
 		);
 
 		// if ( !has_action( 'wp_print_styles', array( __CLASS__, '_wp_print_styles' ) ) ) {
@@ -104,6 +104,16 @@ class Documentation_Categories_Widget extends WP_Widget {
 	 * Registers the widget.
 	 */
 	public static function widgets_init() {
+		self::$orderby_options = array(
+			'id'          => __( 'ID', 'documentation' ),
+			'name'        => __( 'Name', 'documentation' ),
+			'slug'        => __( 'Slug', 'documentation' ),
+			'description' => __( 'Description', 'documentation' )
+		);
+		self::$order_options = array(
+			'ASC'  => __( 'Ascending', 'documentation' ),
+			'DESC' => __( 'Descending', 'documentation' )
+		);
 		register_widget( 'Documentation_Categories_Widget' );
 	}
 
@@ -111,7 +121,7 @@ class Documentation_Categories_Widget extends WP_Widget {
 	 * Creates a documents widget.
 	 */
 	public function __construct() {
-		parent::__construct( false, $name = 'Document Categories' );
+		parent::__construct( false, 'Document Categories' );
 	}
 
 	/**
@@ -138,6 +148,7 @@ class Documentation_Categories_Widget extends WP_Widget {
 	 * Widget output
 	 *
 	 * @see WP_Widget::widget()
+	 *
 	 * @link http://codex.wordpress.org/Class_Reference/WP_Object_Cache
 	 */
 	public function widget( $args, $instance ) {
@@ -159,8 +170,6 @@ class Documentation_Categories_Widget extends WP_Widget {
 
 		$title = apply_filters( 'widget_title', $instance['title'] );
 
-		$widget_id = $args['widget_id'];
-
 		// output
 		$output = '';
 		$output .= $before_widget;
@@ -177,6 +186,7 @@ class Documentation_Categories_Widget extends WP_Widget {
 
 	/**
 	 * Look for a term by id, slug or name.
+	 *
 	 * @param string $key
 	 *
 	 * @return WP_Term or false
@@ -196,8 +206,6 @@ class Documentation_Categories_Widget extends WP_Widget {
 	 * @see WP_Widget::update()
 	 */
 	public function update( $new_instance, $old_instance ) {
-
-		global $wpdb;
 
 		$settings = $old_instance;
 

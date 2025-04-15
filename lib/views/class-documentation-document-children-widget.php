@@ -69,27 +69,26 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 			'include'            => '',
 			'sort_order'         => 'ASC',
 			'sort_column'        => 'menu_order,post_title',
-// 			'title_li'           => __( 'Documents', 'documentation' ),
 			'show_author'        => false,
 			'show_date'          => false
 		);
 
 		self::$orderby_options = array(
-			'ID'            => __( 'ID', 'documentation' ),
-			'menu_order'    => __( 'Order', 'documentation' ),
-			'post_author'   => __( 'Author', 'documentation' ),
-			'post_date'     => __( 'Date', 'documentation' ),
-			'post_title'    => __( 'Title', 'documentation' )
+			'ID'            => 'ID',
+			'menu_order'    => 'Order',
+			'post_author'   => 'Author',
+			'post_date'     => 'Date',
+			'post_title'    => 'Title',
 		);
 
 		self::$order_options = array(
-			'ASC'  => __( 'Ascending', 'documentation' ),
-			'DESC' => __( 'Descending', 'documentation' )
+			'ASC'  => 'Ascending',
+			'DESC' => 'Descending',
 		);
 
-// 		if ( !has_action( 'wp_print_styles', array( __CLASS__, '_wp_print_styles' ) ) ) {
-// 			add_action( 'wp_print_styles', array( __CLASS__, '_wp_print_styles' ) );
-// 		}
+		// if ( !has_action( 'wp_print_styles', array( __CLASS__, '_wp_print_styles' ) ) ) {
+		// 	add_action( 'wp_print_styles', array( __CLASS__, '_wp_print_styles' ) );
+		// }
 		if ( !has_action( 'comment_post', array( __CLASS__, 'cache_delete' ) ) ) {
 			add_action( 'comment_post', array( __CLASS__, 'cache_delete' ) );
 		}
@@ -103,6 +102,17 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 	 * Registers the widget.
 	 */
 	static function widgets_init() {
+		self::$orderby_options = array(
+			'ID'            => __( 'ID', 'documentation' ),
+			'menu_order'    => __( 'Order', 'documentation' ),
+			'post_author'   => __( 'Author', 'documentation' ),
+			'post_date'     => __( 'Date', 'documentation' ),
+			'post_title'    => __( 'Title', 'documentation' )
+		);
+		self::$order_options = array(
+			'ASC'  => __( 'Ascending', 'documentation' ),
+			'DESC' => __( 'Descending', 'documentation' )
+		);
 		register_widget( 'Documentation_Document_Children_Widget' );
 	}
 
@@ -110,7 +120,7 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 	 * Creates a documents widget.
 	 */
 	public function __construct() {
-		parent::__construct( false, $name = 'Document Children' );
+		parent::__construct( false, 'Document Children' );
 	}
 
 	/**
@@ -137,6 +147,7 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 	 * Widget output
 	 *
 	 * @see WP_Widget::widget()
+	 *
 	 * @link http://codex.wordpress.org/Class_Reference/WP_Object_Cache
 	 */
 	function widget( $args, $instance ) {
@@ -158,8 +169,6 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 
 		$title = apply_filters( 'widget_title', $instance['title'] );
 
-		$widget_id = $args['widget_id'];
-
 		// output
 		$output = '';
 		$output .= $before_widget;
@@ -180,8 +189,6 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 	 * @see WP_Widget::update()
 	 */
 	function update( $new_instance, $old_instance ) {
-
-		global $wpdb;
 
 		$settings = $old_instance;
 
@@ -314,18 +321,18 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 		echo '</p>';
 
 		// orderby
-// 		$orderby = isset( $instance['orderby'] ) ? $instance['orderby'] : '';
-// 		echo '<p>';
-// 		echo sprintf( '<label title="%s">', __( 'Sorting criteria.', 'documentation' ) );
-// 		echo __( 'Order by ...', 'documentation' );
-// 		echo '<select class="widefat" name="' . $this->get_field_name( 'orderby' ) . '">';
-// 		foreach ( self::$orderby_options as $orderby_option_key => $orderby_option_name ) {
-// 			$selected = ( $orderby_option_key == $orderby ? ' selected="selected" ' : "" );
-// 			echo '<option ' . $selected . 'value="' . $orderby_option_key . '">' . $orderby_option_name . '</option>';
-// 		}
-// 		echo '</select>';
-// 		echo '</label>';
-// 		echo '</p>';
+		// $orderby = isset( $instance['orderby'] ) ? $instance['orderby'] : '';
+		// echo '<p>';
+		// echo sprintf( '<label title="%s">', __( 'Sorting criteria.', 'documentation' ) );
+		// echo __( 'Order by ...', 'documentation' );
+		// echo '<select class="widefat" name="' . $this->get_field_name( 'orderby' ) . '">';
+		// foreach ( self::$orderby_options as $orderby_option_key => $orderby_option_name ) {
+		// 	$selected = ( $orderby_option_key == $orderby ? ' selected="selected" ' : "" );
+		// 	echo '<option ' . $selected . 'value="' . $orderby_option_key . '">' . $orderby_option_name . '</option>';
+		// }
+		// echo '</select>';
+		// echo '</label>';
+		// echo '</p>';
 
 		$sort_column = isset( $instance['sort_column'] ) ? $instance['sort_column'] : '';
 		echo '<p>';
@@ -387,6 +394,7 @@ class Documentation_Document_Children_Widget extends WP_Widget {
 
 	/**
 	 * Render the widget.
+	 *
 	 * @param array $instance
 	 */
 	public static function render( $instance ) {

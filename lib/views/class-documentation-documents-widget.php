@@ -39,23 +39,25 @@ class Documentation_Documents_Widget extends WP_Widget {
 	static $cache_flag = 'widget';
 
 	static $defaults = array(
-		'number'       => 10,
-		'order'        => 'DESC',
-		'orderby'      => 'post_date',
-		'show_author'  => false,
-		'show_date'    => false,
+		'number'             => 10,
+		'order'              => 'DESC',
+		'orderby'            => 'post_date',
+		'show_author'        => false,
+		'show_date'          => false,
 		'show_comment_count' => false,
 		'category_id'        => null,
 	);
 
 	/**
 	 * Sort criteria and labels.
+	 *
 	 * @var array
 	 */
 	static $orderby_options;
 
 	/**
 	 * Sort direction and labels.
+	 *
 	 * @var array
 	 */
 	static $order_options;
@@ -65,19 +67,19 @@ class Documentation_Documents_Widget extends WP_Widget {
 	 */
 	public static function init() {
 		self::$orderby_options = array(
-			'post_author'   => __( 'Author', 'documentation' ),
-			'post_date'     => __( 'Date', 'documentation' ),
-			'post_title'    => __( 'Title', 'documentation' ),
-			'comment_count' => __( 'Comment Count', 'documentation' ),
-			'menu_order'    => __( 'Order', 'documentation' )
+			'post_author'   => 'Author',
+			'post_date'     => 'Date',
+			'post_title'    => 'Title',
+			'comment_count' => 'Comment Count',
+			'menu_order'    => 'Order',
 		);
 		self::$order_options = array(
-			'ASC'  => __( 'Ascending', 'documentation' ),
-			'DESC' => __( 'Descending', 'documentation' )
+			'ASC'  => 'Ascending',
+			'DESC' => 'Descending'
 		);
-// 		if ( !has_action( 'wp_print_styles', array( __CLASS__, '_wp_print_styles' ) ) ) {
-// 			add_action( 'wp_print_styles', array( __CLASS__, '_wp_print_styles' ) );
-// 		}
+		// if ( !has_action( 'wp_print_styles', array( __CLASS__, '_wp_print_styles' ) ) ) {
+		// 	add_action( 'wp_print_styles', array( __CLASS__, '_wp_print_styles' ) );
+		// }
 		if ( !has_action( 'comment_post', array( __CLASS__, 'cache_delete' ) ) ) {
 			add_action( 'comment_post', array(__CLASS__, 'cache_delete' ) );
 		}
@@ -91,6 +93,17 @@ class Documentation_Documents_Widget extends WP_Widget {
 	 * Registers the widget.
 	 */
 	public static function widgets_init() {
+		self::$orderby_options = array(
+			'post_author'   => __( 'Author', 'documentation' ),
+			'post_date'     => __( 'Date', 'documentation' ),
+			'post_title'    => __( 'Title', 'documentation' ),
+			'comment_count' => __( 'Comment Count', 'documentation' ),
+			'menu_order'    => __( 'Order', 'documentation' )
+		);
+		self::$order_options = array(
+			'ASC'  => __( 'Ascending', 'documentation' ),
+			'DESC' => __( 'Descending', 'documentation' )
+		);
 		register_widget( 'Documentation_Documents_Widget' );
 	}
 
@@ -98,7 +111,7 @@ class Documentation_Documents_Widget extends WP_Widget {
 	 * Creates a documents widget.
 	 */
 	public function __construct() {
-		parent::__construct( false, $name = 'Documents' );
+		parent::__construct( false, 'Documents' );
 	}
 
 	/**
@@ -146,8 +159,6 @@ class Documentation_Documents_Widget extends WP_Widget {
 
 		$title = apply_filters( 'widget_title', $instance['title'] );
 
-		$widget_id = $args['widget_id'];
-
 		// output
 		$output = '';
 		$output .= $before_widget;
@@ -168,8 +179,6 @@ class Documentation_Documents_Widget extends WP_Widget {
 	 * @see WP_Widget::update()
 	 */
 	public function update( $new_instance, $old_instance ) {
-
-		global $wpdb;
 
 		$settings = $old_instance;
 

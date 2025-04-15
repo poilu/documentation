@@ -1,5 +1,13 @@
 == Documentation plugin by itthinx - changelog.txt ==
 
+= 1.13.0 =
+* WordPress 6.8 compatible.
+* Requires at least WordPress 6.5.
+* Revised code documentation issues.
+* Fixed several instances of translation calls made too early.
+* Updated settings information.
+* Revised add-ons section.
+
 = 1.12.0 =
 * WordPress 6.4 compatible.
 * Requires at least WordPress 6.0.
