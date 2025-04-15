@@ -52,25 +52,23 @@ class Documentation_Document_Hierarchy_Widget extends WP_Widget {
 			'supernode_height'         => 1,
 			'supernode_subnode_depth'  => 1,
 			'subnode_depth'            => 1,
-			// @todo maybe later
-// 			'sort_order'         => 'ASC',
-// 			'sort_column'        => 'menu_order,post_title',
-// 			'show_author'        => false,
-// 			'show_date'          => false
+			// 'sort_order'         => 'ASC',
+			// 'sort_column'        => 'menu_order,post_title',
+			// 'show_author'        => false,
+			// 'show_date'          => false
 		);
 
-		// @todo
-// 		if ( !has_action( 'wp_print_styles', array( __CLASS__, '_wp_print_styles' ) ) ) {
-// 			add_action( 'wp_print_styles', array( __CLASS__, '_wp_print_styles' ) );
-// 		}
+		// if ( !has_action( 'wp_print_styles', array( __CLASS__, '_wp_print_styles' ) ) ) {
+		// 	add_action( 'wp_print_styles', array( __CLASS__, '_wp_print_styles' ) );
+		// }
 
-		// @todo we don't need these unless the comment counts are displayed
-// 		if ( !has_action( 'comment_post', array( __CLASS__, 'cache_delete' ) ) ) {
-// 			add_action( 'comment_post', array( __CLASS__, 'cache_delete' ) );
-// 		}
-// 		if ( !has_action( 'transition_comment_status', array( __CLASS__, 'cache_delete' ) ) ) {
-// 			add_action( 'transition_comment_status', array( __CLASS__, 'cache_delete' ) );
-// 		}
+		// we don't need these unless the comment counts are displayed
+		// if ( !has_action( 'comment_post', array( __CLASS__, 'cache_delete' ) ) ) {
+		// 	add_action( 'comment_post', array( __CLASS__, 'cache_delete' ) );
+		// }
+		// if ( !has_action( 'transition_comment_status', array( __CLASS__, 'cache_delete' ) ) ) {
+		// 	add_action( 'transition_comment_status', array( __CLASS__, 'cache_delete' ) );
+		// }
 
 		add_action( 'widgets_init', array( __CLASS__, 'widgets_init' ) );
 	}
@@ -86,7 +84,7 @@ class Documentation_Document_Hierarchy_Widget extends WP_Widget {
 	 * Creates a documents widget.
 	 */
 	public function __construct() {
-		parent::__construct( false, $name = 'Document Hierarchy' );
+		parent::__construct( false, 'Document Hierarchy' );
 	}
 
 	/**
@@ -113,6 +111,7 @@ class Documentation_Document_Hierarchy_Widget extends WP_Widget {
 	 * Widget output
 	 *
 	 * @see WP_Widget::widget()
+	 *
 	 * @link http://codex.wordpress.org/Class_Reference/WP_Object_Cache
 	 */
 	public function widget( $args, $instance ) {
@@ -134,8 +133,6 @@ class Documentation_Document_Hierarchy_Widget extends WP_Widget {
 
 		$title = apply_filters( 'widget_title', $instance['title'] );
 
-		$widget_id = $args['widget_id'];
-
 		// output
 		$output = '';
 		$output .= $before_widget;
@@ -156,8 +153,6 @@ class Documentation_Document_Hierarchy_Widget extends WP_Widget {
 	 * @see WP_Widget::update()
 	 */
 	public function update( $new_instance, $old_instance ) {
-
-		global $wpdb;
 
 		$settings = $old_instance;
 
@@ -272,6 +267,7 @@ class Documentation_Document_Hierarchy_Widget extends WP_Widget {
 
 	/**
 	 * Render the widget.
+	 *
 	 * @param array $instance
 	 *
 	 * @return string

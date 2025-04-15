@@ -4,14 +4,14 @@
  * Plugin URI: https://www.itthinx.com/plugins/documentation
  * Description: A Documentation Management System.
  * Version: 1.13.0
- * Requires at least: 6.0
+ * Requires at least: 6.5
  * Requires PHP: 7.4
  * Author: itthinx
  * Author URI: https://www.itthinx.com
  * Donate-Link: https://www.itthinx.com/shop/
  * License: GPLv3
  *
- * Copyright (c) 2013 - 2024 "kento" Karim Rahimpur www.itthinx.com
+ * Copyright (c) 2013 - 2025 "kento" Karim Rahimpur www.itthinx.com
  *
  * This code is released under the GNU General Public License Version 3.
  * The following additional terms apply to all files as per section
