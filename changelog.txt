@@ -1,7 +1,8 @@
 == Documentation plugin by itthinx - changelog.txt ==
 
 = 1.13.1 =
-* WordPress 6.8 compatible.
+* Fixed wrong language domain on some translated strings.
+* Updated the translation template.
 
 = 1.13.0 =
 * WordPress 6.8 compatible.
