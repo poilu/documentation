@@ -5,7 +5,7 @@ Tags: documentation, document, documents, wiki, woocommerce, manual, manuals, do
 Requires at least: 6.5
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.13.0
+Stable tag: 1.13.1
 License: GPLv3
 
 A documentation management system.
