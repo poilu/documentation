@@ -7,7 +7,7 @@
 msgid   ""
 msgstr  "Project-Id-Version: PACKAGE VERSION\n"
         "Report-Msgid-Bugs-To: \n"
-        "POT-Creation-Date: 2021-04-02 21:19+0200\n"
+        "POT-Creation-Date: 2025-04-17 16:07+0200\n"
         "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
         "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
         "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,8 +22,8 @@ msgstr  "Project-Id-Version: PACKAGE VERSION\n"
 msgid   "#%d (no title)"
 msgstr  ""
 
-#: lib/views/class-documentation-renderer.php:177
-#: lib/views/class-documentation-documents-widget.php:413
+#: lib/views/class-documentation-renderer.php:210
+#: lib/views/class-documentation-documents-widget.php:422
 #, php-format
 msgid   "1 reply"
 msgid_plural    "%d replies"
@@ -54,7 +54,7 @@ msgid   "After changing this, please visit the <a href=\"%s\">Permalinks</a> "
         "admin section to make sure that the permalink structure is updated."
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:250
+#: lib/views/class-documentation-documents-widget.php:259
 msgid   "All"
 msgstr  ""
 
@@ -70,14 +70,14 @@ msgstr  ""
 msgid   "Allow comments on documents"
 msgstr  ""
 
-#: lib/views/class-documentation-categories-widget.php:87
-#: lib/views/class-documentation-document-children-widget.php:86
-#: lib/views/class-documentation-documents-widget.php:75
+#: lib/views/class-documentation-categories-widget.php:114
+#: lib/views/class-documentation-document-children-widget.php:113
+#: lib/views/class-documentation-documents-widget.php:104
 msgid   "Ascending"
 msgstr  ""
 
-#: lib/views/class-documentation-document-children-widget.php:80
-#: lib/views/class-documentation-documents-widget.php:68
+#: lib/views/class-documentation-document-children-widget.php:108
+#: lib/views/class-documentation-documents-widget.php:97
 msgid   "Author"
 msgstr  ""
 
@@ -85,28 +85,28 @@ msgstr  ""
 msgid   "Categories"
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:296
+#: lib/views/class-documentation-documents-widget.php:305
 msgid   "Category ID"
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:303
+#: lib/views/class-documentation-documents-widget.php:312
 #, php-format
 msgid   "Category: <em>%s</em>"
 msgstr  ""
 
-#: lib/views/class-documentation-categories-widget.php:301
+#: lib/views/class-documentation-categories-widget.php:309
 msgid   "Children of &hellip;"
 msgstr  ""
 
-#: lib/views/class-documentation-document-children-widget.php:296
+#: lib/views/class-documentation-document-children-widget.php:303
 msgid   "Children of ..."
 msgstr  ""
 
-#: lib/views/class-documentation-document-hierarchy-widget.php:246
+#: lib/views/class-documentation-document-hierarchy-widget.php:241
 msgid   "Children of documents above"
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:71
+#: lib/views/class-documentation-documents-widget.php:100
 msgid   "Comment Count"
 msgstr  ""
 
@@ -122,8 +122,8 @@ msgstr  ""
 msgid   "Custom field updated."
 msgstr  ""
 
-#: lib/views/class-documentation-document-children-widget.php:81
-#: lib/views/class-documentation-documents-widget.php:69
+#: lib/views/class-documentation-document-children-widget.php:109
+#: lib/views/class-documentation-documents-widget.php:98
 msgid   "Date"
 msgstr  ""
 
@@ -132,17 +132,17 @@ msgid   "Depending on your Permalink settings, URLs of documents will contain "
         "this in their path before the section that identifies the document."
 msgstr  ""
 
-#: lib/views/class-documentation-categories-widget.php:318
+#: lib/views/class-documentation-categories-widget.php:326
 msgid   "Depth"
 msgstr  ""
 
-#: lib/views/class-documentation-categories-widget.php:88
-#: lib/views/class-documentation-document-children-widget.php:87
-#: lib/views/class-documentation-documents-widget.php:76
+#: lib/views/class-documentation-categories-widget.php:115
+#: lib/views/class-documentation-document-children-widget.php:114
+#: lib/views/class-documentation-documents-widget.php:105
 msgid   "Descending"
 msgstr  ""
 
-#: lib/views/class-documentation-categories-widget.php:83
+#: lib/views/class-documentation-categories-widget.php:111
 msgid   "Description"
 msgstr  ""
 
@@ -175,7 +175,7 @@ msgctxt "taxonomy singular name"
 msgid   "Document Category"
 msgstr  ""
 
-#: lib/views/class-documentation-categories-widget.php:309
+#: lib/views/class-documentation-categories-widget.php:317
 #, php-format
 msgid   "Document Category: <em>%s</em>"
 msgstr  ""
@@ -215,7 +215,7 @@ msgstr  ""
 msgid   "Document updated."
 msgstr  ""
 
-#: lib/views/class-documentation-document-children-widget.php:303
+#: lib/views/class-documentation-document-children-widget.php:310
 #, php-format
 msgid   "Document: <em>%s</em>"
 msgstr  ""
@@ -229,15 +229,15 @@ msgid   "Documentation Settings"
 msgstr  ""
 
 #: lib/ext/class-documentation-post-type.php:98
-#: lib/views/class-documentation-renderer.php:412
+#: lib/views/class-documentation-renderer.php:445
 msgid   "Documents"
 msgstr  ""
 
-#: lib/views/class-documentation-document-hierarchy-widget.php:230
+#: lib/views/class-documentation-document-hierarchy-widget.php:225
 msgid   "Documents above"
 msgstr  ""
 
-#: lib/views/class-documentation-document-hierarchy-widget.php:262
+#: lib/views/class-documentation-document-hierarchy-widget.php:257
 msgid   "Documents below"
 msgstr  ""
 
@@ -259,15 +259,15 @@ msgstr  ""
 msgid   "Edit Document"
 msgstr  ""
 
-#: lib/views/class-documentation-categories-widget.php:305
+#: lib/views/class-documentation-categories-widget.php:313
 msgid   "Empty, category ID, slug, name or {current}"
 msgstr  ""
 
-#: lib/views/class-documentation-document-children-widget.php:300
+#: lib/views/class-documentation-document-children-widget.php:307
 msgid   "Empty, document ID or {current}"
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:300
+#: lib/views/class-documentation-documents-widget.php:309
 msgid   "Empty, document category ID or {current}"
 msgstr  ""
 
@@ -275,7 +275,7 @@ msgstr  ""
 msgid   "Enable the block editor to edit documents"
 msgstr  ""
 
-#: lib/views/class-documentation-document-children-widget.php:363
+#: lib/views/class-documentation-document-children-widget.php:370
 msgid   "Exclude documents"
 msgstr  ""
 
@@ -289,11 +289,11 @@ msgid   "For details on the usage of this documentation system, please visit "
         "\">Documentation</a> pages."
 msgstr  ""
 
-#: lib/views/class-documentation-categories-widget.php:328
+#: lib/views/class-documentation-categories-widget.php:336
 msgid   "Hide empty categories"
 msgstr  ""
 
-#: lib/views/class-documentation-categories-widget.php:337
+#: lib/views/class-documentation-categories-widget.php:345
 msgid   "Hierarchical"
 msgstr  ""
 
@@ -301,8 +301,8 @@ msgstr  ""
 msgid   "I've already rated it."
 msgstr  ""
 
-#: lib/views/class-documentation-categories-widget.php:80
-#: lib/views/class-documentation-document-children-widget.php:78
+#: lib/views/class-documentation-categories-widget.php:108
+#: lib/views/class-documentation-document-children-widget.php:106
 msgid   "ID"
 msgstr  ""
 
@@ -319,23 +319,23 @@ msgid   "If this option is enabled, you may choose to allow comments on each "
         "document individually."
 msgstr  ""
 
-#: lib/views/class-documentation-document-children-widget.php:355
+#: lib/views/class-documentation-document-children-widget.php:362
 msgid   "Include documents"
 msgstr  ""
 
-#: lib/views/class-documentation-categories-widget.php:299
+#: lib/views/class-documentation-categories-widget.php:307
 msgid   "Leave empty to show all categories. To show children of a specific "
         "category, indicate the category name, slug or ID. To show those of "
         "the current category, indicate: {current}."
 msgstr  ""
 
-#: lib/views/class-documentation-document-children-widget.php:294
+#: lib/views/class-documentation-document-children-widget.php:301
 msgid   "Leave empty to show all documents. To show child documents for a "
         "specific document, indicate the document ID. To show child documents "
         "for the current document, indicate: {current}."
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:294
+#: lib/views/class-documentation-documents-widget.php:303
 msgid   "Leave empty to show documents in all document categories. To show "
         "documents in a specific category, indicate the category ID. To show "
         "documents in the current document category, indicate: {current} "
@@ -343,17 +343,22 @@ msgid   "Leave empty to show documents in all document categories. To show "
         "displayed)."
 msgstr  ""
 
-#: lib/views/class-documentation-categories-widget.php:317
+#: lib/views/class-documentation-categories-widget.php:325
 msgid   "Levels to include from document category, 0 includes all, "
         "hierarchical must be enabled."
 msgstr  ""
 
-#: lib/views/class-documentation-document-children-widget.php:362
+#: lib/admin/class-documentation-add-ons.php:115
+msgid   "Limit the use of Payment Methods by Group Memberships, Roles, "
+        "Countries, and Order Amounts. "
+msgstr  ""
+
+#: lib/views/class-documentation-document-children-widget.php:369
 msgid   "List of documents to exclude, indicate document IDs separated by "
         "comma."
 msgstr  ""
 
-#: lib/views/class-documentation-document-children-widget.php:354
+#: lib/views/class-documentation-document-children-widget.php:361
 msgid   "List of documents to include, indicate document IDs separated by "
         "comma."
 msgstr  ""
@@ -366,12 +371,12 @@ msgstr  ""
 msgid   "Many thanks for using <strong>Documentation</strong>!"
 msgstr  ""
 
-#: lib/admin/class-documentation-add-ons.php:182
+#: lib/admin/class-documentation-add-ons.php:230
 #, php-format
 msgid   "More from <a href=\"%s\">itthinx</a>"
 msgstr  ""
 
-#: lib/views/class-documentation-categories-widget.php:81
+#: lib/views/class-documentation-categories-widget.php:109
 msgid   "Name"
 msgstr  ""
 
@@ -392,18 +397,24 @@ msgstr  ""
 msgid   "No Documents found in trash"
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:249
+#: lib/views/class-documentation-documents-widget.php:258
 msgid   "Number of documents"
 msgstr  ""
 
-#: lib/views/class-documentation-document-children-widget.php:79
-#: lib/views/class-documentation-documents-widget.php:72
+#: lib/admin/class-documentation-add-ons.php:123
+msgid   "Offer exclusive, automatic and targeted coupon discounts for your "
+        "customers! Use group memberships and roles to control the validity "
+        "of coupons."
+msgstr  ""
+
+#: lib/views/class-documentation-document-children-widget.php:107
+#: lib/views/class-documentation-documents-widget.php:101
 msgid   "Order"
 msgstr  ""
 
-#: lib/views/class-documentation-categories-widget.php:345
-#: lib/views/class-documentation-document-children-widget.php:333
-#: lib/views/class-documentation-documents-widget.php:258
+#: lib/views/class-documentation-categories-widget.php:353
+#: lib/views/class-documentation-document-children-widget.php:340
+#: lib/views/class-documentation-documents-widget.php:267
 msgid   "Order by ..."
 msgstr  ""
 
@@ -424,12 +435,24 @@ msgstr  ""
 msgid   "Preview document"
 msgstr  ""
 
+#: lib/admin/class-documentation-add-ons.php:139
+msgid   "Provides automatic discounts and coupons based on the quantities of "
+        "products in the cart."
+msgstr  ""
+
 #: lib/admin/class-documentation-add-ons.php:93
 msgid   "Recommended Tools and Extensions"
 msgstr  ""
 
-#: lib/views/class-documentation-document-hierarchy-widget.php:214
+#: lib/views/class-documentation-document-hierarchy-widget.php:209
 msgid   "Root depth"
+msgstr  ""
+
+#: lib/admin/class-documentation-add-ons.php:131
+msgid   "Sales Analysis oriented at Marketing & Management. Get in-depth "
+        "views on fundamental Business Intelligence, focused on Sales and net "
+        "Revenue Trends, International Sales Reports, Product Market and "
+        "Customer Trends."
 msgstr  ""
 
 #: lib/admin/settings.php:101
@@ -444,84 +467,96 @@ msgstr  ""
 msgid   "Search Documents"
 msgstr  ""
 
+#: lib/admin/class-documentation-add-ons.php:107
+msgid   "Sell Memberships with Groups and WooCommerce! Groups WooCommerce "
+        "grants memberships based on products. It automatically assigns a "
+        "customer to one or more groups based on the products ordered."
+msgstr  ""
+
 #: lib/admin/class-documentation-settings.php:68
 #: lib/admin/class-documentation-settings.php:84
 #: lib/admin/class-documentation-settings.php:108
 msgid   "Settings"
 msgstr  ""
 
-#: lib/views/class-documentation-document-children-widget.php:373
-#: lib/views/class-documentation-documents-widget.php:312
+#: lib/views/class-documentation-document-children-widget.php:380
+#: lib/views/class-documentation-documents-widget.php:321
 msgid   "Show author"
 msgstr  ""
 
-#: lib/views/class-documentation-document-hierarchy-widget.php:244
+#: lib/views/class-documentation-document-hierarchy-widget.php:239
 msgid   "Show child documents of parent documents above the current one up to "
         "how many levels deep?"
 msgstr  ""
 
-#: lib/views/class-documentation-document-hierarchy-widget.php:260
+#: lib/views/class-documentation-document-hierarchy-widget.php:255
 msgid   "Show child documents of the current one up to how many levels deep?"
 msgstr  ""
 
-#: lib/views/class-documentation-categories-widget.php:374
+#: lib/views/class-documentation-categories-widget.php:382
 msgid   "Show count"
 msgstr  ""
 
-#: lib/views/class-documentation-document-children-widget.php:382
-#: lib/views/class-documentation-documents-widget.php:321
+#: lib/views/class-documentation-document-children-widget.php:389
+#: lib/views/class-documentation-documents-widget.php:330
 msgid   "Show date"
 msgstr  ""
 
-#: lib/views/class-documentation-document-hierarchy-widget.php:212
+#: lib/views/class-documentation-document-hierarchy-widget.php:207
 msgid   "Show documents within the hierarchy from root documents (those "
         "without parents) to how many levels deep?"
 msgstr  ""
 
-#: lib/views/class-documentation-document-children-widget.php:310
+#: lib/views/class-documentation-document-children-widget.php:317
 msgid   "Show documents within the hierarchy to how many levels deep?"
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:330
+#: lib/views/class-documentation-documents-widget.php:339
 msgid   "Show number of replies"
 msgstr  ""
 
-#: lib/views/class-documentation-document-hierarchy-widget.php:228
+#: lib/views/class-documentation-document-hierarchy-widget.php:223
 msgid   "Show parent documents above the current one up to how many levels?"
 msgstr  ""
 
-#: lib/views/class-documentation-categories-widget.php:82
+#: lib/views/class-documentation-categories-widget.php:110
 msgid   "Slug"
 msgstr  ""
 
-#: lib/views/class-documentation-categories-widget.php:359
-#: lib/views/class-documentation-document-children-widget.php:342
-#: lib/views/class-documentation-documents-widget.php:272
+#: lib/views/class-documentation-categories-widget.php:367
+#: lib/views/class-documentation-document-children-widget.php:349
+#: lib/views/class-documentation-documents-widget.php:281
 msgid   "Sort order"
 msgstr  ""
 
-#: lib/views/class-documentation-categories-widget.php:358
-#: lib/views/class-documentation-document-children-widget.php:341
-#: lib/views/class-documentation-documents-widget.php:271
+#: lib/views/class-documentation-categories-widget.php:366
+#: lib/views/class-documentation-document-children-widget.php:348
+#: lib/views/class-documentation-documents-widget.php:280
 msgid   "Sort order."
 msgstr  ""
 
-#: lib/views/class-documentation-document-children-widget.php:332
+#: lib/views/class-documentation-document-children-widget.php:339
 msgid   "Sorting criteria, one or more options separated by comma. Possible "
         "choices are post_title, menu_order, post_date, post_modified, ID, "
         "post_author and post_name."
 msgstr  ""
 
-#: lib/views/class-documentation-categories-widget.php:344
-#: lib/views/class-documentation-documents-widget.php:257
+#: lib/views/class-documentation-categories-widget.php:352
+#: lib/views/class-documentation-documents-widget.php:266
 msgid   "Sorting criteria."
 msgstr  ""
 
-#: lib/views/class-documentation-document-children-widget.php:311
+#: lib/views/class-documentation-document-children-widget.php:318
 msgid   "Sublevel depth"
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:248
+#: lib/admin/class-documentation-add-ons.php:99
+msgid   "The essential extension for every WooCommerce store! The perfect "
+        "Search Engine for your store helps your customers to find and buy "
+        "the right products quickly."
+msgstr  ""
+
+#: lib/views/class-documentation-documents-widget.php:257
 msgid   "The number of documents to show."
 msgstr  ""
 
@@ -529,24 +564,24 @@ msgstr  ""
 msgid   "The settings have been saved."
 msgstr  ""
 
-#: lib/views/class-documentation-categories-widget.php:281
-#: lib/views/class-documentation-document-children-widget.php:276
-#: lib/views/class-documentation-document-hierarchy-widget.php:202
-#: lib/views/class-documentation-documents-widget.php:239
+#: lib/views/class-documentation-categories-widget.php:289
+#: lib/views/class-documentation-document-children-widget.php:283
+#: lib/views/class-documentation-document-hierarchy-widget.php:197
+#: lib/views/class-documentation-documents-widget.php:248
 msgid   "The widget title."
 msgstr  ""
 
-#: lib/views/class-documentation-renderer.php:183
-#: lib/views/class-documentation-documents-widget.php:419
+#: lib/views/class-documentation-renderer.php:216
+#: lib/views/class-documentation-documents-widget.php:428
 msgid   "There are no documents."
 msgstr  ""
 
-#: lib/views/class-documentation-categories-widget.php:282
-#: lib/views/class-documentation-document-children-widget.php:82
-#: lib/views/class-documentation-document-children-widget.php:277
-#: lib/views/class-documentation-document-hierarchy-widget.php:203
-#: lib/views/class-documentation-documents-widget.php:70
-#: lib/views/class-documentation-documents-widget.php:240
+#: lib/views/class-documentation-categories-widget.php:290
+#: lib/views/class-documentation-document-children-widget.php:110
+#: lib/views/class-documentation-document-children-widget.php:284
+#: lib/views/class-documentation-document-hierarchy-widget.php:198
+#: lib/views/class-documentation-documents-widget.php:99
+#: lib/views/class-documentation-documents-widget.php:249
 msgid   "Title"
 msgstr  ""
 
@@ -567,30 +602,30 @@ msgstr  ""
 msgid   "View document"
 msgstr  ""
 
-#: lib/views/class-documentation-categories-widget.php:326
+#: lib/views/class-documentation-categories-widget.php:334
 msgid   "Whether to hide empty categories."
 msgstr  ""
 
-#: lib/views/class-documentation-categories-widget.php:335
+#: lib/views/class-documentation-categories-widget.php:343
 msgid   "Whether to show a hierarchical list or tree, will be flat if "
         "disabled."
 msgstr  ""
 
-#: lib/views/class-documentation-document-children-widget.php:371
-#: lib/views/class-documentation-documents-widget.php:310
+#: lib/views/class-documentation-document-children-widget.php:378
+#: lib/views/class-documentation-documents-widget.php:319
 msgid   "Whether to show the author of each document."
 msgstr  ""
 
-#: lib/views/class-documentation-documents-widget.php:328
+#: lib/views/class-documentation-documents-widget.php:337
 msgid   "Whether to show the comment count for each document."
 msgstr  ""
 
-#: lib/views/class-documentation-document-children-widget.php:380
-#: lib/views/class-documentation-documents-widget.php:319
+#: lib/views/class-documentation-document-children-widget.php:387
+#: lib/views/class-documentation-documents-widget.php:328
 msgid   "Whether to show the date of each document."
 msgstr  ""
 
-#: lib/views/class-documentation-categories-widget.php:372
+#: lib/views/class-documentation-categories-widget.php:380
 msgid   "Whether to show the number of documents in each category."
 msgstr  ""
 

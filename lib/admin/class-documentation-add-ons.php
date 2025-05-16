@@ -94,6 +94,54 @@ class Documentation_Add_Ons {
 		printf( '</h%d>', $h2 );
 
 		$entries = array(
+			'woocommerce-product-search' => array(
+				'title'    => 'WooCommerce Product Search',
+				'content'  => esc_html__( 'The essential extension for every WooCommerce store! The perfect Search Engine for your store helps your customers to find and buy the right products quickly.', 'documentation' ),
+				'image'    => DOCUMENTATION_PLUGIN_URL . 'images/add-ons/woocommerce-product-search.png',
+				'url'      => 'https://woocommerce.com/products/woocommerce-product-search/',
+				'featured' => true,
+				'index'    => 10
+			),
+			'groups-woocommerce' => array(
+				'title'    => 'Group Memberships for WooCommerce',
+				'content'  => esc_html__( 'Sell Memberships with Groups and WooCommerce! Groups WooCommerce grants memberships based on products. It automatically assigns a customer to one or more groups based on the products ordered.', 'documentation' ),
+				'image'    => DOCUMENTATION_PLUGIN_URL . 'images/add-ons/groups-woocommerce.png',
+				'url'      => 'https://woocommerce.com/products/groups-woocommerce/',
+				'featured' => true,
+				'index'    => 20
+			),
+			'restrict-payment-methods' => array(
+				'title'    => 'Restrict Payment Methods for WooCommerce',
+				'content'  => esc_html__( 'Limit the use of Payment Methods by Group Memberships, Roles, Countries, and Order Amounts. ', 'documentation' ),
+				'image'    => DOCUMENTATION_PLUGIN_URL . 'images/add-ons/restrict-payment-methods.png',
+				'url'      => 'https://woocommerce.com/products/restrict-payment-methods/',
+				'featured' => true,
+				'index'    => 30
+			),
+			'woocommerce-group-coupons' => array(
+				'title'    => 'Group Coupons for WooCommerce',
+				'content'  => esc_html__( 'Offer exclusive, automatic and targeted coupon discounts for your customers! Use group memberships and roles to control the validity of coupons.', 'documentation' ),
+				'image'    => DOCUMENTATION_PLUGIN_URL . 'images/add-ons/woocommerce-group-coupons.png',
+				'url'      => 'https://woocommerce.com/products/group-coupons/',
+				'featured' => false,
+				'index'    => 40
+			),
+			'woocommerce-sales-analysis' => array(
+				'title'    => 'Sales Analysis for WooCommerce',
+				'content'  => esc_html__( 'Sales Analysis oriented at Marketing & Management. Get in-depth views on fundamental Business Intelligence, focused on Sales and net Revenue Trends, International Sales Reports, Product Market and Customer Trends.', 'documentation' ),
+				'url'      => 'https://woocommerce.com/products/sales-analysis-for-woocommerce/',
+				'image'    => DOCUMENTATION_PLUGIN_URL . 'images/add-ons/sales-analysis.png',
+				'featured' => false,
+				'index'    => 50
+			),
+			'volume-discount-coupons' => array(
+				'title'    => 'Volume Discount Coupons for WooCommerce',
+				'content'  => esc_html__( 'Provides automatic discounts and coupons based on the quantities of products in the cart.', 'documentation' ),
+				'image'    => DOCUMENTATION_PLUGIN_URL . 'images/add-ons/volume-discount-coupons.png',
+				'url'      => 'https://woocommerce.com/products/volume-discount-coupons/',
+				'featured' => false,
+				'index'    => 60
+			),
 			'woocommerce-documentation' => array(
 				'title'   => 'WooCommerce Documentation',
 				'content' => 'This extension for WooCommerce and the Documentation plugin for WordPress allows to link documentation pages to products and display them automatically on the product pages.',
@@ -231,6 +279,7 @@ class Documentation_Add_Ons {
 	 *
 	 * @param array $e1
 	 * @param array $e2
+	 *
 	 * @return number
 	 */
 	public static function add_ons_sort( $e1, $e2 ) {

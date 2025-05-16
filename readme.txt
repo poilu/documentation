@@ -2,10 +2,10 @@
 Contributors: itthinx
 Donate link: https://www.itthinx.com/plugins/documentation
 Tags: documentation, document, documents, wiki, woocommerce, manual, manuals, document management, documentation management
-Requires at least: 6.0
-Tested up to: 6.4
+Requires at least: 6.5
+Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.12.0
+Stable tag: 1.13.1
 License: GPLv3
 
 A documentation management system.
